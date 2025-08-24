@@ -1,73 +1,64 @@
-# Welcome to your Lovable project
 
-## Project info
+# Nagendra-Portfolio
 
-**URL**: https://lovable.dev/projects/ad05eb62-672b-4ad7-a0bc-ccae25431b7f
+A personal portfolio website built with Vite, React and TypeScript. It showcases a modern responsive UI, custom Three.js scenes, and a collection of reusable Radix-based UI components styled with Tailwind CSS.
 
-## How can I edit this code?
+## What I used
 
-There are several ways of editing your application.
+- Vite (build tool)
+- React + TypeScript
+- Tailwind CSS (+ tailwind-animate)
+- Radix UI primitives (accessible UI building blocks)
+- Three.js, @react-three/fiber and @react-three/drei for 3D scenes
+- GSAP for timeline animations
+- React Router, React Hook Form and Zod for forms and validation
+- ESLint + TypeScript for static checks
 
-**Use Lovable**
+## Download & run (PowerShell)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ad05eb62-672b-4ad7-a0bc-ccae25431b7f) and start prompting.
+1. Clone the repository:
 
-Changes made via Lovable will be committed automatically to this repo.
+```powershell
+git clone https://github.com/nagendra376/Nagendra-Portfolio.git
+cd Nagendra-Portfolio
+```
 
-**Use your preferred IDE**
+2. Install dependencies (npm):
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```powershell
+npm install
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. Start the dev server:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```powershell
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open http://localhost:5173 in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Build for production and preview:
 
-**Use GitHub Codespaces**
+```powershell
+npm run build
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Notes:
 
-## What technologies are used for this project?
+- You can use `pnpm` or `yarn` instead of `npm` if preferred; replace the commands accordingly.
+- If the default port is busy, start Vite on another port: `npm run dev -- --port 5174`.
 
-This project is built with:
+## Project layout (high level)
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- `src/` — application source (components, pages, hooks, utils)
+- `src/components/ui/` — shared UI primitives (buttons, dialogs, inputs)
+- `public/` — static assets
+- `index.html`, `vite.config.ts`, `tailwind.config.ts` — build and styling config
 
-## How can I deploy this project?
+## Troubleshooting
 
-Simply open [Lovable](https://lovable.dev/projects/ad05eb62-672b-4ad7-a0bc-ccae25431b7f) and click on Share -> Publish.
+- If you run into type errors, check your Node.js version and reinstall dependencies.
+- Run `npm run lint` to surface lint/type issues.
 
-## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
