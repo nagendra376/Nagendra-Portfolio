@@ -42,13 +42,14 @@ const Hero = () => {
   return (
     <div ref={heroRef} className="min-h-screen flex items-center justify-center bg-portfolio-dark pt-20">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl">
-          <h1 
-            ref={titleRef}
-            className="text-5xl md:text-7xl font-mono font-bold mb-8 text-foreground"
-          >
-            Hi, I'm Sudeep Kuchara
-          </h1>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="max-w-4xl">
+            <h1 
+              ref={titleRef}
+              className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold mb-8 text-foreground"
+            >
+              Hi, I'm Sudeep Kuchara
+            </h1>
           
           <p 
             ref={subtitleRef}
@@ -89,28 +90,46 @@ const Hero = () => {
             </div>
           </div>
 
-          <div ref={socialRef} className="flex space-x-8">
-            <a 
-              href="https://github.com" 
-              className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
-            >
-              <Github className="w-5 h-5 group-hover:animate-pulse" />
-              <span className="font-mono">github (work)</span>
-            </a>
-            <a 
-              href="https://github.com" 
-              className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
-            >
-              <Github className="w-5 h-5 group-hover:animate-pulse" />
-              <span className="font-mono">github (personal)</span>
-            </a>
-            <a 
-              href="https://linkedin.com" 
-              className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
-            >
-              <Linkedin className="w-5 h-5 group-hover:animate-pulse" />
-              <span className="font-mono">LinkedIn</span>
-            </a>
+            <div ref={socialRef} className="flex flex-wrap gap-6">
+              <a 
+                href="https://github.com" 
+                className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
+              >
+                <Github className="w-5 h-5 group-hover:animate-pulse" />
+                <span className="font-mono">github (work)</span>
+              </a>
+              <a 
+                href="https://github.com" 
+                className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
+              >
+                <Github className="w-5 h-5 group-hover:animate-pulse" />
+                <span className="font-mono">github (personal)</span>
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
+              >
+                <Linkedin className="w-5 h-5 group-hover:animate-pulse" />
+                <span className="font-mono">LinkedIn</span>
+              </a>
+            </div>
+          </div>
+          
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden border-2 border-portfolio-green glow-effect">
+              <video 
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/api/placeholder/600/400" type="video/mp4" />
+                <div className="w-full h-full bg-gradient-to-br from-portfolio-green/20 to-portfolio-dark flex items-center justify-center">
+                  <span className="text-portfolio-green font-mono text-lg">Video Placeholder</span>
+                </div>
+              </video>
+            </div>
           </div>
         </div>
       </div>

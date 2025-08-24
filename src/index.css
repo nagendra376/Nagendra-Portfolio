@@ -104,6 +104,7 @@ All colors MUST be HSL.
 @layer components {
   .nav-link {
     @apply relative transition-colors duration-300 hover:text-[hsl(var(--portfolio-green))];
+    overflow: hidden;
   }
   
   .nav-link::after {
@@ -113,6 +114,18 @@ All colors MUST be HSL.
   
   .nav-link:hover::after {
     @apply w-full;
+  }
+
+  /* Moving line transition effect */
+  .nav-link::before {
+    content: '';
+    @apply absolute top-0 left-[-100%] w-full h-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--portfolio-green) / 0.4), transparent);
+    transition: left 0.5s;
+  }
+
+  .nav-link:hover::before {
+    @apply left-[100%];
   }
 
   .text-portfolio-green {
@@ -128,7 +141,12 @@ All colors MUST be HSL.
   }
 
   .glow-effect {
-    box-shadow: 0 0 20px hsl(var(--portfolio-green) / 0.3);
+    box-shadow: 0 0 30px hsl(var(--portfolio-green) / 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 50px hsl(var(--portfolio-green) / 0.5);
   }
 
   .text-gradient {
@@ -136,5 +154,28 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Floating animations */
+  .floating-tech:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px hsl(var(--portfolio-green) / 0.2);
+  }
+
+  .floating-scene:hover {
+    transform: scale(1.05);
+  }
+
+  /* Mobile responsive improvements */
+  @media (max-width: 768px) {
+    .floating-shape {
+      opacity: 0.5;
+      transform: scale(0.7);
+    }
+    
+    .floating-tech {
+      font-size: 0.75rem;
+      padding: 0.5rem;
+    }
   }
 }
