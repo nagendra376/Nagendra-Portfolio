@@ -38,7 +38,7 @@ const Skills = () => {
           ref={titleRef}
           className="text-4xl md:text-6xl font-mono font-semibold mb-16 text-foreground text-start"
         >
-          Following are the tools  i am familiar 
+          Tools I am proficient in:
         </h2>
 
         <div className="max-w-4xl  space-y-16">
@@ -53,23 +53,27 @@ const Skills = () => {
               </li>
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
-                VueJs 3.0 with options api for creating micro frontend functionalities
+                TypeScript, JavaScript (ES6+)
+              </li>
+              <li className="flex items-start">
+                <span className="text-portfolio-green mr-4">•</span>
+                CSS libraries: Tailwind CSS, SCSS (Sass), Bootstrap, Material UI
               </li>
             </ul>
           </div>
 
           <div ref={templatingRef}>
             <h3 className="text-2xl md:text-3xl font-mono font-semibold mb-8 text-foreground">
-              Templating languages:
+              CRM Tools:
             </h3>
             <ul className="space-y-4 text-lg font-mono text-muted-foreground">
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
-                Liquid for Shopify commerce sites
+                 Shopify commerce sites
               </li>
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
-                Php8 and Php7 for php based ecommerce sites and wordpress sites
+                 wordpress sites
               </li>
             </ul>
           </div>
@@ -80,12 +84,9 @@ const Skills = () => {
             <ul className="space-y-4 text-lg font-mono text-muted-foreground">
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
-                MongoDB : NOSQL
+                MongoDB (NoSQL), MySQL (SQL)
               </li>
-              <li className="flex items-start">
-                <span className="text-portfolio-green mr-4">•</span>
-                MySQL: SQL
-              </li>
+              
             </ul>
           </div>
         </div>

@@ -29,32 +29,33 @@ const Work = () => {
   ];
 
   return (
-    <div ref={workRef} className="min-h-screen bg-portfolio-dark">
-      <Navigation />
+    // <div ref={workRef} className="min-h-screen bg-portfolio-dark">
+    //   <Navigation />
       
-      <div className="pt-24 pb-16">
-        <div className="container mx-auto px-6">
-          <div ref={projectsRef} className="max-w-4xl space-y-16">
-            {projects.map((project, index) => (
-              <div 
-                key={index}
-                className="border-l-2 border-portfolio-green pl-8 hover:border-portfolio-green-hover transition-colors duration-300"
-              >
-                <h1 className="text-4xl md:text-5xl font-mono font-bold mb-4 text-portfolio-green">
-                  {project.title}
-                </h1>
-                <h2 className="text-xl md:text-2xl font-mono text-foreground mb-6">
-                  {project.subtitle}
-                </h2>
-                <p className="text-lg font-mono text-muted-foreground leading-relaxed">
-                  <span className="text-foreground font-semibold">Thoughts | Role :</span> {project.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    //   <div className="pt-24 pb-16">
+    //     <div className="container mx-auto px-6">
+    //       <div ref={projectsRef} className="max-w-4xl space-y-16">
+    //         {projects.map((project, index) => (
+    //           <div 
+    //             key={index}
+    //             className="border-l-2 border-portfolio-green pl-8 hover:border-portfolio-green-hover transition-colors duration-300"
+    //           >
+    //             <h1 className="text-4xl md:text-5xl font-mono font-bold mb-4 text-portfolio-green">
+    //               {project.title}
+    //             </h1>
+    //             <h2 className="text-xl md:text-2xl font-mono text-foreground mb-6">
+    //               {project.subtitle}
+    //             </h2>
+    //             <p className="text-lg font-mono text-muted-foreground leading-relaxed">
+    //               <span className="text-foreground font-semibold">Thoughts | Role :</span> {project.description}
+    //             </p>
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+    <div className='text-4xl md:text-5xl font-mono font-bold mt-4 mb-4 text-portfolio-green text-center'>Updating Soon!</div>
   );
 };
 
