@@ -39,20 +39,20 @@ const Education = () => {
 
   const educationData = [
     {
-      degree: "Bachelor of Technology",
+      degree: "Master of Computer Applications",
       field: "Computer Science Engineering",
-      institution: "Your University",
-      location: "City, Country",
-      period: "2018 - 2022",
-      description: "Focused on software development, algorithms, and data structures."
+      institution: "Sikkim Manipal University (SMU)",
+      location: "Gangtok, Sikkim",
+      period: "Currently pursuing",
+      description: "Focused on advanced topics in software development."
     },
     {
-      degree: "Higher Secondary",
-      field: "Science (PCM)",
-      institution: "Your School",
-      location: "City, Country", 
-      period: "2016 - 2018",
-      description: "Mathematics, Physics, and Chemistry with computer science."
+      degree: "Bachelor of Science",
+      field: "In Information Technology",
+      institution: "Nirmala Memorial Foundation College of Commerce & Science",
+      location: "Mumbai, India",
+      period: "2019 - 2022",
+      description: "Specialized in software development, algorithms, and data structures."
     }
   ];
 

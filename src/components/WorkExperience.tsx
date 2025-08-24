@@ -39,31 +39,34 @@ const WorkExperience = () => {
 
   const workData = [
     {
-      position: "Senior Frontend Engineer",
-      company: "Current Company",
-      location: "Remote / Office",
-      period: "2023 - Present",
-      description: "Leading frontend development for V-retail platform. Building scalable React applications with TypeScript and modern tooling.",
-      technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS", "AWS"],
-      projects: ["V-retail", "E-commerce Platform", "Admin Dashboard"]
+      position: "Web Developer",
+  company: "Accenture",
+  url: "https://www.accenture.com/in-en",
+      location: "Mumbai, India",
+      period: "2024 - 2025",
+      description: "Worked on various web development projects using HTML, CSS, and JavaScript.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      projects: ["GSK"]
     },
     {
-      position: "Frontend Developer",
-      company: "Previous Company",
-      location: "City, Country",
-      period: "2021 - 2023",
+      position: "Web Developer",
+  company: "Webtactics",
+  url: "https://webtactic.in/",
+      location: "Mumbai, India",
+      period: "2024 - 2024",
       description: "Developed responsive web applications and collaborated with design teams to implement pixel-perfect UIs.",
-      technologies: ["React", "JavaScript", "SCSS", "Node.js", "MongoDB"],
-      projects: ["KNKY Platform", "v-estate", "Client Portals"]
+      technologies: ["HTML", "CSS", "JavaScript", "WordPress", "Shopify", "PHP", "MySQL"],
+      projects: ["Shagun", "Sunrise", "Esn India", "Internal Projects"]
     },
     {
-      position: "Junior Developer",
-      company: "First Company",
-      location: "City, Country",
-      period: "2020 - 2021",
+      position: "Web Developer",
+  company: "My Country Mobile",
+  url: "https://www.mycountrymobile.com",
+      location: "Mumbai, India",
+      period: "2022 - 2024",
       description: "Started career building web applications and learning modern development practices.",
-      technologies: ["HTML", "CSS", "JavaScript", "React", "Git"],
-      projects: ["Company Website", "Internal Tools", "Landing Pages"]
+      technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
+      projects: ["SmsLocal", "My Country Mobile", "Teloz", "RingCentral", "CallMama", "Internal Tools", "Landing Pages"]
     }
   ];
 
@@ -107,9 +110,20 @@ const WorkExperience = () => {
                   </div>
                 </div>
                 
-                <p className="text-portfolio-green font-mono font-semibold mb-2 flex items-center space-x-2">
-                  <span>{work.company}</span>
-                  <ExternalLink className="w-4 h-4" />
+                <p className="text-portfolio-green font-mono font-semibold mb-2">
+                  {work.url ? (
+                    <a
+                      href={work.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 hover:underline"
+                    >
+                      <span>{work.company}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  ) : (
+                    <span className="flex items-center space-x-2">{work.company}</span>
+                  )}
                 </p>
                 
                 <p className="text-muted-foreground font-mono leading-relaxed mb-4">
