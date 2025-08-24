@@ -26,25 +26,25 @@ const Contact = () => {
     { 
       name: 'Email', 
       icon: Mail, 
-      href: 'mailto:sudeep@example.com',
+      href: 'mailto:nagendraswsah@pm.me',
       color: 'text-portfolio-green' 
     },
     { 
-      name: 'Twitter', 
+      name: 'X', 
       icon: Twitter, 
-      href: 'https://twitter.com',
+      href: 'https://x.com/nagendra92407',
       color: 'text-portfolio-green' 
     },
     { 
       name: 'Instagram', 
       icon: Instagram, 
-      href: 'https://instagram.com',
+      href: 'https://www.instagram.com/drippxesthetic_/',
       color: 'text-portfolio-green' 
     },
     { 
       name: 'GitHub', 
       icon: Github, 
-      href: 'https://github.com',
+      href: 'https://github.com/nagendra376',
       color: 'text-portfolio-green' 
     }
   ];
@@ -84,7 +84,7 @@ const Contact = () => {
         >
           <div className="border-t border-portfolio-green/30 pt-8">
             <p className="text-center text-lg font-mono text-muted-foreground">
-              ©2025, Sudeep Kuchara
+              ©2025, Nagendra Dwivedi
             </p>
           </div>
         </div>
