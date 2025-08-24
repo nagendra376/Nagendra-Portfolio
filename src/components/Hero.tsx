@@ -46,43 +46,64 @@ const Hero = () => {
           <div className="max-w-4xl">
             <h1 
               ref={titleRef}
-              className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold mb-8 text-foreground"
+              className="text-4xl md:text-6xl lg:text-7xl font-mono font-bold mb-8 text-foreground" style={{width: '110%', lineHeight: '1.2'}}
             >
-              Hi, I'm Sudeep Kuchara
+              Hi, I'm Nagendra Dwivedi
             </h1>
           
           <p 
             ref={subtitleRef}
             className="text-xl md:text-2xl font-mono mb-6 text-foreground flex items-center"
           >
-            Senior frontend engineer at{' '}
+             Frontend engineer at {''}
             <span className="inline-block w-3 h-3 bg-portfolio-green rounded-full ml-2 animate-glow-pulse"></span>
+            <span>&nbsp;Ink In Caps</span>
           </p>
           
           <p 
             ref={currentRef}
             className="text-lg md:text-xl font-mono mb-12 text-muted-foreground"
           >
-            Currently building ⚡ <span className="text-portfolio-green">V-retail</span> with my mates in the office.
+            Currently building ⚡ <span className="text-portfolio-green">Knky & Link</span> with my office colleagues.
           </p>
 
           <div ref={workRef} className="mb-16">
             <h2 className="text-2xl font-mono font-semibold mb-8 text-foreground">Recent work:</h2>
             <div className="flex flex-wrap gap-8 items-center">
               <div className="flex items-center space-x-2 group cursor-pointer">
-                <span className="text-lg font-mono text-portfolio-green">⚡</span>
-                <span className="text-lg font-mono text-foreground group-hover:text-portfolio-green transition-colors">
-                  V-retail
+                <span className="text-lg font-mono text-portfolio-green">
+                  <img
+                    src={new URL('../image/knkyLogo.svg', import.meta.url).href}
+                    alt="KNKY Logo"
+                    width={32}
+                    height={32}
+                    className="inline-block"
+                  />
                 </span>
-              </div>
-              <div className="flex items-center space-x-2 group cursor-pointer">
-                <span className="text-lg font-mono text-pink-500">●●</span>
                 <span className="text-lg font-mono text-foreground group-hover:text-portfolio-green transition-colors">
                   KNKY
                 </span>
               </div>
               <div className="flex items-center space-x-2 group cursor-pointer">
-                <span className="text-lg font-mono text-blue-400">▣</span>
+                <span className="text-lg font-mono text-pink-500">  <img
+                    src={new URL('../image/header-logo.png', import.meta.url).href}
+                    alt="Link Logo"
+                    width={32}
+                    height={32}
+                    className="inline-block"
+                  /></span>
+                <span className="text-lg font-mono text-foreground group-hover:text-portfolio-green transition-colors">
+                  Link
+                </span>
+              </div>
+              <div className="flex items-center space-x-2 group cursor-pointer">
+                <span className="text-lg font-mono text-blue-400"><span className="text-lg font-mono text-pink-500">  <img
+                    src={new URL('../image/vestate.svg', import.meta.url).href}
+                    alt="v-estate Logo"
+                    width={50}
+                    height={100}
+                    className="inline-block"
+                  /></span></span>
                 <span className="text-lg font-mono text-foreground group-hover:text-portfolio-green transition-colors">
                   v-estate
                 </span>
@@ -92,21 +113,21 @@ const Hero = () => {
 
             <div ref={socialRef} className="flex flex-wrap gap-6">
               <a 
-                href="https://github.com" 
+                href="https://github.com/nagendraiic" 
                 className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
               >
                 <Github className="w-5 h-5 group-hover:animate-pulse" />
                 <span className="font-mono">github (work)</span>
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/nagendra376" 
                 className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
               >
                 <Github className="w-5 h-5 group-hover:animate-pulse" />
                 <span className="font-mono">github (personal)</span>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/nagendra-dwivedi-1049651b6/" 
                 className="flex items-center space-x-2 text-foreground hover:text-portfolio-green transition-colors group"
               >
                 <Linkedin className="w-5 h-5 group-hover:animate-pulse" />
@@ -117,16 +138,18 @@ const Hero = () => {
           
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md aspect-video rounded-lg overflow-hidden border-2 border-portfolio-green glow-effect">
-              <video 
+              <video
                 className="w-full h-full object-cover"
                 autoPlay
                 muted
                 loop
                 playsInline
+                src={new URL('../image/Nagendra.mp4', import.meta.url).href}
               >
-                <source src="/api/placeholder/600/400" type="video/mp4" />
+                <source src={new URL('../image/Nagendra.mp4', import.meta.url).href} type="video/mp4" />
+                {/* fallback content shown when video can't play */}
                 <div className="w-full h-full bg-gradient-to-br from-portfolio-green/20 to-portfolio-dark flex items-center justify-center">
-                  <span className="text-portfolio-green font-mono text-lg">Video Placeholder</span>
+                  <span className="text-portfolio-green font-mono text-lg">Nagendra Dwivedi</span>
                 </div>
               </video>
             </div>

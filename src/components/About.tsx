@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ThreeScene from './ThreeScene';
+// ...existing code...
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,32 +64,15 @@ const About = () => {
               technologies for frontend as well as backend
             </p>
             
-            {/* Floating tech stack */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div className="floating-tech bg-portfolio-green/10 backdrop-blur-sm rounded-lg p-4 text-center animate-float-slow">
-                <span className="text-portfolio-green font-mono text-sm">React</span>
-              </div>
-              <div className="floating-tech bg-portfolio-green/10 backdrop-blur-sm rounded-lg p-4 text-center animate-float-medium">
-                <span className="text-portfolio-green font-mono text-sm">Next.js</span>
-              </div>
-              <div className="floating-tech bg-portfolio-green/10 backdrop-blur-sm rounded-lg p-4 text-center animate-float-fast">
-                <span className="text-portfolio-green font-mono text-sm">TypeScript</span>
-              </div>
-              <div className="floating-tech bg-portfolio-green/10 backdrop-blur-sm rounded-lg p-4 text-center animate-float-medium">
-                <span className="text-portfolio-green font-mono text-sm">Node.js</span>
-              </div>
-              <div className="floating-tech bg-portfolio-green/10 backdrop-blur-sm rounded-lg p-4 text-center animate-float-slow">
-                <span className="text-portfolio-green font-mono text-sm">Python</span>
-              </div>
-              <div className="floating-tech bg-portfolio-green/10 backdrop-blur-sm rounded-lg p-4 text-center animate-float-fast">
-                <span className="text-portfolio-green font-mono text-sm">AWS</span>
-              </div>
-            </div>
           </div>
           
           <div ref={sceneRef} className="flex justify-center">
             <div className="floating-scene animate-float-medium">
-              <ThreeScene />
+              <img
+                src={new URL('../image/Nagendra Dwivedi.jpg', import.meta.url).href}
+                alt="Nagendra"
+                className="rounded-lg shadow-lg max-w-full h-auto"
+              />
             </div>
           </div>
         </div>

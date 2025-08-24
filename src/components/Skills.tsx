@@ -36,12 +36,12 @@ const Skills = () => {
       <div className="container mx-auto px-6">
         <h2 
           ref={titleRef}
-          className="text-3xl md:text-4xl font-mono font-semibold mb-16 text-foreground text-center"
+          className="text-4xl md:text-6xl font-mono font-semibold mb-16 text-foreground text-start"
         >
-          Following are the tools I've used in the past projects and I am familiar with
+          Following are the tools  i am familiar 
         </h2>
 
-        <div className="max-w-4xl mx-auto space-y-16">
+        <div className="max-w-4xl  space-y-16">
           <div ref={frontendRef}>
             <h3 className="text-2xl md:text-3xl font-mono font-semibold mb-8 text-foreground">
               Frontend libraries/frameworks:
@@ -49,7 +49,7 @@ const Skills = () => {
             <ul className="space-y-4 text-lg font-mono text-muted-foreground">
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
-                React + NextJs or Gatsby to create single page web Applications
+                React + NextJs or AngularJs to create single page web Applications
               </li>
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
@@ -70,6 +70,21 @@ const Skills = () => {
               <li className="flex items-start">
                 <span className="text-portfolio-green mr-4">•</span>
                 Php8 and Php7 for php based ecommerce sites and wordpress sites
+              </li>
+            </ul>
+          </div>
+           <div ref={templatingRef}>
+            <h3 className="text-2xl md:text-3xl font-mono font-semibold mb-8 text-foreground">
+              Databases:
+            </h3>
+            <ul className="space-y-4 text-lg font-mono text-muted-foreground">
+              <li className="flex items-start">
+                <span className="text-portfolio-green mr-4">•</span>
+                MongoDB : NOSQL
+              </li>
+              <li className="flex items-start">
+                <span className="text-portfolio-green mr-4">•</span>
+                MySQL: SQL
               </li>
             </ul>
           </div>
