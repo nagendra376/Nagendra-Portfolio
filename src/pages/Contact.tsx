@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Mail, Twitter, Instagram, Github } from 'lucide-react';
+import { Mail, Twitter, Instagram, Github, Code } from 'lucide-react';
 import Navigation from '../components/Navigation';
 
 const Contact = () => {
@@ -45,6 +45,12 @@ const Contact = () => {
       name: 'GitHub', 
       icon: Github, 
       href: 'https://github.com/nagendra376',
+      color: 'text-portfolio-green' 
+    },
+    { 
+      name: 'Leetcode', 
+      icon: Code, 
+      href: 'https://leetcode.com/nDX2IJ9Ehk/',
       color: 'text-portfolio-green' 
     }
   ];
