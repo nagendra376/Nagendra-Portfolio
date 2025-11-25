@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { Mail, Twitter, Instagram, Github } from 'lucide-react';
-import Navigation from '../components/Navigation';
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { Mail, Twitter, Instagram, Github } from "lucide-react";
+import Navigation from "../components/Navigation";
 
 const Contact = () => {
   const contactRef = useRef<HTMLDivElement>(null);
@@ -10,12 +10,20 @@ const Contact = () => {
 
   useEffect(() => {
     const tl = gsap.timeline();
-    
-    tl.fromTo(linksRef.current?.children || [],
+
+    tl.fromTo(
+      linksRef.current?.children || [],
       { opacity: 0, x: -30 },
-      { opacity: 1, x: 0, duration: 0.6, stagger: 0.1, ease: "power2.out", delay: 0.3 }
-    )
-    .fromTo(footerRef.current,
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        delay: 0.3,
+      }
+    ).fromTo(
+      footerRef.current,
       { opacity: 0, y: 20 },
       { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
       "-=0.2"
@@ -23,39 +31,42 @@ const Contact = () => {
   }, []);
 
   const contactLinks = [
-    { 
-      name: 'Email', 
-      icon: Mail, 
-      href: 'mailto:nagendraswsah@pm.me',
-      color: 'text-portfolio-green' 
+    {
+      name: "Email",
+      icon: Mail,
+      href: "mailto:nagendraswsah@pm.me",
+      color: "text-portfolio-green",
     },
-    { 
-      name: 'X', 
-      icon: Twitter, 
-      href: 'https://x.com/nagendra92407',
-      color: 'text-portfolio-green' 
+    {
+      name: "X",
+      icon: Twitter,
+      href: "https://x.com/nagendra92407",
+      color: "text-portfolio-green",
     },
-    { 
-      name: 'Instagram', 
-      icon: Instagram, 
-      href: 'https://www.instagram.com/drippxesthetic_/',
-      color: 'text-portfolio-green' 
+    {
+      name: "Instagram",
+      icon: Instagram,
+      href: "https://www.instagram.com/drippxesthetic_/",
+      color: "text-portfolio-green",
     },
-    { 
-      name: 'GitHub', 
-      icon: Github, 
-      href: 'https://github.com/nagendra376',
-      color: 'text-portfolio-green' 
-    }
+    {
+      name: "GitHub",
+      icon: Github,
+      href: "https://github.com/nagendra376",
+      color: "text-portfolio-green",
+    },
   ];
 
   return (
-    <div ref={contactRef} className="min-h-screen bg-portfolio-dark flex flex-col">
+    <div
+      ref={contactRef}
+      className="min-h-screen bg-portfolio-dark flex flex-col"
+    >
       <Navigation />
-      
-      <div className="flex-1 flex flex-col justify-between pt-24 pb-8">
-        <div className="container mx-auto px-6">
-          <div ref={linksRef} className="max-w-2xl space-y-8">
+
+      <div className="flex-1 flex flex-col justify-between pt-16 sm:pt-24 pb-6 sm:pb-8">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div ref={linksRef} className="max-w-2xl space-y-6 sm:space-y-8">
             {contactLinks.map((link, index) => {
               const Icon = link.icon;
               return (
@@ -66,9 +77,13 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="flex items-center space-x-4 text-4xl md:text-6xl font-mono font-bold hover:translate-x-4 transition-transform duration-300">
-                    <Icon className={`w-8 h-8 md:w-12 md:h-12 ${link.color} group-hover:animate-pulse`} />
-                    <span className={`${link.color} group-hover:text-portfolio-green-hover transition-colors`}>
+                  <div className="flex items-center space-x-3 sm:space-x-4 text-2xl sm:text-4xl md:text-6xl font-mono font-bold hover:translate-x-2 sm:hover:translate-x-4 transition-transform duration-300">
+                    <Icon
+                      className={`w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 ${link.color} group-hover:animate-pulse flex-shrink-0`}
+                    />
+                    <span
+                      className={`${link.color} group-hover:text-portfolio-green-hover transition-colors`}
+                    >
                       {link.name}
                     </span>
                   </div>
@@ -78,12 +93,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <div 
-          ref={footerRef}
-          className="container mx-auto px-6"
-        >
-          <div className="border-t border-portfolio-green/30 pt-8">
-            <p className="text-center text-lg font-mono text-muted-foreground">
+        <div ref={footerRef} className="container mx-auto px-4 sm:px-6">
+          <div className="border-t border-portfolio-green/30 pt-6 sm:pt-8">
+            <p className="text-center text-sm sm:text-lg font-mono text-muted-foreground">
               ©2025, Nagendra Dwivedi
             </p>
           </div>

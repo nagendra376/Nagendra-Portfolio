@@ -1,9 +1,9 @@
-import Navigation from '../components/Navigation';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Education from '../components/Education';
-import WorkExperience from '../components/WorkExperience';
-import Skills from '../components/Skills';
+import Navigation from "../components/Navigation";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Education from "../components/Education";
+import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
 
 const Index = () => {
   return (
@@ -12,9 +12,9 @@ const Index = () => {
       <section id="home">
         <Hero />
       </section>
-      <section id="about">
+      {/* <section id="about">
         <About />
-      </section>
+      </section> */}
       <section id="education">
         <Education />
       </section>
