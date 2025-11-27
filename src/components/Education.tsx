@@ -61,9 +61,9 @@ const Education = () => {
   return (
     <div
       ref={educationRef}
-      className="min-h-screen bg-portfolio-darker py-12 sm:py-20"
+      className="min-h-screen bg-portfolio-darker py-12 sm:py-20 overflow-x-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container w-full mx-auto px-4 sm:px-6">
         <h2
           ref={titleRef}
           className="text-2xl sm:text-4xl md:text-6xl font-mono font-bold mb-8 sm:mb-16 text-center text-foreground"

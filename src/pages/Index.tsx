@@ -7,7 +7,7 @@ import Skills from "../components/Skills";
 
 const Index = () => {
   return (
-    <div className="bg-portfolio-dark min-h-screen">
+    <div className="bg-portfolio-dark min-h-screen overflow-x-hidden w-full max-w-full">
       <Navigation />
       <section id="home">
         <Hero />

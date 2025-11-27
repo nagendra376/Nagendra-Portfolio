@@ -53,7 +53,7 @@ const About = () => {
         <div className="floating-shape absolute bottom-20 right-1/3 w-16 h-16 sm:w-24 sm:h-24 bg-portfolio-green/5 rounded-full animate-float-slow"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+      <div className="container w-full mx-auto px-4 sm:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <h2

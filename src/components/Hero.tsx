@@ -56,14 +56,16 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="min-h-screen flex items-center justify-center bg-portfolio-dark pt-16 sm:pt-20"
+      className="min-h-screen flex items-center justify-center bg-portfolio-dark pt-16 sm:pt-20 overflow-x-hidden"
     >
-      <div className="container mx-auto px-4 sm:px-6">
+      <div className="container w-full mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="max-w-4xl order-2 lg:order-1">
+          {/* Content Section */}
+          <div className="max-w-4xl order-1 lg:order-1">
             <h1
               ref={titleRef}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold mb-4 sm:mb-8 text-foreground leading-tight"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold mb-4 sm:mb-8 text-foreground "
+              style={{ lineHeight: 1.2 }}
             >
               Hi, I'm Nagendra Dwivedi
             </h1>
@@ -74,7 +76,14 @@ const Hero = () => {
             >
               Junior SDE at {""}
               <span className="inline-block w-2 h-2 sm:w-3 sm:h-3 bg-portfolio-green rounded-full ml-2 animate-glow-pulse"></span>
-              <span>&nbsp;Ink In Caps</span>
+              <div
+                className="flex items-center space-x-2 group cursor-pointer"
+                onClick={() => window.open("https://iiclab.com/", "_blank")}
+              >
+                <span className="text-base sm:text-lg font-mono text-foreground group-hover:text-portfolio-green transition-colors">
+                  &nbsp;Ink In Caps
+                </span>
+              </div>
             </p>
 
             <p
@@ -167,7 +176,8 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+          {/* Video Section */}
+          <div className="flex justify-center lg:justify-end order-2 lg:order-2 w-full">
             <div className="relative w-full max-w-xs sm:max-w-md aspect-video rounded-lg overflow-hidden border-2 border-portfolio-green glow-effect">
               <video
                 className="w-full h-full object-cover"

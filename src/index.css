@@ -46,9 +46,13 @@ All colors MUST be HSL.
     --portfolio-darker: 0 0% 3%;
 
     /* Gradients */
-    --gradient-green: linear-gradient(135deg, hsl(120 100% 50%), hsl(140 100% 45%));
+    --gradient-green: linear-gradient(
+      135deg,
+      hsl(120 100% 50%),
+      hsl(140 100% 45%)
+    );
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 3%));
-    
+
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,10 +94,13 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html,
   body {
     @apply bg-background text-foreground font-mono antialiased;
     background: hsl(var(--portfolio-dark));
     color: hsl(var(--foreground));
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   html {
@@ -106,21 +113,26 @@ All colors MUST be HSL.
     @apply relative transition-colors duration-300 hover:text-[hsl(var(--portfolio-green))];
     overflow: hidden;
   }
-  
+
   .nav-link::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-0 h-0.5 bg-[hsl(var(--portfolio-green))] transition-all duration-300;
   }
-  
+
   .nav-link:hover::after {
     @apply w-full;
   }
 
   /* Moving line transition effect */
   .nav-link::before {
-    content: '';
+    content: "";
     @apply absolute top-0 left-[-100%] w-full h-full;
-    background: linear-gradient(90deg, transparent, hsl(var(--portfolio-green) / 0.4), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--portfolio-green) / 0.4),
+      transparent
+    );
     transition: left 0.5s;
   }
 
@@ -172,10 +184,14 @@ All colors MUST be HSL.
       opacity: 0.5;
       transform: scale(0.7);
     }
-    
+
     .floating-tech {
       font-size: 0.75rem;
       padding: 0.5rem;
     }
   }
+}
+
+body {
+  overflow-x: hidden;
 }

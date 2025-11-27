@@ -66,12 +66,12 @@ const Contact = () => {
   return (
     <div
       ref={contactRef}
-      className="min-h-screen bg-portfolio-dark flex flex-col"
+      className="min-h-screen bg-portfolio-dark flex flex-col overflow-x-hidden w-full max-w-full"
     >
       <Navigation />
 
       <div className="flex-1 flex flex-col justify-between pt-16 sm:pt-24 pb-6 sm:pb-8">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container w-full mx-auto px-4 sm:px-6">
           <div ref={linksRef} className="max-w-2xl space-y-6 sm:space-y-8">
             {contactLinks.map((link, index) => {
               const Icon = link.icon;
