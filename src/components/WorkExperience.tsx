@@ -46,7 +46,7 @@ const WorkExperience = () => {
       location: "Mumbai, India",
       period: "2024 - 2025",
       description:
-        "Worked on various web development projects using HTML, CSS, and JavaScript.",
+        "At Accenture (2024–2025), I worked as a Frontend Developer on projects like GSK, building pixel-perfect slides using HTML, CSS, and JavaScript. Ensuring designs matched the exact references was challenging but strengthened my attention to detail.",
       technologies: ["HTML", "CSS", "JavaScript"],
       projects: ["GSK"],
     },
@@ -57,7 +57,7 @@ const WorkExperience = () => {
       location: "Mumbai, India",
       period: "2024 - 2024",
       description:
-        "Developed responsive web applications and collaborated with design teams to implement pixel-perfect UIs.",
+        "At Webtactics (2024) in Mumbai, I worked as a Web Developer, building responsive web applications and delivering pixel-perfect UIs across projects like Shagun, Sunrise, ESN India, and various internal tools. I worked with HTML, CSS, JavaScript, WordPress, Shopify, PHP, and MySQL, handling both frontend and software development tasks.",
       technologies: [
         "HTML",
         "CSS",
@@ -67,7 +67,13 @@ const WorkExperience = () => {
         "PHP",
         "MySQL",
       ],
-      projects: ["Shagun", "Sunrise", "Esn India", "Internal Projects"],
+      projects: [
+        "Shagun",
+        "Sunrise",
+        "Esn India",
+        "Internal Projects",
+        "software development",
+      ],
     },
     {
       position: "Web Developer",
@@ -76,7 +82,7 @@ const WorkExperience = () => {
       location: "Mumbai, India",
       period: "2022 - 2024",
       description:
-        "Started career building web applications and learning modern development practices.",
+        "At My Country Mobile (2022–2024) in Mumbai, I began my career as a Web Developer, building web applications, landing pages, and internal tools using HTML, CSS, JavaScript, WordPress, and PHP. I contributed to key projects like SmsLocal, Teloz, RingCentral, CallMama, and more while learning modern development practices.",
       technologies: ["HTML", "CSS", "JavaScript", "WordPress", "PHP"],
       projects: [
         "SmsLocal",

@@ -64,50 +64,52 @@ const Contact = () => {
   ];
 
   return (
-    <div
-      ref={contactRef}
-      className="min-h-screen bg-portfolio-dark flex flex-col overflow-x-hidden w-full max-w-full"
-    >
-      <Navigation />
+    <>
+      <div
+        ref={contactRef}
+        className="min-h-screen bg-portfolio-dark flex flex-col overflow-x-hidden w-full max-w-full pt-6 lg:pt-8"
+      >
+        <Navigation />
 
-      <div className="flex-1 flex flex-col justify-between pt-16 sm:pt-24 pb-6 sm:pb-8">
-        <div className="container w-full mx-auto px-4 sm:px-6">
-          <div ref={linksRef} className="max-w-2xl space-y-6 sm:space-y-8">
-            {contactLinks.map((link, index) => {
-              const Icon = link.icon;
-              return (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="group block"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="flex items-center space-x-3 sm:space-x-4 text-2xl sm:text-4xl md:text-6xl font-mono font-bold hover:translate-x-2 sm:hover:translate-x-4 transition-transform duration-300">
-                    <Icon
-                      className={`w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 ${link.color} group-hover:animate-pulse flex-shrink-0`}
-                    />
-                    <span
-                      className={`${link.color} group-hover:text-portfolio-green-hover transition-colors`}
-                    >
-                      {link.name}
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
+        <div className="flex-1 flex flex-col justify-between pt-16 sm:pt-24 pb-6 sm:pb-8">
+          <div className="container w-full mx-auto px-4 sm:px-6">
+            <div ref={linksRef} className="max-w-2xl space-y-6 sm:space-y-8">
+              {contactLinks.map((link, index) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="group block"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="flex items-center space-x-3 sm:space-x-4 text-2xl sm:text-4xl md:text-6xl font-mono font-bold hover:translate-x-2 sm:hover:translate-x-4 transition-transform duration-300">
+                      <Icon
+                        className={`w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 ${link.color} group-hover:animate-pulse flex-shrink-0`}
+                      />
+                      <span
+                        className={`${link.color} group-hover:text-portfolio-green-hover transition-colors`}
+                      >
+                        {link.name}
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <div ref={footerRef} className="container mx-auto px-4 sm:px-6">
-          <div className="border-t border-portfolio-green/30 pt-6 sm:pt-8">
-            <p className="text-center text-sm sm:text-lg font-mono text-muted-foreground">
-              ©2025, Nagendra Dwivedi
-            </p>
+          <div ref={footerRef} className="container mx-auto px-4 sm:px-6">
+            <div className="border-t border-portfolio-green/30 pt-6 sm:pt-8">
+              <p className="text-center text-sm sm:text-lg font-mono text-muted-foreground">
+                ©2025, Nagendra Dwivedi
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

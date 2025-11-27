@@ -47,7 +47,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between w-full">
           {/* Logo - always left */}
-          <img src={logo} alt="Logo" className="w-10 h-10" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-10 h-10 cursor-pointer"
+            onClick={() => (window.location.href = "/")}
+          />
 
           {/* Desktop Navigation - right side */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-12">

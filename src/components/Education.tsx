@@ -45,7 +45,8 @@ const Education = () => {
       institution: "Sikkim Manipal University (SMU)",
       location: "Gangtok, Sikkim",
       period: "Currently pursuing",
-      description: "Focused on advanced topics in software development.",
+      description:
+        "I am currently pursuing my Master of Computer Applications (MCA) in Computer Science Engineering from Sikkim Manipal University, Gangtok, Sikkim. My studies are focused on advanced areas of software development, helping me strengthen both my theoretical foundation and practical skills in modern technologies.",
     },
     {
       degree: "Bachelor of Science",
@@ -54,7 +55,7 @@ const Education = () => {
       location: "Mumbai, India",
       period: "2019 - 2022",
       description:
-        "Specialized in software development, algorithms, and data structures.",
+        "I completed my Bachelor of Science in Information Technology (2019–2022) from Nirmala Memorial Foundation College of Commerce & Science, Mumbai. During this period, I built a strong foundation in software development, algorithms, and data structures, which helped shape my technical understanding and practical problem-solving skills.",
     },
   ];
 

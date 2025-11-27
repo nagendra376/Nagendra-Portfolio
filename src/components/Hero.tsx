@@ -67,7 +67,7 @@ const Hero = () => {
               className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-mono font-bold mb-4 sm:mb-8 text-foreground "
               style={{ lineHeight: 1.2 }}
             >
-              Hi, I'm Nagendra Dwivedi
+              Hi, I'm Nagendra Dwivedi 👋
             </h1>
 
             <p
