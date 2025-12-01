@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Navigation from "../components/Navigation";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom"; // Add this import at the top
 
 const Work = () => {
   const workRef = useRef<HTMLDivElement>(null);
@@ -126,13 +127,13 @@ const Work = () => {
 
             {/* WorkLog Link */}
             <div className="mt-12 sm:mt-16">
-              <a
-                href="/personal-projects"
+              <Link
+                to="/personal-projects"
                 className="inline-flex items-center gap-2 text-sm sm:text-base font-mono text-portfolio-green hover:text-portfolio-green-hover transition-colors"
               >
                 View Personal Projects{" "}
                 <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -146,13 +147,6 @@ const Work = () => {
           </div>
         </footer>
       </div>
-      <footer className="py-6 sm:py-8 border-t border-portfolio-green/20">
-        <div className="container mx-auto px-4 sm:px-6">
-          <p className="text-center text-xs sm:text-sm font-mono text-muted-foreground">
-            @2025, Nagendra Dwivedi
-          </p>
-        </div>
-      </footer>
     </>
   );
 };
