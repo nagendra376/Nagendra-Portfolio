@@ -21,7 +21,7 @@ const personalProjects = [
     subtitle: "Porche Theme Website Clone",
     description:
       "A clone of the Porche design website built using React and TailwindCSS. currently, i am developing this project with my office mate as a office assignment project on timeLine Based animations using GSAP and three.js library for animations.",
-    url: "",
+    url: "https://timeline-activity.vercel.app/",
   },
 ];
 
