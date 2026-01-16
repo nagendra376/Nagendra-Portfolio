@@ -3,11 +3,18 @@ import { ExternalLink } from "lucide-react";
 
 const personalProjects = [
   {
-    title: "Portfolio Website",
-    subtitle: "Personal Portfolio",
+    title: "Social Media App",
+    subtitle: "A Frontend architectural Based project",
     description:
-      "Built with React and TailwindCSS, this site showcases my skills, experience, and projects. It features smooth animations and a responsive design.",
-    url: "https://www.nagendradwivedi.dev/",
+      "Hey everyone, This is a social media application, but it’s not intended to be a typical clone or replica of existing platforms. This is a personal project where I plan to implement multiple proofs of concept (POCs) as part of my learning journey. Based on my past professional experience, I’ll be applying the knowledge and patterns I’ve gained and evolving them within this project. I strongly believe that building POCs is one of the most effective ways to understand and design scalable, well-structured architectures.",
+    url: "https://social-media-app-chi-three.vercel.app/",
+  },
+  {
+    title: "Porche Design Clone",
+    subtitle: "Porche Theme Website Clone",
+    description:
+      "A clone of the Porche design website built using React and TailwindCSS. currently, i am developing this project with my office mate as a office assignment project on timeLine Based animations using GSAP and three.js library for animations.",
+    url: "https://timeline-activity.vercel.app/",
   },
   {
     title: "Snake and Ladders Game",
@@ -17,11 +24,11 @@ const personalProjects = [
     url: "https://github.com/nagendra376/Snkae-ladder-game",
   },
   {
-    title: "Porche Design Clone",
-    subtitle: "Porche Theme Website Clone",
+    title: "Portfolio Website",
+    subtitle: "Personal Portfolio",
     description:
-      "A clone of the Porche design website built using React and TailwindCSS. currently, i am developing this project with my office mate as a office assignment project on timeLine Based animations using GSAP and three.js library for animations.",
-    url: "https://timeline-activity.vercel.app/",
+      "Built with React and TailwindCSS, this site showcases my skills, experience, and projects. It features smooth animations and a responsive design.",
+    url: "https://www.nagendradwivedi.dev/",
   },
 ];
 

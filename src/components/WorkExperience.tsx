@@ -23,12 +23,12 @@ const WorkExperience = () => {
     tl.fromTo(
       titleRef.current,
       { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
     ).fromTo(
       itemsRef.current,
       { opacity: 0, x: 50 },
       { opacity: 1, x: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" },
-      "-=0.5"
+      "-=0.5",
     );
   }, []);
 
@@ -106,7 +106,7 @@ const WorkExperience = () => {
           ref={titleRef}
           className="text-2xl sm:text-4xl md:text-6xl font-mono font-bold mb-8 sm:mb-16 text-center text-foreground"
         >
-          Work Experience
+          Past Work Experience
         </h2>
 
         <div className="max-w-5xl mx-auto">

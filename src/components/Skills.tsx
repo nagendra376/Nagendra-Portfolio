@@ -23,12 +23,12 @@ const Skills = () => {
     tl.fromTo(
       titleRef.current,
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
     ).fromTo(
       [frontendRef.current, templatingRef.current],
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 0.8, stagger: 0.2, ease: "power2.out" },
-      "-=0.3"
+      "-=0.3",
     );
   }, []);
 
@@ -60,16 +60,13 @@ const Skills = () => {
                     HTML, and CSS for core frontend logic and structure.
                   </span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-portfolio-green mr-2 sm:mr-4">•</span>
-                  <span>Styling & UI Frameworks</span>
-                </li>
+
                 <li className="flex items-start">
                   <span className="text-portfolio-green mr-2 sm:mr-4">•</span>
                   <span>
-                    Bootstrap, Tailwind CSS, SCSS (Sass), and Material UI for
-                    responsive styling, modern component design, animations, and
-                    consistent UI layouts.
+                    Styling & UI Frameworks: Bootstrap, Tailwind CSS, SCSS
+                    (Sass), and Material UI for responsive styling, modern
+                    component design, animations, and consistent UI layouts.
                   </span>
                 </li>
               </ul>
