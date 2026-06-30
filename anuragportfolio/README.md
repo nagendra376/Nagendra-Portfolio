@@ -1,4 +1,4 @@
-# Anurag Jha — Portfolio v2
+# Anurag Jha — Portfolio
 
 A modern, minimal, and premium personal portfolio built with the modern JavaScript/TypeScript ecosystem.
 
