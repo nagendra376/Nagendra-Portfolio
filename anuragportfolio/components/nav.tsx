@@ -94,6 +94,29 @@ export function Nav() {
         </div>
 
         
+      </motion.nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="absolute top-20 w-[calc(100%-2rem)] max-w-3xl rounded-2xl border bg-surface/90 p-2 backdrop-blur-xl md:hidden"
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-4 py-3 text-sm text-muted transition-colors hover:bg-fg/5 hover:text-fg"
+              >
+                {l.label}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
