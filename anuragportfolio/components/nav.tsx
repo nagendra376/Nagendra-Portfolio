@@ -52,8 +52,6 @@ export function Nav() {
             : "border border-transparent"
         }`}
       >
-
-        
         <a
           href="#top"
           className="group flex items-center gap-2 font-mono text-sm font-semibold tracking-tight"
@@ -78,8 +76,24 @@ export function Nav() {
           ))}
         </div>
 
+        <div className="flex items-center gap-1">
+          <button
+            aria-label="Toggle theme"
+            onClick={toggle}
+            className="grid h-8 w-8 place-items-center rounded-full text-muted transition-colors hover:bg-fg/5 hover:text-fg"
+          >
+            <SunMoon theme={theme} />
+          </button>
+          <button
+            aria-label="Menu"
+            onClick={() => setOpen((o) => !o)}
+            className="grid h-8 w-8 place-items-center rounded-full text-muted transition-colors hover:bg-fg/5 hover:text-fg md:hidden"
+          >
+            {open ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}
+          </button>
+        </div>
 
-
+        
     </header>
   );
 }
