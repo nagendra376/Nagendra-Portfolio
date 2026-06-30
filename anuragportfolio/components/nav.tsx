@@ -52,6 +52,20 @@ export function Nav() {
             : "border border-transparent"
         }`}
       >
+
+        
+        <a
+          href="#top"
+          className="group flex items-center gap-2 font-mono text-sm font-semibold tracking-tight"
+        >
+          <img 
+            src={site.profileImages[imgIndex]} 
+            alt={site.initials} 
+            className="h-7 w-7 rounded-full object-cover ring-1 ring-accent/30 transition-transform group-hover:rotate-12" 
+          />
+          <span className="hidden sm:inline">{site.name.split(" ")[0].toLowerCase()}</span>
+        </a>
+
     </header>
   );
 }
