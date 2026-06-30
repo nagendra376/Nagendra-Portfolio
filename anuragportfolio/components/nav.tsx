@@ -66,6 +66,20 @@ export function Nav() {
           <span className="hidden sm:inline">{site.name.split(" ")[0].toLowerCase()}</span>
         </a>
 
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="rounded-full px-3 py-1.5 text-sm text-muted transition-colors hover:bg-fg/5 hover:text-fg"
+            >
+              {l.label}
+            </a>
+          ))}
+        </div>
+
+
+
     </header>
   );
 }
