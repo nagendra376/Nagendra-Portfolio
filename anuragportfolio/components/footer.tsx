@@ -30,3 +30,14 @@ export function Footer() {
           <Socials />
         </div>
       </div>
+
+
+      <div className="mt-10 flex flex-col items-center justify-between gap-4 text-sm text-faint sm:flex-row">
+        <p>
+          © {new Date().getFullYear()} {site.name}. {site.footerNote}
+        </p>
+        <LiveClock />
+      </div>
+    </footer>
+  );
+}
