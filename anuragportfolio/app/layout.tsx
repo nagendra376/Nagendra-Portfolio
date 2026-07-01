@@ -41,3 +41,32 @@ export const metadata: Metadata = {
     description: site.tagline,
   },
 };
+
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* set theme before paint to avoid a flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.add('light')}}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className={`${sans.variable} ${mono.variable} font-sans`}>
+        <ThemeProvider>
+          <Nav />
+          <main className="relative">{children}</main>
+          <Footer />
+          <Konami />
+          <Script src="/oneko.js" strategy="lazyOnload" />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
