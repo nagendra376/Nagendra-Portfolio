@@ -24,3 +24,23 @@ export function Reveal({
     </motion.div>
   );
 }
+
+export function SectionHeader({
+  index,
+  title,
+  id,
+}: {
+  index: string;
+  title: string;
+  id?: string;
+}) {
+  return (
+    <div id={id} className="mb-8 flex items-center gap-4 scroll-mt-28">
+      <span className="font-mono text-sm text-accent">{index}</span>
+      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+        {title}
+      </h2>
+      <span className="h-px flex-1 bg-border" />
+    </div>
+  );
+}
