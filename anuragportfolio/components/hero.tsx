@@ -95,3 +95,28 @@ export function Hero() {
           </a>
           <Socials />
         </motion.div>
+
+
+        {/* status / "now" pills */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-12 grid gap-3 sm:grid-cols-3"
+        >
+          {site.status.available && (
+            <div className="flex items-center gap-2 rounded-2xl border bg-surface/30 px-4 py-3 text-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="text-muted">{site.status.availableText}</span>
+            </div>
+          )}
+          <NowPill label="building" value={site.status.nowBuilding} />
+          <NowPill label="learning" value={site.status.nowLearning} />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
