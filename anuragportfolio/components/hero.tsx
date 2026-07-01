@@ -120,3 +120,18 @@ export function Hero() {
     </section>
   );
 }
+
+
+
+function NowPill({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border bg-surface/30 px-4 py-3 text-sm">
+      <span className="font-mono text-xs uppercase tracking-wider text-faint">
+        {label}
+      </span>
+      <p className="mt-0.5 line-clamp-2 text-muted" title={value}>
+        {value}
+      </p>
+    </div>
+  );
+}
