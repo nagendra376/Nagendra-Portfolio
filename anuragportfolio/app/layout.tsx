@@ -23,3 +23,21 @@ const mono = JetBrains_Mono({
 });
 
 const url = "https://example.com"; // TODO: your deployed URL
+
+export const metadata: Metadata = {
+  metadataBase: new URL(url),
+  title: `${site.name} — ${site.role}`,
+  description: site.tagline,
+  authors: [{ name: site.name }],
+  openGraph: {
+    title: `${site.name} — ${site.role}`,
+    description: site.tagline,
+    type: "website",
+    url,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.role}`,
+    description: site.tagline,
+  },
+};
