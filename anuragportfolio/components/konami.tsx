@@ -53,3 +53,43 @@ export function Konami() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  const pieces = Array.from({ length: 40 });
+
+  return (
+    <AnimatePresence>
+      {unlocked && (
+        <>
+          <div className="pointer-events-none fixed inset-0 z-[100] overflow-hidden">
+            {pieces.map((_, i) => {
+              const left = (i * 37) % 100;
+              const delay = (i % 10) * 0.05;
+              const hue = (i * 53) % 360;
+              return (
+                <motion.span
+                  key={i}
+                  initial={{ y: -40, opacity: 1, rotate: 0 }}
+                  animate={{ y: "110vh", opacity: [1, 1, 0], rotate: 720 }}
+                  transition={{ duration: 2.2 + (i % 5) * 0.2, delay, ease: "easeIn" }}
+                  style={{
+                    left: `${left}%`,
+                    background: `hsl(${hue} 90% 60%)`,
+                  }}
+                  className="absolute top-0 h-2 w-2 rounded-sm"
+                />
+              );
+            })}
+          </div>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 30, opacity: 0 }}
+            className="fixed bottom-6 left-1/2 z-[101] -translate-x-1/2 rounded-full border bg-surface/90 px-5 py-2.5 text-sm font-medium shadow-xl backdrop-blur-xl"
+          >
+            🏆 Achievement unlocked — <span className="text-accent">you found the secret</span>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
