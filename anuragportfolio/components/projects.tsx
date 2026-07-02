@@ -53,3 +53,33 @@ export function Projects() {
                   </span>
                 ))}
               </div>
+
+              <div className="mt-5 flex items-center gap-4 text-sm">
+                {p.links.live && (
+                  <a
+                    href={p.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-fg transition-colors hover:text-accent"
+                  >
+                    live <ArrowUpRight />
+                  </a>
+                )}
+                {p.links.source && (
+                  <a
+                    href={p.links.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-fg"
+                  >
+                    <GitHubIcon className="h-4 w-4" /> source
+                  </a>
+                )}
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
