@@ -152,3 +152,86 @@
 
     window.requestAnimationFrame(onAnimationFrame);
   }
+
+  let lastFrameTimestamp;
+
+  function onAnimationFrame(timestamp) {
+    // Stops execution if the neko element is removed from DOM
+    if (!nekoEl.isConnected) {
+      return;
+    }
+    if (!lastFrameTimestamp) {
+      lastFrameTimestamp = timestamp;
+    }
+    if (timestamp - lastFrameTimestamp > 100) {
+      lastFrameTimestamp = timestamp;
+      frame();
+    }
+    window.requestAnimationFrame(onAnimationFrame);
+  }
+
+  function setSprite(name, frame) {
+    const sprite = spriteSets[name][frame % spriteSets[name].length];
+    nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32}px`;
+  }
+
+  function resetIdleAnimation() {
+    idleAnimation = null;
+    idleAnimationFrame = 0;
+  }
+
+  function idle() {
+    idleTime += 1;
+
+    // every ~ 20 seconds
+    if (
+      idleTime > 10 &&
+      Math.floor(Math.random() * 200) == 0 &&
+      idleAnimation == null
+    ) {
+      let avalibleIdleAnimations = ["sleeping", "scratchSelf"];
+      if (nekoPosX < 32) {
+        avalibleIdleAnimations.push("scratchWallW");
+      }
+      if (nekoPosY < 32) {
+        avalibleIdleAnimations.push("scratchWallN");
+      }
+      if (nekoPosX > window.innerWidth - 32) {
+        avalibleIdleAnimations.push("scratchWallE");
+      }
+      if (nekoPosY > window.innerHeight - 32) {
+        avalibleIdleAnimations.push("scratchWallS");
+      }
+      idleAnimation =
+        avalibleIdleAnimations[
+        Math.floor(Math.random() * avalibleIdleAnimations.length)
+        ];
+    }
+
+    switch (idleAnimation) {
+      case "sleeping":
+        if (idleAnimationFrame < 8) {
+          setSprite("tired", 0);
+          break;
+        }
+        setSprite("sleeping", Math.floor(idleAnimationFrame / 4));
+        if (idleAnimationFrame > 192) {
+          resetIdleAnimation();
+        }
+        break;
+      case "scratchWallN":
+      case "scratchWallS":
+      case "scratchWallE":
+      case "scratchWallW":
+      case "scratchSelf":
+        setSprite(idleAnimation, idleAnimationFrame);
+        if (idleAnimationFrame > 9) {
+          resetIdleAnimation();
+        }
+        break;
+      default:
+        setSprite("idle", 0);
+        return;
+    }
+    idleAnimationFrame += 1;
+  }
