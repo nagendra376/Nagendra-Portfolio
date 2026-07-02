@@ -98,3 +98,57 @@
         persistPosition = JSON.parse(curScript.dataset.persistPosition.toLowerCase());
       }
     }
+
+    if (persistPosition) {
+      let storedNeko = JSON.parse(window.localStorage.getItem("oneko"));
+      if (storedNeko !== null) {
+        nekoPosX = storedNeko.nekoPosX;
+        nekoPosY = storedNeko.nekoPosY;
+        mousePosX = storedNeko.mousePosX;
+        mousePosY = storedNeko.mousePosY;
+        frameCount = storedNeko.frameCount;
+        idleTime = storedNeko.idleTime;
+        idleAnimation = storedNeko.idleAnimation;
+        idleAnimationFrame = storedNeko.idleAnimationFrame;
+        nekoEl.style.backgroundPosition = storedNeko.bgPos;
+      }
+    }
+
+    nekoEl.id = "oneko";
+    nekoEl.ariaHidden = true;
+    nekoEl.style.width = "32px";
+    nekoEl.style.height = "32px";
+    nekoEl.style.position = "fixed";
+    nekoEl.style.pointerEvents = "none";
+    nekoEl.style.imageRendering = "pixelated";
+    nekoEl.style.left = `${nekoPosX - 16}px`;
+    nekoEl.style.top = `${nekoPosY - 16}px`;
+    nekoEl.style.zIndex = 2147483647;
+
+    nekoEl.style.backgroundImage = `url(${nekoFile})`;
+
+    document.body.appendChild(nekoEl);
+
+    document.addEventListener("mousemove", function (event) {
+      mousePosX = event.clientX;
+      mousePosY = event.clientY;
+    });
+
+    if (persistPosition) {
+      window.addEventListener("beforeunload", function (event) {
+        window.localStorage.setItem("oneko", JSON.stringify({
+          nekoPosX: nekoPosX,
+          nekoPosY: nekoPosY,
+          mousePosX: mousePosX,
+          mousePosY: mousePosY,
+          frameCount: frameCount,
+          idleTime: idleTime,
+          idleAnimation: idleAnimation,
+          idleAnimationFrame: idleAnimationFrame,
+          bgPos: nekoEl.style.backgroundPosition
+        }));
+      });
+    }
+
+    window.requestAnimationFrame(onAnimationFrame);
+  }
