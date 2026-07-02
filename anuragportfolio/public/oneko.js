@@ -235,3 +235,45 @@
     }
     idleAnimationFrame += 1;
   }
+
+  function frame() {
+    frameCount += 1;
+    const diffX = nekoPosX - mousePosX;
+    const diffY = nekoPosY - mousePosY;
+    const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
+
+    if (distance < nekoSpeed || distance < 48) {
+      idle();
+      return;
+    }
+
+    idleAnimation = null;
+    idleAnimationFrame = 0;
+
+    if (idleTime > 1) {
+      setSprite("alert", 0);
+      // count down after being alerted before moving
+      idleTime = Math.min(idleTime, 7);
+      idleTime -= 1;
+      return;
+    }
+
+    let direction;
+    direction = diffY / distance > 0.5 ? "N" : "";
+    direction += diffY / distance < -0.5 ? "S" : "";
+    direction += diffX / distance > 0.5 ? "W" : "";
+    direction += diffX / distance < -0.5 ? "E" : "";
+    setSprite(direction, frameCount);
+
+    nekoPosX -= (diffX / distance) * nekoSpeed;
+    nekoPosY -= (diffY / distance) * nekoSpeed;
+
+    nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
+    nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
+
+    nekoEl.style.left = `${nekoPosX - 16}px`;
+    nekoEl.style.top = `${nekoPosY - 16}px`;
+  }
+
+  init();
+})();
