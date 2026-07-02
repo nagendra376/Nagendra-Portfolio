@@ -34,3 +34,31 @@ export type Post = {
   url: string;
   readingTime?: string;
 };
+
+export const site = {
+  /* ---------------------------------------------------------------- */
+  /*  IDENTITY                                                         */
+  /* ---------------------------------------------------------------- */
+  name: "Anurag Jha",
+  profileImages: [
+    "/profile.jpg",
+    "/profile2.png",
+  ],
+  initials: "AJ",
+  role: "Full Stack Developer",
+  location: "Delhi, India",
+  timezone: "Asia/Kolkata",
+  email: "conveytoanurag@gmail.com",
+  greeting: "Hey, I'm Anurag",
+  tagline: "I build clean, modern websites and web apps where design, functionality, and even the smallest details matter.",
+  about: [
+    "Hey, I'm Anurag, a full stack developer who loves building clean, modern websites and apps where design, functionality, and even the smallest details matter, with a focus on making products that are both practical and visually satisfying.",
+    "I spend most of my time in the terminal, the browser, or scribbling on a whiteboard. I lean backend,not because I don't like frontend, but because I enjoy making polished things actually hold up.",
+    "I don't ship junk. Maintainability isn't optional. And I build best when I'm curious.",
+  ],
+  tldr: [
+    "Building products.",
+    "Learning technologies.",
+    "Shipping consistently.",
+    "Obsessed with clean code.",
+  ],
