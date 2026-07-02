@@ -62,3 +62,27 @@ export const site = {
     "Shipping consistently.",
     "Obsessed with clean code.",
   ],
+
+  /* ---------------------------------------------------------------- */
+  /*  STATUS — the little "now" widget                                */
+  /* ---------------------------------------------------------------- */
+  status: {
+    available: true,
+    availableText: "open to opportunities",
+    nowLearning: "Backend Engineering • System Design • DSA • DevOps",
+    nowBuilding: "DoodleDash",
+    nowListening: "focus playlists",
+  },
+
+  /* ---------------------------------------------------------------- */
+  /*  SOCIAL LINKS  (leave a field empty "" to hide it)               */
+  /* ---------------------------------------------------------------- */
+  socials: {
+    github: "https://github.com/nodeanurag",
+    twitter: "https://x.com/anuragdotdev",
+    linkedin: "https://linkedin.com/in/nodeanurag",
+    email: "mailto:conveytoanurag@gmail.com",
+    resume: "",
+    discord: "https://discord.gg/ra4kyKdTk",
+    medium: "https://medium.com/@anuragdotdev",
+  },
