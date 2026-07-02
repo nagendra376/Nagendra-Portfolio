@@ -86,3 +86,37 @@ export const site = {
     discord: "https://discord.gg/ra4kyKdTk",
     medium: "https://medium.com/@anuragdotdev",
   },
+
+  /* ---------------------------------------------------------------- */
+  /*  EXPERIENCE                                                       */
+  /* ---------------------------------------------------------------- */
+  experience: [
+    {
+      company: "Independent Developer",
+      role: "Frontend Developer",
+      period: "2025 — Present",
+      blurb:
+        "Built and deployed multiple SPAs & web applications. Engaged in competitive coding events like the Smart India Hackathon and HT codeathon.",
+      url: "",
+    },
+  ] as Job[],
+
+  /* ---------------------------------------------------------------- */
+  /*  PROJECTS                                                         */
+  /* ---------------------------------------------------------------- */
+  projects: [
+    {
+      title: "FrameLabs",
+      blurb:
+        "A creative tool that turns static card generation into a reactive, real-time design experience. Users can switch between retro palettes and layouts on the fly, with zero jank—because every state transition is memoized and component-driven.",
+      story:
+        "The frontend is built with React's compositional model, styled atomically with Tailwind CSS, and powered by Zustand for predictable, lean state management. Icons from lucide-react keep the UI crisp and accessible. The result: a minimal surface area with a maximal creative ceiling.\n\n*Designed for speed \u2022 Engineered for feel.*",
+      stack: ["React.js", "Tailwind CSS", "Zustand", "lucide-react"],
+      year: "2026",
+      links: {
+        live: "https://framelabs.vercel.app/",
+        source: "https://github.com/nodeanurag/FrameLabs",
+      },
+      featured: true,
+    },
+  ] as Project[],
