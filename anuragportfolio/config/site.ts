@@ -149,3 +149,24 @@ export const site = {
     "Python",
 
   ],
+
+  /* ---------------------------------------------------------------- */
+  /*  WRITING  (set [] to hide the section entirely)                  */
+  /* ---------------------------------------------------------------- */
+  writing: [] as Post[],
+
+  /* ---------------------------------------------------------------- */
+  /*  GITHUB — used for the contribution-style graph + stats           */
+  /* ---------------------------------------------------------------- */
+  github: {
+    username: "nodeanurag",
+    contributionsLastYear: "500+",
+  },
+
+  /* ---------------------------------------------------------------- */
+  /*  FOOTER                                                          */
+  /* ---------------------------------------------------------------- */
+  footerNote: "Built with ❤️ and hardwork "
+} as const;
+
+export type Site = typeof site;
