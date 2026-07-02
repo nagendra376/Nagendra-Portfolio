@@ -120,3 +120,32 @@ export const site = {
       featured: true,
     },
   ] as Project[],
+
+  /* ---------------------------------------------------------------- */
+  /*  SKILLS */
+  /* ---------------------------------------------------------------- */
+  skills: [
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "Tailwind CSS",
+    "Shadcn UI",
+    "PostgreSQL",
+    "MongoDB",
+    "Prisma",
+    "Supabase",
+    "Firebase",
+    "REST APIs",
+    "JWT",
+    "Git",
+    "GitHub",
+    "Postman",
+    "Vercel",
+    "Figma",
+    "C++",
+    "Python",
+
+  ],
