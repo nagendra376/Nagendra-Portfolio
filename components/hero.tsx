@@ -86,7 +86,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative h-28 w-28 shrink-0 sm:h-32 sm:w-32 group"
+            onClick={handleNextImage}
+            className="relative h-28 w-28 shrink-0 sm:h-32 sm:w-32 group cursor-pointer select-none"
+            title="Click to change profile image"
           >
             {/* Main Avatar Image */}
             <img
@@ -116,8 +118,11 @@ export function Hero() {
             </div>
 
             <button
-              onClick={handleNextImage}
-              className="absolute -right-3 -top-3 rounded-full border border-border bg-surface p-1.5 text-muted transition-all hover:text-fg hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100 z-20"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleNextImage();
+              }}
+              className="absolute -right-3 -top-3 rounded-full border border-border bg-surface p-1.5 text-muted transition-all hover:text-fg hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100 z-20 cursor-pointer"
               aria-label="Switch profile image"
             >
               <RotateCw size={15} strokeWidth={2} />
