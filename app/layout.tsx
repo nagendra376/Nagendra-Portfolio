@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import { Konami } from "@/components/konami";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 
@@ -143,6 +144,7 @@ export default function RootLayout({
           <Script src="/oneko.js" strategy="lazyOnload" />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
