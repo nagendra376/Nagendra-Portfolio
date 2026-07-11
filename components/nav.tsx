@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Sun, Moon, Menu, X, Search } from "lucide-react";
 import { site } from "@/config/site";
 import { useTheme } from "./theme-provider";
+import { CommandPalette } from "./command-palette";
 
 const links = [
   { href: "#about", label: "about" },
@@ -26,6 +27,7 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [imgIndex, setImgIndex] = useState(0);
+  const [isPaletteOpen, setIsPaletteOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -38,6 +40,18 @@ export function Nav() {
     const handleProfileChange = (e: any) => setImgIndex(e.detail);
     window.addEventListener("profileImageChanged", handleProfileChange);
     return () => window.removeEventListener("profileImageChanged", handleProfileChange);
+  }, []);
+
+  // Listen for Ctrl+K / Cmd+K keys
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setIsPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
@@ -78,6 +92,15 @@ export function Nav() {
 
         <div className="flex items-center gap-1">
           <button
+            aria-label="Open Command Palette"
+            onClick={() => setIsPaletteOpen(true)}
+            className="grid h-8 w-8 place-items-center rounded-full text-muted transition-colors hover:bg-fg/5 hover:text-fg"
+            title="Search / Shortcuts (Ctrl+K)"
+          >
+            <Search size={16} aria-hidden />
+          </button>
+          
+          <button
             aria-label="Toggle theme"
             onClick={toggle}
             className="grid h-8 w-8 place-items-center rounded-full text-muted transition-colors hover:bg-fg/5 hover:text-fg"
@@ -92,9 +115,10 @@ export function Nav() {
             {open ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}
           </button>
         </div>
-
-        
       </motion.nav>
+
+      {/* Global Command Palette */}
+      <CommandPalette isOpen={isPaletteOpen} setIsOpen={setIsPaletteOpen} />
 
       <AnimatePresence>
         {open && (
