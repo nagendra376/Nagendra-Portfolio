@@ -23,7 +23,7 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const url = "https://example.com"; // TODO: your deployed URL
+const url = "https://example.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -59,10 +59,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${sans.variable} ${mono.variable} font-sans`}>
+      <body className={`${sans.variable} ${mono.variable} font-sans`} suppressHydrationWarning>
         <ThemeProvider>
           <Nav />
-          <main className="relative">{children}</main>
+          
+          {/* Blueprint Vertical Lines */}
+          <div className="pointer-events-none fixed bottom-0 top-0 left-1/2 -z-20 w-px -translate-x-[22rem] bg-border/40 max-lg:hidden" />
+          <div className="pointer-events-none fixed bottom-0 top-0 left-1/2 -z-20 w-px translate-x-[22rem] bg-border/40 max-lg:hidden" />
+          
+          <main className="relative z-10">{children}</main>
           <Footer />
           <Konami />
           <Script src="/oneko.js" strategy="lazyOnload" />
