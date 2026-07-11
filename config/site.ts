@@ -1,22 +1,14 @@
-/* ==========================================================================
- *  YOUR PORTFOLIO — SINGLE SOURCE OF TRUTH
- * ==========================================================================
- *  Everything visible on the site is driven by this one file.
- *  Edit the values below and the whole site updates. Look for  // TODO  marks.
- *  Nothing else in the codebase needs to be touched for normal content edits.
- * ========================================================================== */
-
 export type Project = {
   title: string;
-  /** the story / the "why" behind it — 1–2 sentences, this is what makes it human */
   blurb: string;
-  /** the problem it solved or the thing you learned */
   story?: string;
   stack: string[];
   year: string;
   links: { live?: string; source?: string };
-  /** mark your favourite — gets a highlighted card */
   featured?: boolean;
+  status?: string;
+  image?: string;
+  categories?: ("Frontend" | "Backend" | "Fullstack")[];
 };
 
 export type Job = {
@@ -30,15 +22,12 @@ export type Job = {
 export type Post = {
   title: string;
   summary: string;
-  date: string; // e.g. "Mar 2026"
+  date: string;
   url: string;
   readingTime?: string;
 };
 
 export const site = {
-  /* ---------------------------------------------------------------- */
-  /*  IDENTITY                                                         */
-  /* ---------------------------------------------------------------- */
   name: "Anurag Jha",
   profileImages: [
     "/profile.jpg",
@@ -62,10 +51,6 @@ export const site = {
     "Shipping consistently.",
     "Obsessed with clean code.",
   ],
-
-  /* ---------------------------------------------------------------- */
-  /*  STATUS — the little "now" widget                                */
-  /* ---------------------------------------------------------------- */
   status: {
     available: true,
     availableText: "open to opportunities",
@@ -73,10 +58,6 @@ export const site = {
     nowBuilding: "DoodleDash",
     nowListening: "focus playlists",
   },
-
-  /* ---------------------------------------------------------------- */
-  /*  SOCIAL LINKS  (leave a field empty "" to hide it)               */
-  /* ---------------------------------------------------------------- */
   socials: {
     github: "https://github.com/nodeanurag",
     twitter: "https://x.com/anuragdotdev",
@@ -86,10 +67,6 @@ export const site = {
     discord: "https://discord.gg/ra4kyKdTk",
     medium: "https://medium.com/@anuragdotdev",
   },
-
-  /* ---------------------------------------------------------------- */
-  /*  EXPERIENCE                                                       */
-  /* ---------------------------------------------------------------- */
   experience: [
     {
       company: "Independent Developer",
@@ -100,10 +77,6 @@ export const site = {
       url: "",
     },
   ] as Job[],
-
-  /* ---------------------------------------------------------------- */
-  /*  PROJECTS                                                         */
-  /* ---------------------------------------------------------------- */
   projects: [
     {
       title: "FrameLabs",
@@ -118,12 +91,74 @@ export const site = {
         source: "https://github.com/nodeanurag/FrameLabs",
       },
       featured: true,
+      image: "/projects/framelabs.png",
+      categories: ["Frontend"],
+    },
+    {
+      title: "DoodleDash",
+      blurb:
+        "A real-time multiplayer drawing and guessing game (Skribbl.io clone) built as a TypeScript monorepo with absolute dimension-independent drawing synchronization.",
+      story:
+        "Engineered using Socket.IO WebSockets for bidirectional event mapping. Features a zero-trust server validation engine (timers, guessing logic, turn loops managed strictly on the server), spectator rooms, and a custom canvas-to-image engine for client-side PNG sharing. Strikethroughs and drawing vectors are normalized to relative coordinates to ensure cross-device consistency.",
+      stack: ["React.js", "Node.js", "Socket.IO", "TypeScript", "Tailwind CSS v4", "Zustand"],
+      year: "2026",
+      links: {
+        source: "https://github.com/nodeanurag/DoodleDash",
+      },
+      featured: true,
+      status: "In Progress",
+      image: "/projects/doodledash.png",
+      categories: ["Fullstack", "Backend"],
+    },
+    {
+      title: "CodeForge",
+      blurb:
+        "A local-first browser-based IDE offering full Monaco editing, in-browser code execution for JS/Python/TS, sandboxed previews, and IndexedDB workspace persistence.",
+      story:
+        "Engineered to run entirely client-side without servers. Integrates Monaco Editor models with dynamic Web Workers and Pyodide runtimes. Features resizable panel split layouts, instant sandboxed iframe live-previews for web files, Dexie-powered IndexedDB database state management, workspace-wide text search, and URL-encoded code snippets sharing.",
+      stack: ["React.js", "Vite", "Zustand", "Monaco Editor", "Pyodide", "Dexie.js"],
+      year: "2026",
+      links: {
+        source: "https://github.com/nodeanurag/codeforge",
+      },
+      featured: true,
+      status: "In Progress",
+      image: "/projects/codeforge.png",
+      categories: ["Frontend"],
+    },
+    {
+      title: "SwiftPoll",
+      blurb:
+        "A real-time anonymous polling application built for maximum creation and voting speed without user registration friction.",
+      story:
+        "Uses Supabase Realtime DB and server actions for lightning-fast voting updates and creator actions. Features browser-stored secret admin tokens for accountless close/delete operations, server-side IP hashing spam de-duplication, full keyboard accessibility, and optimistic client voting counts.",
+      stack: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS v4", "Zod", "Vitest"],
+      year: "2026",
+      links: {
+        source: "https://github.com/nodeanurag/swiftpoll",
+      },
+      featured: false,
+      status: "In Progress",
+      image: "/projects/swiftpoll.png",
+      categories: ["Fullstack"],
+    },
+    {
+      title: "Nexus",
+      blurb:
+        "A workspace-based project management app featuring kanban boards, real-time activity tracking, nodemailer notifications, and robust team collaboration.",
+      story:
+        "Built to mimic enterprise collaboration canvases. Employs Next-Auth for role-based authentication, TanStack Query for caching and server synchronization, Recharts for team productivity insights, and @dnd-kit for seamless drag-and-drop workflow task transitions. Backed by a clean PostgreSQL database schema via Prisma.",
+      stack: ["Next.js", "Prisma", "PostgreSQL", "React Query", "@dnd-kit", "Next-Auth"],
+      year: "2026",
+      links: {
+        source: "https://github.com/nodeanurag/nexus",
+      },
+      featured: false,
+      status: "In Progress",
+      image: "/projects/nexus.png",
+      categories: ["Fullstack", "Backend"],
     },
   ] as Project[],
-
-  /* ---------------------------------------------------------------- */
-  /*  SKILLS */
-  /* ---------------------------------------------------------------- */
   skills: [
     "TypeScript",
     "JavaScript",
@@ -147,25 +182,12 @@ export const site = {
     "Figma",
     "C++",
     "Python",
-
   ],
-
-  /* ---------------------------------------------------------------- */
-  /*  WRITING  (set [] to hide the section entirely)                  */
-  /* ---------------------------------------------------------------- */
   writing: [] as Post[],
-
-  /* ---------------------------------------------------------------- */
-  /*  GITHUB — used for the contribution-style graph + stats           */
-  /* ---------------------------------------------------------------- */
   github: {
     username: "nodeanurag",
     contributionsLastYear: "500+",
   },
-
-  /* ---------------------------------------------------------------- */
-  /*  FOOTER                                                          */
-  /* ---------------------------------------------------------------- */
   footerNote: "Built with ❤️ and hardwork "
 } as const;
 
