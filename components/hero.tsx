@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { site } from "@/config/site";
 import { Socials } from "./socials";
 import { RotateCw } from "lucide-react";
-
-
 
 export function Hero() {
   const [imgIndex, setImgIndex] = useState(0);
@@ -16,6 +14,52 @@ export function Hero() {
     setImgIndex(nextIndex);
     window.dispatchEvent(new CustomEvent("profileImageChanged", { detail: nextIndex }));
   };
+
+  const roles = [
+    "Full Stack Developer.",
+    "Backend Engineer.",
+    "Open Source Contributor.",
+    "Problem Solver."
+  ];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    const fullText = roles[roleIndex];
+    
+    const typingSpeed = isDeleting ? 30 : 60;
+    const delayBeforeDelete = 2000;
+    const delayBeforeType = 400;
+
+    const tick = () => {
+      if (!isDeleting) {
+        const nextText = fullText.slice(0, currentText.length + 1);
+        setCurrentText(nextText);
+        
+        if (nextText === fullText) {
+          timer = setTimeout(() => setIsDeleting(true), delayBeforeDelete);
+          return;
+        }
+      } else {
+        const nextText = fullText.slice(0, currentText.length - 1);
+        setCurrentText(nextText);
+        
+        if (nextText === "") {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+          timer = setTimeout(() => {}, delayBeforeType);
+          return;
+        }
+      }
+      
+      timer = setTimeout(tick, typingSpeed);
+    };
+
+    timer = setTimeout(tick, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, roleIndex]);
 
   return (
     <section
@@ -44,14 +88,36 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="relative h-28 w-28 shrink-0 sm:h-32 sm:w-32 group"
           >
+            {/* Main Avatar Image */}
             <img
               src={site.profileImages[imgIndex]}
               alt="Profile"
-              className="h-full w-full rounded-2xl object-cover border border-border shadow-xl transition-all"
+              className="h-full w-full rounded-2xl object-cover border border-border shadow-xl transition-all pointer-events-none"
             />
+            
+            {/* Chromatic aberration split channel 1 on hover */}
+            <img
+              src={site.profileImages[imgIndex]}
+              alt="Profile Glitch Red"
+              className="absolute inset-0 h-full w-full rounded-2xl object-cover border border-border pointer-events-none opacity-0 group-hover:opacity-70 filter saturate-150 hue-rotate-[90deg] mix-blend-screen transition-all duration-75 ease-out glitch-img-1"
+            />
+            
+            {/* Chromatic aberration split channel 2 on hover */}
+            <img
+              src={site.profileImages[imgIndex]}
+              alt="Profile Glitch Blue"
+              className="absolute inset-0 h-full w-full rounded-2xl object-cover border border-border pointer-events-none opacity-0 group-hover:opacity-70 filter saturate-150 hue-rotate-[240deg] mix-blend-screen transition-all duration-75 ease-out glitch-img-2"
+            />
+
+            {/* CRT scanline overlay */}
+            <div className="absolute inset-0 pointer-events-none rounded-2xl overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]">
+              {/* Scanline glow swipe bar */}
+              <div className="absolute inset-0 h-1 bg-white/20 blur-[1px] animate-scanline" />
+            </div>
+
             <button
               onClick={handleNextImage}
-              className="absolute -right-3 -top-3 rounded-full border border-border bg-surface p-1.5 text-muted transition-all hover:text-fg hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100"
+              className="absolute -right-3 -top-3 rounded-full border border-border bg-surface p-1.5 text-muted transition-all hover:text-fg hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100 z-20"
               aria-label="Switch profile image"
             >
               <RotateCw size={15} strokeWidth={2} />
@@ -68,7 +134,10 @@ export function Hero() {
               {site.name}.
             </span>
             <br />
-            <span className="text-xl font-medium text-muted sm:text-2xl">{site.role}.</span>
+            <span className="text-xl font-medium text-muted sm:text-2xl font-mono min-h-[36px] inline-block">
+              {currentText}
+              <span className="inline-block w-[2px] animate-blink bg-muted/60 ml-1">&nbsp;</span>
+            </span>
           </motion.h1>
         </div>
 
