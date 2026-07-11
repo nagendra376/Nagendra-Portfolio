@@ -35,12 +35,13 @@ export function SectionHeader({
   id?: string;
 }) {
   return (
-    <div id={id} className="mb-8 flex items-center gap-4 scroll-mt-28">
+    <div id={id} className="mb-8 flex items-center gap-4 scroll-mt-28 relative">
       <span className="font-mono text-sm text-accent">{index}</span>
       <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
         {title}
       </h2>
-      <span className="h-px flex-1 bg-border" />
+      <span className="h-px flex-1 bg-border/60" />
+      <span className="font-mono text-[10px] text-muted/50 select-none -ml-2">+</span>
     </div>
   );
 }
