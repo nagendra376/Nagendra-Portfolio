@@ -29,6 +29,7 @@ export type Post = {
 
 export const site = {
   name: "Anurag Jha",
+  url: "https://anuragdotdev.vercel.app",
   profileImages: [
     "/profile.jpg",
     "/profile2.png",

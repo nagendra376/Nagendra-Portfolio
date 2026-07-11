@@ -23,23 +23,62 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const url = "https://example.com";
+const baseUrl = site.url || "https://anuragjha.dev";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(url),
+  metadataBase: new URL(baseUrl),
   title: `${site.name} — ${site.role}`,
   description: site.tagline,
   authors: [{ name: site.name }],
+  keywords: [
+    "Anurag Jha",
+    "Anurag Jha portfolio",
+    "Anurag Jha developer",
+    "Anurag Jha software engineer",
+    "Delhi developer",
+    "Full Stack Developer Delhi",
+    "smart india hackathon Anurag",
+    "web developer Delhi",
+    "Next.js portfolio",
+    "TypeScript developer"
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: baseUrl,
+  },
   openGraph: {
     title: `${site.name} — ${site.role}`,
     description: site.tagline,
     type: "website",
-    url,
+    url: baseUrl,
+    siteName: site.name,
+    images: [
+      {
+        url: `${baseUrl}/icon.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${site.name} Portfolio Logo`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — ${site.role}`,
     description: site.tagline,
+    images: [`${baseUrl}/icon.jpg`],
+  },
+  verification: {
+    google: "google-site-verification-placeholder",
   },
 };
 
@@ -49,6 +88,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": site.name,
+    "url": baseUrl,
+    "jobTitle": site.role,
+    "alumniOf": "SIH (Smart India Hackathon)",
+    "gender": "male",
+    "sameAs": [
+      site.socials.github,
+      site.socials.twitter,
+      site.socials.linkedin,
+      site.socials.medium
+    ].filter(Boolean),
+    "knowsAbout": [
+      "Software Engineering",
+      "Web Development",
+      "React",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Full Stack Development"
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -57,6 +122,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.add('light')}}catch(e){}})();`,
           }}
+        />
+        {/* Structured Schema Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className={`${sans.variable} ${mono.variable} font-sans`} suppressHydrationWarning>
