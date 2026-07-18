@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { site } from "@/config/site";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -21,6 +21,13 @@ const sans = Inter({
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -130,13 +137,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${sans.variable} ${mono.variable} font-sans`} suppressHydrationWarning>
+      <body className={`${sans.variable} ${mono.variable} ${serif.variable} font-sans`} suppressHydrationWarning>
         <ThemeProvider>
           <Nav />
           
-          {/* Blueprint Vertical Lines */}
-          <div className="pointer-events-none fixed bottom-0 top-0 left-1/2 -z-20 w-px -translate-x-[22rem] bg-border/40 max-lg:hidden" />
-          <div className="pointer-events-none fixed bottom-0 top-0 left-1/2 -z-20 w-px translate-x-[22rem] bg-border/40 max-lg:hidden" />
+          {/* Blueprint Vertical Dashed Guidelines */}
+          <div className="pointer-events-none fixed bottom-0 top-0 left-1/2 -z-20 w-px -translate-x-[24rem] border-r border-dashed border-border/40 max-lg:hidden" />
+          <div className="pointer-events-none fixed bottom-0 top-0 left-1/2 -z-20 w-px translate-x-[24rem] border-r border-dashed border-border/40 max-lg:hidden" />
           
           <main className="relative z-10">{children}</main>
           <Footer />
