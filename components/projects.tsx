@@ -99,7 +99,7 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
 
             {/* Floating Pop-out Screenshot */}
             {p.image && (
-              <div className="absolute -right-8 -bottom-6 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 shadow-2xl transition-all duration-300 group-hover:-right-4 group-hover:-bottom-3 group-hover:scale-102">
+              <div className="absolute -right-8 -bottom-6 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 shadow-2xl transition-all duration-300 group-hover:-right-4 group-hover:-bottom-3 group-hover:scale-102 group-hover:-rotate-1">
                 <img
                   src={p.image}
                   alt={`${p.title} preview`}
