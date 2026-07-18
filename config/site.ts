@@ -160,6 +160,21 @@ export const site = {
       image: "/projects/nexus.png",
       categories: ["Fullstack", "Backend"],
     },
+    {
+      title: "AlumniConnect",
+      blurb:
+        "A white-label, production-ready alumni newsletter builder built entirely on @unlayer/react-email-editor.",
+      story:
+        "One React application renders a custom email client simulator, a responsive web portal, and a print-tuned PDF engine — and exports straight to Unlayer design JSON. It features a drag-and-drop editor canvas, live client simulator preview, and exports to Email-safe HTML, Dynamic JSON Layout, and A4 PDF Document.",
+      stack: ["React.js", "Unlayer", "TypeScript", "Tailwind CSS"],
+      year: "2026",
+      links: {
+        source: "https://github.com/nodeanurag/alumniconnect",
+      },
+      featured: false,
+      image: "/projects/alumniconnect.png",
+      categories: ["Frontend"],
+    },
   ] as Project[],
   skills: [
     "TypeScript",
