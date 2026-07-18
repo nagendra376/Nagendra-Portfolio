@@ -108,7 +108,6 @@ export const site = {
         source: "https://github.com/nodeanurag/DoodleDash",
       },
       featured: true,
-      status: "In Progress",
       image: "/projects/doodledash.png",
       categories: ["Fullstack", "Backend"],
     },
