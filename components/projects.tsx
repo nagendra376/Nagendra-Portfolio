@@ -64,6 +64,7 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
 
             {/* Interactive Viewfinder Overlay Effects */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 font-mono text-[9px] text-white">
+              <div className="absolute inset-0 border border-accent/30 rounded-xl pointer-events-none" />
               {/* Corner Viewfinder Reticles */}
               <div className="absolute top-3 left-3 w-2.5 h-2.5 border-t border-l border-white/70" />
               <div className="absolute top-3 right-3 w-2.5 h-2.5 border-t border-r border-white/70" />
