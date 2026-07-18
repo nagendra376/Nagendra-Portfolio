@@ -49,6 +49,7 @@ const getProjectGradient = (index: number) => {
 
 export function ProjectCard({ p, i }: { p: Project; i: number }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [imgError, setImgError] = useState(false);
 
   return (
     <Reveal delay={i * 0.05}>
@@ -97,15 +98,26 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
               )}
             </div>
 
-            {/* Floating Pop-out Screenshot */}
-            {p.image && (
-              <div className="absolute -right-8 -bottom-6 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 shadow-2xl transition-all duration-300 group-hover:-right-4 group-hover:-bottom-3 group-hover:scale-102 group-hover:-rotate-1">
+            {/* Floating Pop-out Screenshot with Fallback */}
+            {p.image && !imgError ? (
+              <div className="absolute -right-8 -bottom-6 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 shadow-2xl transition-all duration-300 group-hover:-right-4 group-hover:-bottom-3 group-hover:scale-102 group-hover:-rotate-1 bg-surface">
                 <img
                   src={p.image}
                   alt={`${p.title} preview`}
                   className="h-full w-full object-cover object-top"
                   loading="lazy"
+                  onError={() => setImgError(true)}
                 />
+              </div>
+            ) : (
+              <div className="absolute -right-6 -bottom-4 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 bg-surface/90 shadow-2xl p-4 flex flex-col justify-between transition-all duration-300 group-hover:-right-3 group-hover:-bottom-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-rose-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-amber-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
+                  <span className="font-mono text-[9px] text-muted ml-2">{p.title.toLowerCase()}</span>
+                </div>
+                <div className="font-serif text-lg text-fg truncate">{p.title}</div>
               </div>
             )}
           </div>
