@@ -35,13 +35,14 @@ export function SectionHeader({
   id?: string;
 }) {
   return (
-    <div id={id} className="mb-8 flex items-center gap-4 scroll-mt-28 relative">
-      <span className="font-mono text-sm text-accent">{index}</span>
-      <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-        {title}
-      </h2>
-      <span className="h-px flex-1 bg-border/60" />
-      <span className="font-mono text-[10px] text-muted/50 select-none -ml-2">+</span>
+    <div id={id} className="mb-8 flex items-baseline justify-between border-b border-dashed border-border/60 pb-3 scroll-mt-28 relative">
+      <div className="flex items-baseline gap-3">
+        <h2 className="font-serif text-3xl font-normal sm:text-4xl text-fg">
+          {title}
+        </h2>
+        <span className="font-mono text-xs text-muted/60">({index})</span>
+      </div>
+      <span className="font-mono text-xs text-faint select-none">•</span>
     </div>
   );
 }
