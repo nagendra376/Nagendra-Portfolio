@@ -35,6 +35,18 @@ const getTechIcon = (tech: string) => {
   return map[tech] || `https://img.icons8.com/color/48/code.png`;
 };
 
+const getProjectGradient = (index: number) => {
+  const gradients = [
+    "from-emerald-950/50 via-neutral-900 to-neutral-950",
+    "from-indigo-950/50 via-neutral-900 to-neutral-950",
+    "from-purple-950/50 via-neutral-900 to-neutral-950",
+    "from-rose-950/50 via-neutral-900 to-neutral-950",
+    "from-cyan-950/50 via-neutral-900 to-neutral-950",
+    "from-amber-950/50 via-neutral-900 to-neutral-950"
+  ];
+  return gradients[index % gradients.length];
+};
+
 export function ProjectCard({ p, i }: { p: Project; i: number }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -42,36 +54,66 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
     <Reveal delay={i * 0.05}>
       <article
         id={`project-card-${p.title.toLowerCase()}`}
-        className="group relative flex flex-col justify-between h-full overflow-hidden rounded-2xl border p-5 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-xl hover:shadow-accent/5 hover:border-accent/40 backdrop-blur-sm bg-surface/30"
+        className="group relative flex flex-col justify-between h-full overflow-hidden rounded-2xl border border-dashed border-border/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/5 backdrop-blur-sm bg-surface/30"
       >
         <div>
-          {p.image && (
-            <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-xl border bg-fg/[0.03]">
-              <img
-                src={p.image}
-                alt={`${p.title} screenshot`}
-                className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
+          {/* Creative Banner Canvas Header */}
+          <div className={`relative mb-5 h-52 w-full overflow-hidden rounded-xl border border-dashed border-border/80 bg-gradient-to-br ${getProjectGradient(i)} p-3 flex flex-col justify-between`}>
+            {/* Background Grid Pattern */}
+            <div className="bg-grid absolute inset-0 opacity-20 pointer-events-none" />
+
+            {/* Interactive Viewfinder Overlay Effects */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 font-mono text-[9px] text-white">
+              {/* Corner Viewfinder Reticles */}
+              <div className="absolute top-3 left-3 w-2.5 h-2.5 border-t border-l border-white/70" />
+              <div className="absolute top-3 right-3 w-2.5 h-2.5 border-t border-r border-white/70" />
+              <div className="absolute bottom-3 left-3 w-2.5 h-2.5 border-b border-l border-white/70" />
+              <div className="absolute bottom-3 right-3 w-2.5 h-2.5 border-b border-r border-white/70" />
               
+              {/* Live REC indicator / Inspector badge */}
+              <div className="absolute top-3 left-7 flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-2 py-0.5 rounded border border-white/10">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[8px] uppercase tracking-wider text-white/80">INSPECT</span>
+              </div>
+            </div>
+
+            {/* Top Badges */}
+            <div className="relative z-10 flex items-center justify-between">
+              {p.status ? (
+                <span className="rounded-md bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-amber-300 backdrop-blur-md">
+                  • {p.status}
+                </span>
+              ) : (
+                <span className="rounded-md bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+                  • Live
+                </span>
+              )}
+
               {p.featured && (
-                <span className="absolute right-3 top-3 z-10 rounded-full bg-accent/15 backdrop-blur-md px-2.5 py-1 font-mono text-[9px] uppercase tracking-wider text-accent border border-accent/20">
-                  featured
+                <span className="rounded-md bg-accent/20 border border-accent/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-accent backdrop-blur-md">
+                  ★ Featured
                 </span>
               )}
             </div>
-          )}
+
+            {/* Floating Pop-out Screenshot */}
+            {p.image && (
+              <div className="absolute -right-8 -bottom-6 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 shadow-2xl transition-all duration-300 group-hover:-right-4 group-hover:-bottom-3 group-hover:scale-102">
+                <img
+                  src={p.image}
+                  alt={`${p.title} preview`}
+                  className="h-full w-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+            )}
+          </div>
 
           <div className="flex items-baseline justify-between gap-3 flex-wrap">
             <div className="flex items-baseline gap-2 flex-wrap">
-              <h3 className="text-lg font-semibold tracking-tight group-hover:text-accent transition-colors">
+              <h3 className="font-serif text-2xl font-normal tracking-tight group-hover:text-accent transition-colors">
                 {p.title}
               </h3>
-              {p.status && (
-                <span className="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 font-mono text-[9px] uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  {p.status}
-                </span>
-              )}
             </div>
             <span className="font-mono text-xs text-faint">{p.year}</span>
           </div>
@@ -82,7 +124,7 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
             {p.stack.map((tech) => (
               <span
                 key={tech}
-                className="inline-flex items-center gap-1.5 rounded-md border bg-bg/40 px-2 py-0.5 font-mono text-[10px] text-muted hover:border-accent/30 hover:text-fg transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-border/80 bg-surface/40 px-2 py-0.5 font-mono text-[10px] text-muted hover:border-accent/40 hover:text-fg transition-colors"
               >
                 <img
                   src={getTechIcon(tech)}
