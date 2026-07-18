@@ -59,37 +59,37 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
       >
         <div>
           {/* Creative Banner Canvas Header */}
-          <div className={`relative mb-5 h-52 w-full overflow-hidden rounded-xl border border-dashed border-border/80 bg-gradient-to-br ${getProjectGradient(i)} p-3 flex flex-col justify-between`}>
+          <div className={`relative mb-5 h-60 sm:h-64 w-full overflow-hidden rounded-xl border border-dashed border-border/80 bg-gradient-to-br ${getProjectGradient(i)} p-3.5 flex flex-col justify-between`}>
             {/* Background Grid Pattern */}
             <div className="bg-grid absolute inset-0 opacity-20 pointer-events-none" />
 
-            {/* Interactive Viewfinder Overlay Effects */}
+            {/* Viewfinder Reticles & Outer Frame */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 font-mono text-[9px] text-white">
               <div className="absolute inset-0 border border-accent/30 rounded-xl pointer-events-none" />
-              {/* Corner Viewfinder Reticles */}
-              <div className="absolute top-3 left-3 w-2.5 h-2.5 border-t border-l border-white/70" />
-              <div className="absolute top-3 right-3 w-2.5 h-2.5 border-t border-r border-white/70" />
-              <div className="absolute bottom-3 left-3 w-2.5 h-2.5 border-b border-l border-white/70" />
-              <div className="absolute bottom-3 right-3 w-2.5 h-2.5 border-b border-r border-white/70" />
-              
-              {/* Live REC indicator / Inspector badge */}
-              <div className="absolute top-3 left-7 flex items-center gap-1.5 bg-black/40 backdrop-blur-xs px-2 py-0.5 rounded border border-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[8px] uppercase tracking-wider text-white/80">INSPECT</span>
-              </div>
+              <div className="absolute top-2.5 left-2.5 w-2.5 h-2.5 border-t border-l border-white/70" />
+              <div className="absolute top-2.5 right-2.5 w-2.5 h-2.5 border-t border-r border-white/70" />
+              <div className="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 border-b border-l border-white/70" />
+              <div className="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 border-b border-r border-white/70" />
             </div>
 
-            {/* Top Badges */}
-            <div className="relative z-10 flex items-center justify-between">
-              {p.status ? (
-                <span className="rounded-md bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-amber-300 backdrop-blur-md">
-                  • {p.status}
+            {/* Top Badges Row (No Collision) */}
+            <div className="relative z-20 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                {p.status ? (
+                  <span className="rounded-md bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-amber-300 backdrop-blur-md">
+                    • {p.status}
+                  </span>
+                ) : (
+                  <span className="rounded-md bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
+                    • Live
+                  </span>
+                )}
+
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5 bg-black/50 backdrop-blur-md px-2 py-0.5 rounded border border-white/10 font-mono text-[8px] uppercase tracking-wider text-white/80">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>INSPECT</span>
                 </span>
-              ) : (
-                <span className="rounded-md bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-emerald-300 backdrop-blur-md">
-                  • Live
-                </span>
-              )}
+              </div>
 
               {p.featured && (
                 <span className="rounded-md bg-accent/20 border border-accent/40 px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wider text-accent backdrop-blur-md">
@@ -98,26 +98,26 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
               )}
             </div>
 
-            {/* Floating Pop-out Screenshot with Fallback */}
+            {/* Prominent & Fully Visible Project Screenshot */}
             {p.image && !imgError ? (
-              <div className="absolute -right-8 -bottom-6 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 shadow-2xl transition-all duration-300 group-hover:-right-4 group-hover:-bottom-3 group-hover:scale-102 group-hover:-rotate-1 bg-surface">
+              <div className="relative mt-2 h-44 sm:h-48 w-full overflow-hidden rounded-lg border border-border/80 shadow-md bg-surface transition-all duration-300 group-hover:border-accent/40 group-hover:shadow-xl">
                 <img
                   src={p.image}
                   alt={`${p.title} preview`}
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                   onError={() => setImgError(true)}
                 />
               </div>
             ) : (
-              <div className="absolute -right-6 -bottom-4 w-4/5 aspect-[16/10] overflow-hidden rounded-xl border-2 border-border/80 bg-surface/90 shadow-2xl p-4 flex flex-col justify-between transition-all duration-300 group-hover:-right-3 group-hover:-bottom-2">
+              <div className="relative mt-2 h-44 sm:h-48 w-full overflow-hidden rounded-lg border border-border/80 bg-surface/95 shadow-md p-4 flex flex-col justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-rose-500/80" />
                   <span className="h-2 w-2 rounded-full bg-amber-500/80" />
                   <span className="h-2 w-2 rounded-full bg-emerald-500/80" />
                   <span className="font-mono text-[9px] text-muted ml-2">{p.title.toLowerCase()}</span>
                 </div>
-                <div className="font-serif text-lg text-fg truncate">{p.title}</div>
+                <div className="font-serif text-xl text-fg">{p.title}</div>
               </div>
             )}
           </div>
