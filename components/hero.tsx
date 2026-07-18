@@ -64,86 +64,97 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92vh] items-center overflow-hidden px-6"
+      className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6 pb-12 pt-20"
     >
       {/* backdrop */}
       <div className="bg-grid pointer-events-none absolute inset-0 -z-10" />
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[50rem] w-[50rem] -translate-x-1/2 rounded-full bg-accent/5 blur-[160px]" />
 
-      <div className="mx-auto w-full max-w-content pt-20">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
+      <div className="mx-auto w-full max-w-content">
+        {/* Cover Banner Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="font-mono text-sm text-accent"
+          className="relative h-36 w-full overflow-hidden rounded-xl border border-dashed border-border/80 bg-gradient-to-r from-neutral-900 via-indigo-950/60 to-neutral-950 sm:h-48"
         >
-          {site.greeting}
-          <span className="ml-0.5 inline-block w-[2px] animate-blink bg-accent">&nbsp;</span>
-        </motion.p>
+          <div className="bg-grid absolute inset-0 opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-80" />
+          <div className="absolute top-3 right-4 flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs font-mono text-muted backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            <span>Live • {site.location}</span>
+          </div>
+        </motion.div>
 
-        <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            onClick={handleNextImage}
-            className="relative h-28 w-28 shrink-0 sm:h-32 sm:w-32 group cursor-pointer select-none"
-            title="Click to change profile image"
-          >
-            {/* Main Avatar Image */}
-            <img
-              src={site.profileImages[imgIndex]}
-              alt="Profile"
-              className="h-full w-full rounded-2xl object-cover border border-border shadow-xl transition-all pointer-events-none"
-            />
-            
-            {/* Chromatic aberration split channel 1 on hover */}
-            <img
-              src={site.profileImages[imgIndex]}
-              alt="Profile Glitch Red"
-              className="absolute inset-0 h-full w-full rounded-2xl object-cover border border-border pointer-events-none opacity-0 group-hover:opacity-70 filter saturate-150 hue-rotate-[90deg] mix-blend-screen transition-all duration-75 ease-out glitch-img-1"
-            />
-            
-            {/* Chromatic aberration split channel 2 on hover */}
-            <img
-              src={site.profileImages[imgIndex]}
-              alt="Profile Glitch Blue"
-              className="absolute inset-0 h-full w-full rounded-2xl object-cover border border-border pointer-events-none opacity-0 group-hover:opacity-70 filter saturate-150 hue-rotate-[240deg] mix-blend-screen transition-all duration-75 ease-out glitch-img-2"
-            />
-
-            {/* CRT scanline overlay */}
-            <div className="absolute inset-0 pointer-events-none rounded-2xl overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]">
-              {/* Scanline glow swipe bar */}
-              <div className="absolute inset-0 h-1 bg-white/20 blur-[1px] animate-scanline" />
-            </div>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                handleNextImage();
-              }}
-              className="absolute -right-3 -top-3 rounded-full border border-border bg-surface p-1.5 text-muted transition-all hover:text-fg hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100 z-20 cursor-pointer"
-              aria-label="Switch profile image"
+        {/* Profile Avatar & Title Section */}
+        <div className="relative -mt-14 sm:-mt-16 flex flex-col sm:flex-row sm:items-end justify-between gap-6 px-4">
+          <div className="flex flex-col sm:flex-row sm:items-end gap-5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              onClick={handleNextImage}
+              className="relative h-28 w-28 shrink-0 sm:h-32 sm:w-32 group cursor-pointer select-none rounded-2xl border-4 border-bg shadow-2xl bg-surface"
+              title="Click to change profile image"
             >
-              <RotateCw size={15} strokeWidth={2} />
-            </button>
-          </motion.div>
+              {/* Main Avatar Image */}
+              <img
+                src={site.profileImages[imgIndex]}
+                alt="Profile"
+                className="h-full w-full rounded-xl object-cover pointer-events-none"
+              />
+              
+              {/* Chromatic aberration split channel 1 on hover */}
+              <img
+                src={site.profileImages[imgIndex]}
+                alt="Profile Glitch Red"
+                className="absolute inset-0 h-full w-full rounded-xl object-cover pointer-events-none opacity-0 group-hover:opacity-70 filter saturate-150 hue-rotate-[90deg] mix-blend-screen transition-all duration-75 ease-out glitch-img-1"
+              />
+              
+              {/* Chromatic aberration split channel 2 on hover */}
+              <img
+                src={site.profileImages[imgIndex]}
+                alt="Profile Glitch Blue"
+                className="absolute inset-0 h-full w-full rounded-xl object-cover pointer-events-none opacity-0 group-hover:opacity-70 filter saturate-150 hue-rotate-[240deg] mix-blend-screen transition-all duration-75 ease-out glitch-img-2"
+              />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-fg to-muted">
-              {site.name}.
-            </span>
-            <br />
-            <span className="text-xl font-medium text-muted sm:text-2xl font-mono min-h-[36px] inline-block">
-              {currentText}
-              <span className="inline-block w-[2px] animate-blink bg-muted/60 ml-1">&nbsp;</span>
-            </span>
-          </motion.h1>
+              {/* CRT scanline overlay */}
+              <div className="absolute inset-0 pointer-events-none rounded-xl overflow-hidden opacity-[0.18] group-hover:opacity-30 transition-opacity bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]">
+                <div className="absolute inset-0 h-1 bg-white/20 blur-[1px] animate-scanline" />
+              </div>
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextImage();
+                }}
+                className="absolute -right-2 -top-2 rounded-full border border-border bg-surface p-1.5 text-muted transition-all hover:text-fg hover:scale-110 sm:opacity-100 opacity-0 group-hover:opacity-100 z-20 cursor-pointer shadow-md"
+                aria-label="Switch profile image"
+              >
+                <RotateCw size={14} strokeWidth={2} />
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="pt-2"
+            >
+              <h1 className="font-serif text-4xl font-normal leading-none tracking-tight sm:text-6xl text-fg">
+                {site.name}
+              </h1>
+              <div className="mt-1.5 flex items-center gap-2">
+                <span className="font-mono text-sm font-medium text-accent">
+                  {currentText}
+                  <span className="inline-block w-[2px] animate-blink bg-accent ml-0.5">&nbsp;</span>
+                </span>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         <motion.p
