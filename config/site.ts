@@ -104,6 +104,7 @@ export const site = {
       stack: ["React.js", "Node.js", "Socket.IO", "TypeScript", "Tailwind CSS v4", "Zustand"],
       year: "2026",
       links: {
+        live: "https://doodledash.pages.dev/",
         source: "https://github.com/nodeanurag/DoodleDash",
       },
       featured: true,
