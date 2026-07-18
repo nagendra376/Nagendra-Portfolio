@@ -104,7 +104,7 @@ export function Socials({ className = "" }: { className?: string }) {
                 href={href}
                 target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 rounded-full border border-dashed border-border/80 bg-surface/30 px-3.5 py-1.5 font-mono text-xs text-muted hover:-translate-y-0.5 hover:border-accent/50 hover:text-fg hover:bg-surface/60 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 cursor-pointer"
+                className="group flex items-center gap-2 rounded-full border border-dashed border-border/80 bg-surface/30 px-3.5 py-1.5 font-mono text-xs text-muted hover:-translate-y-0.5 hover:border-accent/50 hover:text-fg hover:bg-surface/60 hover:shadow-lg hover:shadow-accent/5 active:scale-95 transition-all duration-300 cursor-pointer"
               >
                 <Icon className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110 text-muted-foreground group-hover:text-accent" />
                 <span>{label}</span>
