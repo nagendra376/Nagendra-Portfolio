@@ -76,17 +76,14 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative h-36 w-full overflow-hidden rounded-xl border border-dashed border-border/80 bg-gradient-to-r from-neutral-900 via-indigo-950/60 to-neutral-950 sm:h-48"
+          className="relative h-36 w-full overflow-hidden rounded-xl border border-dashed border-border/80 bg-neutral-950 sm:h-48"
         >
-          <div className="bg-grid absolute inset-0 opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-80" />
-          <div className="absolute top-3 right-4 flex items-center gap-2 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-xs font-mono text-muted backdrop-blur-md">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            <span>Live • {site.location}</span>
-          </div>
+          <img
+            src={site.bannerImage}
+            alt="Banner"
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent opacity-80 pointer-events-none" />
         </motion.div>
 
         {/* Profile Avatar & Title Section */}
