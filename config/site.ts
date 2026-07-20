@@ -34,6 +34,8 @@ export const site = {
     "/profile.jpg",
     "/profile2.png",
   ],
+  bannerImage: "/banner.png",
+  socialBannerImage: "/social-banner.png",
   initials: "AJ",
   role: "Full Stack Developer",
   location: "Delhi, India",
