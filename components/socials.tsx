@@ -3,14 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { site } from "@/config/site";
-import { 
-  GitHubIcon, 
-  TwitterIcon, 
-  LinkedInIcon, 
-  MailIcon, 
-  FileIcon, 
-  DiscordIcon, 
-  MediumIcon 
+import {
+  GitHubIcon,
+  TwitterIcon,
+  LinkedInIcon,
+  MailIcon,
+  FileIcon,
+  DiscordIcon,
+  MediumIcon
 } from "./icons";
 
 const items = [
@@ -41,7 +41,7 @@ const hoverCardsData: Record<string, {
   twitter: {
     handle: "@anuragdotdev",
     bio: "Building clean, modern web apps where design, functionality, and even the smallest details matter.",
-    stats: ["100+ Followers", "Open Source"],
+    stats: ["100+ Followers", "Tech bro"],
     bannerText: "connect • share • grow",
     bannerGradient: "from-sky-900 to-indigo-900",
   },
@@ -121,22 +121,27 @@ export function Socials({ className = "" }: { className?: string }) {
                     className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3.5 z-50 w-72 overflow-hidden rounded-2xl border bg-surface/95 shadow-2xl backdrop-blur-xl pointer-events-none select-none border-border/80"
                   >
                     {/* Banner header */}
-                    <div className={`relative h-20 w-full overflow-hidden bg-gradient-to-r ${card.bannerGradient} flex items-center justify-center`}>
-                      <div className="absolute inset-0 bg-grid opacity-[0.15]" />
-                      <span className="font-mono text-[9px] uppercase tracking-widest text-white/50 bg-black/20 backdrop-blur-xs px-2 py-0.5 rounded-md border border-white/5">
+                    <div className="relative h-20 w-full overflow-hidden flex items-center justify-center bg-neutral-950">
+                      <img
+                        src={(site as any).socialBannerImage || "/social-banner.png"}
+                        alt="Banner"
+                        className="absolute inset-0 h-full w-full object-cover object-center"
+                      />
+                      <div className="absolute inset-0 bg-black/20" />
+                      <span className="relative z-10 font-mono text-[9px] uppercase tracking-widest text-white/90 bg-black/40 backdrop-blur-md px-2 py-0.5 rounded-md border border-white/10 shadow-sm">
                         {card.bannerText}
                       </span>
-                      <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-90" />
                     </div>
 
                     {/* Profile body details */}
                     <div className="relative px-4 pb-4 pt-1">
                       {/* Avatar */}
                       <div className="absolute -top-6 left-4 h-12 w-12 rounded-full border-2 border-surface bg-bg overflow-hidden shadow-md">
-                        <img 
-                          src={site.profileImages[0]} 
-                          alt="Avatar" 
-                          className="w-full h-full object-cover" 
+                        <img
+                          src={site.profileImages[0]}
+                          alt="Avatar"
+                          className="w-full h-full object-cover"
                         />
                       </div>
 
@@ -146,7 +151,7 @@ export function Socials({ className = "" }: { className?: string }) {
                             {site.name}
                           </span>
                           <svg className="w-3.5 h-3.5 text-accent shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                           </svg>
                           {card.pronouns && (
                             <span className="text-[9px] font-mono text-muted-foreground bg-surface/50 border rounded-md px-1.5 py-0.2">
