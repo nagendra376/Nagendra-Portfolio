@@ -3,6 +3,7 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: "class",
   content: [
+    "./src/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./config/**/*.{ts,tsx}",
@@ -11,6 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       colors: {
@@ -37,6 +39,9 @@ const config: Config = {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
         },
+      },
+      gridTemplateRows: {
+        "7": "repeat(7, minmax(0, 1fr))",
       },
       animation: {
         "fade-up": "fade-up 0.6s cubic-bezier(0.22,1,0.36,1) both",
