@@ -15,6 +15,7 @@ import { GithubActivity } from "@/sections/GithubActivity";
 import { CommandPalette } from "@/components/command-palette";
 import { WritingPage } from "@/pages/WritingPage";
 import { Konami } from "@/components/konami";
+import { Analytics } from "@vercel/analytics/react";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -83,6 +84,7 @@ export function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <Analytics />
         <ScrollToTop />
         <Konami />
         <div className="min-h-screen bg-[var(--bg)] font-sans text-[var(--fg)] antialiased transition-colors duration-300 relative">

@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@iconify/react": "^6.0.2",
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^11.18.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.475.0",
