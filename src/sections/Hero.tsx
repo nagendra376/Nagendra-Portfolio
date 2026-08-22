@@ -87,7 +87,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
               </button>
             </div>
             <div>
-              <h1 className="font-serif text-[32px] sm:text-[38px] leading-none tracking-tight text-[var(--fg)] text-glitch">
+              <h1 className="font-serif text-3xl sm:text-[38px] leading-none tracking-tight text-[var(--fg)] text-glitch">
                 {site.name}
               </h1>
               <div className="h-[20px] overflow-hidden mt-1">

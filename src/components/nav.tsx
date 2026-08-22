@@ -1,14 +1,16 @@
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Shell } from "@/components/Layout";
 import { site } from "@/config/site";
 import { useTheme } from "./theme-provider";
-import { Sun, Moon, Search } from "lucide-react";
+import { Sun, Moon, Search, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Nav({ onOpenPalette }: { onOpenPalette?: () => void }) {
   const { theme, toggleTheme } = useTheme();
   const dark = theme === "dark";
-
   const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { label: "Home", path: "/" },
@@ -20,10 +22,16 @@ export function Nav({ onOpenPalette }: { onOpenPalette?: () => void }) {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--bg)]/85 backdrop-blur-md">
       <Shell className="flex items-center justify-between px-6 py-3 sm:px-8">
-        <Link to="/" className="font-serif text-xl tracking-wide text-[var(--fg)] hover:opacity-80 transition-opacity">
+        <Link 
+          to="/" 
+          onClick={() => setMobileMenuOpen(false)}
+          className="font-serif text-xl tracking-wide text-[var(--fg)] hover:opacity-80 transition-opacity"
+        >
           {site.firstName}
         </Link>
-        <nav className="flex items-center gap-5 text-[13px] text-[var(--muted)]">
+
+        {/* Desktop Navigation */}
+        <nav className="hidden sm:flex items-center gap-5 text-[13px] text-[var(--muted)]">
           {navLinks.map(({ label, path }) => {
             const isActive = location.pathname === path;
             return (
@@ -64,7 +72,71 @@ export function Nav({ onOpenPalette }: { onOpenPalette?: () => void }) {
             {dark ? <Sun className="size-3.5" /> : <Moon className="size-3.5" />}
           </button>
         </nav>
+
+        {/* Mobile Navigation Trigger Button */}
+        <div className="flex sm:hidden items-center gap-3">
+          {onOpenPalette && (
+            <button
+              type="button"
+              onClick={onOpenPalette}
+              aria-label="Search Command Palette"
+              className="grid size-8 place-items-center rounded-full border border-[var(--line)] text-[var(--muted)] hover:text-[var(--fg)] cursor-pointer"
+            >
+              <Search className="size-4" />
+            </button>
+          )}
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="grid size-8 place-items-center rounded-full border border-[var(--line)] text-[var(--muted)] hover:text-[var(--fg)] cursor-pointer"
+          >
+            {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((o) => !o)}
+            aria-label="Toggle Mobile Menu"
+            className="grid size-8 place-items-center rounded-full border border-[var(--line)] text-[var(--muted)] hover:text-[var(--fg)] cursor-pointer"
+          >
+            {mobileMenuOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+          </button>
+        </div>
       </Shell>
+
+      {/* Mobile Drawer Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="sm:hidden absolute top-full left-0 w-full bg-[var(--bg)] border-b border-[var(--line)] overflow-hidden shadow-lg z-50 bg-stripes"
+          >
+            <div className="px-6 py-6 space-y-4 flex flex-col font-serif text-lg bg-[var(--bg)]">
+              {navLinks.map(({ label, path }) => {
+                const isActive = location.pathname === path;
+                return (
+                  <Link
+                    key={path}
+                    to={path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center gap-2 border-b border-dashed border-[var(--line)]/50 pb-2.5 transition-colors ${
+                      isActive ? "text-[var(--fg)] font-semibold" : "text-[var(--muted)]"
+                    }`}
+                  >
+                    <span className={`size-1.5 rounded-full bg-[var(--fg)] ${isActive ? "opacity-100" : "opacity-0"}`} />
+                    {label}
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

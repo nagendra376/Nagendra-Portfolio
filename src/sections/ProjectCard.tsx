@@ -5,15 +5,7 @@ import { Globe, ChevronDown, ChevronUp } from "lucide-react";
 import { GitHubIcon } from "@/components/icons";
 
 const getProjectGradient = (index: number) => {
-  const gradients = [
-    "from-emerald-950/70 via-neutral-900 to-neutral-950",
-    "from-indigo-950/70 via-neutral-900 to-neutral-950",
-    "from-purple-950/70 via-neutral-900 to-neutral-950",
-    "from-rose-950/70 via-neutral-900 to-neutral-950",
-    "from-cyan-950/70 via-neutral-900 to-neutral-950",
-    "from-amber-950/70 via-neutral-900 to-neutral-950"
-  ];
-  return gradients[index % gradients.length];
+  return "from-[var(--chip)] via-[var(--card)] to-[var(--bg)]/40";
 };
 
 export function ProjectCard({ project: p, index = 0 }: { project: Project; index?: number }) {
@@ -68,7 +60,7 @@ export function ProjectCard({ project: p, index = 0 }: { project: Project; index
 
           {/* Angled Screenshot Image */}
           {p.image && !imgError ? (
-            <div className="absolute -right-12 -bottom-5 w-72 h-40 rounded-lg border-4 border-[var(--bg)]/40 shadow-xl overflow-hidden group-hover:-right-9 group-hover:-bottom-2 transition-all duration-300 pointer-events-none">
+            <div className="absolute -right-6 -bottom-3 w-56 h-32 sm:-right-12 sm:-bottom-5 sm:w-72 sm:h-40 rounded-lg border-4 border-[var(--bg)]/40 shadow-xl overflow-hidden group-hover:-right-4 group-hover:-bottom-1 sm:group-hover:-right-9 sm:group-hover:-bottom-2 transition-all duration-300 pointer-events-none">
               <img
                 src={p.image}
                 alt={`${p.title} preview`}
