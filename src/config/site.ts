@@ -193,17 +193,24 @@ export const site = {
   ],
   writing: [
     {
+      title: "Understanding HTTP: The Backbone of the Web",
+      summary: "A deep dive into the Hypertext Transfer Protocol, exploring header lifecycle, request methods, statelessness, and connection optimization from HTTP/1.1 to HTTP/3.",
+      date: "Aug 22, 2026",
+      readingTime: "15 min read",
+      url: "https://medium.com/@anuragdotdev/understanding-http-the-backbone-of-the-web-3d2109d0facd",
+    },
+    {
       title: "API Rate Limiting: I thought it was just counting requests...",
       summary: "An analysis of rate limiting algorithms from Token Bucket to Sliding Window logs, detailing how distributed systems protect API infrastructure under load.",
       date: "Jul 12, 2026",
-      readingTime: "4 min read",
+      readingTime: "14 min read",
       url: "https://medium.com/@anuragdotdev/api-rate-limiting-i-thought-it-was-just-counting-requests-682cefa2f56c",
     },
     {
       title: "The JWT Storage Debate is Over: Here's the Production-Grade Architecture Your App Actually Needs",
       summary: "A definitive guide to JWT storage in frontend applications, detailing why standard localStorage fails and how to implement secure memory-session architecture with HTTP-only cookies.",
       date: "Jun 24, 2026",
-      readingTime: "6 min read",
+      readingTime: "8 min read",
       url: "https://medium.com/@anuragdotdev/the-jwt-storage-debate-is-over-heres-the-production-grade-architecture-your-app-actually-needs-9ab284da065f",
     }
   ] as Post[],
