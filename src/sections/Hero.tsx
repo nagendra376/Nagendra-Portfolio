@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Shell } from "@/components/Layout";
 import { site } from "@/config/site";
-import { MapPin, Search, RotateCw } from "lucide-react";
+import { MapPin, Search, RotateCw, Eye } from "lucide-react";
+import { useVisitor } from "@/context/VisitorContext";
 
 const HEADLINE_TITLES = [
   "Full Stack Developer",
@@ -14,6 +15,7 @@ const HEADLINE_TITLES = [
 export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const [imgIndex, setImgIndex] = useState(0);
+  const { count, isLoading } = useVisitor();
 
   const handleNextImage = () => {
     const nextIndex = (imgIndex + 1) % site.profileImages.length;
@@ -104,8 +106,15 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
                   </motion.p>
                 </AnimatePresence>
               </div>
-              <p className="mt-1 flex items-center justify-center sm:justify-start gap-1 font-mono text-[11px] text-[var(--soft)]">
-                <MapPin size={12} className="shrink-0" /> {site.location}
+              <p className="mt-1 flex flex-wrap items-center justify-center sm:justify-start gap-x-2 gap-y-1 font-mono text-[11px] text-[var(--soft)]">
+                <span className="flex items-center gap-1">
+                  <MapPin size={12} className="shrink-0" /> {site.location}
+                </span>
+                <span>·</span>
+                <span className="flex items-center gap-1">
+                  <Eye size={12} className="shrink-0" />
+                  <span>{isLoading ? "..." : count?.toLocaleString()} views</span>
+                </span>
               </p>
             </div>
           </div>

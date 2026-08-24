@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
+import { VisitorProvider } from "@/context/VisitorContext";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { SideIndex } from "@/components/SideIndex";
@@ -83,28 +84,30 @@ export function App() {
 
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <Analytics />
-        <ScrollToTop />
-        <Konami />
-        <div className="min-h-screen bg-[var(--bg)] font-sans text-[var(--fg)] antialiased transition-colors duration-300 relative">
-          <Nav onOpenPalette={() => setPaletteOpen(true)} />
-          <SideIndex />
+      <VisitorProvider>
+        <BrowserRouter>
+          <Analytics />
+          <ScrollToTop />
+          <Konami />
+          <div className="min-h-screen bg-[var(--bg)] font-sans text-[var(--fg)] antialiased transition-colors duration-300 relative">
+            <Nav onOpenPalette={() => setPaletteOpen(true)} />
+            <SideIndex />
 
-          <main className="relative z-10">
-            <Routes>
-              <Route path="/" element={<MainLayout onOpenPalette={() => setPaletteOpen(true)} />} />
-              <Route path="/projects" element={<Projects isSearchable={true} />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/writing" element={<WritingPage />} />
-            </Routes>
-          </main>
+            <main className="relative z-10">
+              <Routes>
+                <Route path="/" element={<MainLayout onOpenPalette={() => setPaletteOpen(true)} />} />
+                <Route path="/projects" element={<Projects isSearchable={true} />} />
+                <Route path="/experience" element={<Experience />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/writing" element={<WritingPage />} />
+              </Routes>
+            </main>
 
-          <Footer />
-          <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
-        </div>
-      </BrowserRouter>
+            <Footer />
+            <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
+          </div>
+        </BrowserRouter>
+      </VisitorProvider>
     </ThemeProvider>
   );
 }
