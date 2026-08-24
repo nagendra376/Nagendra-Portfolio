@@ -57,7 +57,8 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="w-full mt-12">
+    <footer className="w-full">
+      <GapBand h="h-12" />
       {/* Scrolled Too Far Section */}
       <SectionHeader title="Scrolled Too Far" />
       <Shell className="px-6 py-10 text-center sm:px-8">
@@ -74,10 +75,10 @@ export function Footer() {
       </Shell>
 
       {/* Quote Band */}
-      <GapBand />
+      <GapBand className="border-t border-[var(--line)]" />
       <div className="w-full border-y border-[var(--line)]">
         <Shell className="px-8 py-12 text-center min-h-[160px] flex flex-col items-center justify-center bg-[var(--bg)] select-none">
-          <div className="w-full max-w-[580px] overflow-hidden">
+          <div className="w-full max-w-[580px] min-h-[140px] flex flex-col items-center justify-center overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={quoteIndex}

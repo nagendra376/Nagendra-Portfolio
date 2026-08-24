@@ -140,6 +140,7 @@ html {
   font-family: var(--font-sans);
   background-color: var(--bg);
   color: var(--fg);
+  overflow-x: hidden;
 }
 
 body {
@@ -150,6 +151,7 @@ body {
   text-rendering: optimizeLegibility;
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .font-serif {

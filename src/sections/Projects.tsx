@@ -41,7 +41,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
                   key={tab}
                   type="button"
                   onClick={() => setProjectTab(tab)}
-                  className={`rounded-md px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer ${
+                  className={`flex items-center justify-center text-center rounded-md px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer ${
                     projectTab === tab
                       ? "bg-[var(--fg)] text-[var(--bg)] shadow-sm font-semibold"
                       : "text-[var(--muted)] hover:text-[var(--fg)]"
@@ -83,7 +83,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
                   key={tab}
                   type="button"
                   onClick={() => setProjectTab(tab)}
-                  className={`flex items-center gap-1.5 rounded-md px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer ${
+                  className={`flex items-center justify-center text-center gap-1.5 rounded-md px-2.5 py-1 text-[11px] font-medium transition-all duration-200 cursor-pointer ${
                     projectTab === tab
                       ? "bg-[var(--fg)] text-[var(--bg)] shadow-sm font-semibold"
                       : "text-[var(--muted)] hover:text-[var(--fg)]"
@@ -96,12 +96,11 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
           </div>
         )}
 
-        <motion.div layout className="grid gap-4 sm:grid-cols-2 overflow-hidden">
-          <AnimatePresence mode="popLayout">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <AnimatePresence>
             {displayedProjects.map((p, idx) => (
               <motion.div
                 key={p.title}
-                layout
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
@@ -111,7 +110,7 @@ export function Projects({ isSearchable = false }: { isSearchable?: boolean }) {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {displayedProjects.length === 0 && (
           <div className="py-12 text-center text-[var(--muted)] text-[13.5px] font-mono">

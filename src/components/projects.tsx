@@ -53,7 +53,7 @@ export function ProjectCard({ p, i }: { p: Project; i: number }) {
     <Reveal delay={i * 0.05}>
       <article
         id={`project-card-${p.title.toLowerCase()}`}
-        className="group relative flex flex-col justify-between h-full overflow-hidden rounded-2xl border border-neutral-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-600 hover:shadow-2xl hover:shadow-black/40 backdrop-blur-md bg-neutral-900/40"
+        className="group relative flex flex-col justify-between h-full rounded-2xl border border-neutral-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-neutral-600 hover:shadow-2xl hover:shadow-black/40 backdrop-blur-md bg-neutral-900/40"
       >
         <div>
           {/* Creative Banner Canvas Header */}

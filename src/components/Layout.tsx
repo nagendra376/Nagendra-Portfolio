@@ -41,9 +41,9 @@ export function SectionHeader({
   );
 }
 
-export function GapBand({ h = "h-7" }: { h?: string }) {
+export function GapBand({ h = "h-7", className = "" }: { h?: string; className?: string }) {
   return (
-    <div className={`relative w-full bg-stripes ${h}`}>
+    <div className={`relative w-full bg-stripes ${h} ${className}`}>
       <Shell className="h-full" />
     </div>
   );

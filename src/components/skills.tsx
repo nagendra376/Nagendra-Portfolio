@@ -74,11 +74,10 @@ export function Skills() {
       </div>
 
       <Reveal>
-        <motion.div layout className="flex flex-wrap gap-3">
-          <AnimatePresence mode="popLayout">
+        <div className="flex flex-wrap gap-3">
+          <AnimatePresence>
             {filteredSkills.map((skill) => (
               <motion.span
-                layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
@@ -97,7 +96,7 @@ export function Skills() {
               </motion.span>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </Reveal>
     </section>
   );
