@@ -99,7 +99,7 @@ export const site = {
         source: "https://github.com/nodeanurag/FrameLabs",
       },
       featured: true,
-      image: "/projects/framelabs.png",
+      image: "/project-images/framelabs.png",
       categories: ["Frontend"],
     },
     {
@@ -115,7 +115,7 @@ export const site = {
         source: "https://github.com/nodeanurag/DoodleDash",
       },
       featured: true,
-      image: "/projects/doodledash.png",
+      image: "/project-images/doodledash.png",
       categories: ["Fullstack", "Backend"],
     },
     {
@@ -131,7 +131,7 @@ export const site = {
       },
       featured: true,
       status: "In Progress",
-      image: "/projects/codeforge.png",
+      image: "/project-images/codeforge.png",
       categories: ["Frontend"],
     },
     {
@@ -147,7 +147,7 @@ export const site = {
       },
       featured: false,
       status: "In Progress",
-      image: "/projects/swiftpoll.png",
+      image: "/project-images/swiftpoll.png",
       categories: ["Fullstack"],
     },
     {
@@ -163,7 +163,7 @@ export const site = {
       },
       featured: false,
       status: "In Progress",
-      image: "/projects/nexus.png",
+      image: "/project-images/nexus.png",
       categories: ["Fullstack", "Backend"],
     },
   ] as Project[],
