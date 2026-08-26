@@ -45,7 +45,7 @@ function MainLayout({ onOpenPalette }: { onOpenPalette: () => void }) {
       <Projects isSearchable={false} />
       <Experience />
       <TechStack />
-      <Writing />
+      <Writing limit={4} />
       <GithubActivity />
     </>
   );
