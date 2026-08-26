@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Shell, SectionHeader } from "@/components/Layout";
 import { site } from "@/config/site";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { MediumIcon } from "@/components/icons";
 
-export function Writing() {
+export function Writing({ limit }: { limit?: number }) {
   if (!site.writing || site.writing.length === 0) return null;
+
+  const displayedPosts = limit ? site.writing.slice(0, limit) : site.writing;
+  const hasMore = limit ? site.writing.length > limit : false;
 
   return (
     <div id="writing">
@@ -26,7 +30,7 @@ export function Writing() {
       />
       <Shell>
         <div className="divide-y divide-[var(--line)]">
-          {site.writing.map((post, i) => (
+          {displayedPosts.map((post, i) => (
             <motion.a
               key={post.title}
               href={post.url}
@@ -58,6 +62,18 @@ export function Writing() {
             </motion.a>
           ))}
         </div>
+
+        {hasMore && (
+          <div className="flex justify-center py-6 border-t border-[var(--line)] bg-stripes">
+            <Link
+              to="/writing"
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--fg)] px-5 py-2.5 text-[13px] font-semibold text-[var(--bg)] transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              Read all articles
+              <ArrowRight className="size-3.5" />
+            </Link>
+          </div>
+        )}
       </Shell>
     </div>
   );
