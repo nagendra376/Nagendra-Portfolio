@@ -193,6 +193,13 @@ export const site = {
   ],
   writing: [
     {
+      title: "The Ultimate Guide to Routing: From Network Packets to Backend Handlers",
+      summary: "A comprehensive exploration of routing across layers, tracing IP packets, hardware routing tables, HTTP multiplexing, and frontend routers.",
+      date: "Aug 26, 2026",
+      readingTime: "20 min read",
+      url: "https://medium.com/@anuragdotdev/the-ultimate-guide-to-routing-from-network-packets-to-backend-handlers-64cc4f7fdbfa",
+    },
+    {
       title: "Understanding HTTP: The Backbone of the Web",
       summary: "A deep dive into the Hypertext Transfer Protocol, exploring header lifecycle, request methods, statelessness, and connection optimization from HTTP/1.1 to HTTP/3.",
       date: "Aug 22, 2026",
