@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const INDEX_ITEMS = [
   { id: "about", label: "About" },
@@ -12,8 +13,10 @@ const INDEX_ITEMS = [
 
 export function SideIndex() {
   const [activeSection, setActiveSection] = useState<string>("");
+  const location = useLocation();
 
   useEffect(() => {
+    if (location.pathname !== "/") return;
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
       for (const item of INDEX_ITEMS) {
@@ -32,7 +35,9 @@ export function SideIndex() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
+
+  if (location.pathname !== "/") return null;
 
   return (
     <aside className="fixed top-[26vh] left-[calc(50%+410px)] pointer-events-auto hidden xl:flex flex-col gap-3.5 z-30">
