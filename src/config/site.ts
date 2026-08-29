@@ -193,6 +193,13 @@ export const site = {
   ],
   writing: [
     {
+      title: "Serialization and Deserialization: The Universal Language of Backend Engineering",
+      summary: "A deep dive into serialization formats from JSON and XML to Protocol Buffers, exploring schema validation, backward compatibility, and network serialization bottlenecks.",
+      date: "Aug 29, 2026",
+      readingTime: "14 min read",
+      url: "https://medium.com/@anuragdotdev/serialization-and-deserialization-the-universal-language-of-backend-engineering-8df8ce03d257",
+    },
+    {
       title: "The Ultimate Guide to Routing: From Network Packets to Backend Handlers",
       summary: "A comprehensive exploration of routing across layers, tracing IP packets, hardware routing tables, HTTP multiplexing, and frontend routers.",
       date: "Aug 26, 2026",
