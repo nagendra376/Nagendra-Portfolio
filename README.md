@@ -1,4 +1,4 @@
-# Nagendra Jha — Portfolio
+# Nagendra Dwivedi — Portfolio
 
 A high-performance, responsive, and aesthetically premium personal portfolio built with React, Vite, Tailwind CSS, and TypeScript. Inspired by minimalist retro terminal grids and modern typographic grids.
 
@@ -41,4 +41,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 ## Customization
 
 To customize the content of the portfolio (such as titles, biography details, social URLs, or technical blog posts), modify the central configuration file:
-* [src/config/site.ts](file:///d:/D%20drive/1/videos/movie/1.dev/Cohort%203.0/WEB%20DEV/cohort-3%20codes/projects/my-portfolio-github/my-portfolio/src/config/site.ts)
+
+- [src/config/site.ts](file:///d:/D%20drive/1/videos/movie/1.dev/Cohort%203.0/WEB%20DEV/cohort-3%20codes/projects/my-portfolio-github/my-portfolio/src/config/site.ts)
