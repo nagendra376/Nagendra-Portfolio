@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { site } from "@/config/site";
 import { useTheme } from "./theme-provider";
-import { 
-  Search, 
-  Compass, 
-  Globe, 
-  Terminal, 
-  Copy, 
-  Check, 
-  Moon, 
-  Sun, 
+import {
+  Search,
+  Compass,
+  Globe,
+  Terminal,
+  Copy,
+  Check,
+  Moon,
+  Sun,
   ExternalLink,
   BookOpen,
-  Mail
+  Mail,
 } from "lucide-react";
 import { GitHubIcon } from "./icons";
 
@@ -138,7 +138,8 @@ export function CommandPalette({
     {
       id: "action-theme",
       category: "actions",
-      title: theme === "dark" ? "Switch to Light Theme" : "Switch to Dark Theme",
+      title:
+        theme === "dark" ? "Switch to Light Theme" : "Switch to Dark Theme",
       subtitle: theme === "dark" ? "Go light mode" : "Go dark mode",
       icon: theme === "dark" ? <Sun size={16} /> : <Moon size={16} />,
       action: () => {
@@ -150,7 +151,7 @@ export function CommandPalette({
       id: "action-medium",
       category: "actions",
       title: "Open Medium Profile",
-      subtitle: "medium.com/@anuragdotdev",
+      subtitle: "medium.com/@nagendraswsa",
       icon: <BookOpen size={16} />,
       action: () => {
         window.open((site.socials as any).medium, "_blank");
@@ -162,7 +163,11 @@ export function CommandPalette({
       category: "actions",
       title: copied ? "Copied!" : "Copy Email Address",
       subtitle: site.email,
-      icon: copied ? <Check size={16} className="text-emerald-500" /> : <Copy size={16} />,
+      icon: copied ? (
+        <Check size={16} className="text-emerald-500" />
+      ) : (
+        <Copy size={16} />
+      ),
       action: handleCopyEmail,
     },
   ];
@@ -186,7 +191,9 @@ export function CommandPalette({
         setSelectedIndex((prev) => (prev + 1) % filteredItems.length);
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
-        setSelectedIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
+        setSelectedIndex(
+          (prev) => (prev - 1 + filteredItems.length) % filteredItems.length,
+        );
       } else if (e.key === "Enter") {
         e.preventDefault();
         if (filteredItems[selectedIndex]) {
@@ -245,8 +252,8 @@ export function CommandPalette({
               </kbd>
             </div>
 
-            <div 
-              ref={listRef} 
+            <div
+              ref={listRef}
               className="flex-1 overflow-y-auto py-2 divide-y divide-neutral-800/40"
             >
               {filteredItems.length === 0 ? (
@@ -255,11 +262,14 @@ export function CommandPalette({
                 </div>
               ) : (
                 Object.entries(
-                  filteredItems.reduce((acc, item) => {
-                    if (!acc[item.category]) acc[item.category] = [];
-                    acc[item.category].push(item);
-                    return acc;
-                  }, {} as Record<string, PaletteItem[]>)
+                  filteredItems.reduce(
+                    (acc, item) => {
+                      if (!acc[item.category]) acc[item.category] = [];
+                      acc[item.category].push(item);
+                      return acc;
+                    },
+                    {} as Record<string, PaletteItem[]>,
+                  ),
                 ).map(([category, catItems]) => {
                   return (
                     <div key={category} className="py-2 first:pt-0 last:pb-0">
@@ -283,7 +293,9 @@ export function CommandPalette({
                                   : "border-transparent text-neutral-300 hover:bg-neutral-800/50"
                               }`}
                             >
-                              <span className={`shrink-0 ${isActive ? "text-white" : "text-neutral-400"}`}>
+                              <span
+                                className={`shrink-0 ${isActive ? "text-white" : "text-neutral-400"}`}
+                              >
                                 {item.icon}
                               </span>
                               <div className="flex-1 min-w-0">
@@ -291,15 +303,22 @@ export function CommandPalette({
                                   {item.title}
                                 </p>
                                 {item.subtitle && (
-                                  <p className={`text-[10px] leading-tight truncate mt-0.5 ${
-                                    isActive ? "text-neutral-300" : "text-neutral-400"
-                                  }`}>
+                                  <p
+                                    className={`text-[10px] leading-tight truncate mt-0.5 ${
+                                      isActive
+                                        ? "text-neutral-300"
+                                        : "text-neutral-400"
+                                    }`}
+                                  >
                                     {item.subtitle}
                                   </p>
                                 )}
                               </div>
                               {isActive && (
-                                <ExternalLink size={12} className="opacity-60 text-white" />
+                                <ExternalLink
+                                  size={12}
+                                  className="opacity-60 text-white"
+                                />
                               )}
                             </button>
                           );

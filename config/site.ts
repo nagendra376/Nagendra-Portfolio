@@ -66,7 +66,7 @@ export const site = {
     email: "mailto:conveytoanurag@gmail.com",
     resume: "",
     discord: "https://discord.gg/ra4kyKdTk",
-    medium: "https://medium.com/@anuragdotdev",
+    medium: "https://medium.com/@nagendraswsa",
   },
   experience: [
     {

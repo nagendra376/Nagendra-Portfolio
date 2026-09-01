@@ -76,11 +76,35 @@ export const site = {
   },
   experience: [
     {
-      company: "Independent Developer",
-      role: "Backend & Full-Stack Developer",
-      period: "2025 – Present",
+      company: "INK IN CAPS",
+      role: "Junior Software Engineer",
+      period: "Feb '25 – Present",
       blurb:
-        "Building and deploying full-stack web applications, SaaS platforms, and backend systems. Working across APIs, authentication, databases, real-time systems, and modern web infrastructure.",
+        "• Contributed to KNKY, a global social platform, by developing scalable frontend features across feeds, profiles, channels, reels, and monetization workflows.\n• Built 20+ reusable React components to improve consistency, maintainability, and delivery speed across major application modules.\n• Architected an Instagram-style Reels experience using virtualized rendering and media lifecycle management to support smooth, scalable content consumption.\n• Integrated WebSocket-based real-time functionality for live streaming and messaging, along with checkout and payment workflows within media feeds.\n• Improved Largest Contentful Paint (LCP) by ~35% through frontend performance optimization and efficient rendering strategies.\n• Resolved 50+ production issues across UI, rendering, cross-browser compatibility, and application functionality, improving platform stability.",
+      url: "",
+    },
+    {
+      company: "Accenture",
+      role: "Frontend Developer",
+      period: "Aug '24 – Dec '24",
+      blurb:
+        "• Worked on the GSK project, translating complex Figma designs into production-ready, pixel-perfect web interfaces.\n• Developed reusable HTML, CSS, JavaScript, and React components following established design patterns and component standards.\n• Implemented responsive and consistent UI layouts while maintaining high visual fidelity across different screen sizes.\n• Collaborated on frontend implementation and refinement of complex UI requirements, bridging the gap between design specifications and production-ready interfaces.",
+      url: "",
+    },
+    {
+      company: "Webtactics",
+      role: "Web Developer",
+      period: "Mar '24 – Aug '24",
+      blurb:
+        "• Developed responsive web applications for client projects including Shagun, Sunrise, and ESN India.\n• Built pixel-perfect, responsive interfaces using HTML, CSS, JavaScript, WordPress, and Shopify.\n• Optimized website loading performance while maintaining visual consistency across devices.\n• Worked with PHP and MySQL to implement and maintain dynamic website functionality.",
+      url: "",
+    },
+    {
+      company: "My Country Mobile",
+      role: "Web Developer",
+      period: "Jul '22 – Mar '24",
+      blurb:
+        "• Developed and maintained scalable UI components across 10+ telecommunication platforms, including Callam and SMSLocal.\n• Integrated REST APIs to display real-time VoIP telemetry and communication data within web applications.\n• Built responsive and reusable frontend interfaces, focusing on consistency and maintainability across multiple platforms.\n• Worked on data-driven web interfaces for telecom applications, improving the usability and presentation of real-time communication information.",
       url: "",
     },
   ] as Job[],
@@ -182,56 +206,19 @@ export const site = {
     "Postman",
     "Vercel",
     "Figma",
-    "C++",
-    "Python",
   ],
   writing: [
     {
-      title:
-        "Serialization and Deserialization: The Universal Language of Backend Engineering",
+      title: "HTTP for Frontend Developers: Beyond the Fetch Call",
       summary:
-        "A deep dive into serialization formats from JSON and XML to Protocol Buffers, exploring schema validation, backward compatibility, and network serialization bottlenecks.",
-      date: "Aug 29, 2026",
+        "A practical breakdown of how HTTP actually works behind everyday frontend tasks—from requests and responses to headers, status codes, caching, cookies, retries, and debugging real-world network issues.",
+      date: "Sep 01, 2026",
       readingTime: "14 min read",
-      url: "https://medium.com/@anuragdotdev/serialization-and-deserialization-the-universal-language-of-backend-engineering-8df8ce03d257",
-    },
-    {
-      title:
-        "The Ultimate Guide to Routing: From Network Packets to Backend Handlers",
-      summary:
-        "A comprehensive exploration of routing across layers, tracing IP packets, hardware routing tables, HTTP multiplexing, and frontend routers.",
-      date: "Aug 26, 2026",
-      readingTime: "20 min read",
-      url: "https://medium.com/@anuragdotdev/the-ultimate-guide-to-routing-from-network-packets-to-backend-handlers-64cc4f7fdbfa",
-    },
-    {
-      title: "Understanding HTTP: The Backbone of the Web",
-      summary:
-        "A deep dive into the Hypertext Transfer Protocol, exploring header lifecycle, request methods, statelessness, and connection optimization from HTTP/1.1 to HTTP/3.",
-      date: "Aug 22, 2026",
-      readingTime: "15 min read",
-      url: "https://medium.com/@anuragdotdev/understanding-http-the-backbone-of-the-web-3d2109d0facd",
-    },
-    {
-      title: "API Rate Limiting: I thought it was just counting requests...",
-      summary:
-        "An analysis of rate limiting algorithms from Token Bucket to Sliding Window logs, detailing how distributed systems protect API infrastructure under load.",
-      date: "Jul 12, 2026",
-      readingTime: "14 min read",
-      url: "https://medium.com/@anuragdotdev/api-rate-limiting-i-thought-it-was-just-counting-requests-682cefa2f56c",
-    },
-    {
-      title:
-        "The JWT Storage Debate is Over: Here's the Production-Grade Architecture Your App Actually Needs",
-      summary:
-        "A definitive guide to JWT storage in frontend applications, detailing why standard localStorage fails and how to implement secure memory-session architecture with HTTP-only cookies.",
-      date: "Jun 24, 2026",
-      readingTime: "8 min read",
-      url: "https://medium.com/@anuragdotdev/the-jwt-storage-debate-is-over-heres-the-production-grade-architecture-your-app-actually-needs-9ab284da065f",
+      url: "https://medium.com/@nagendraswsa/http-for-frontend-developers-beyond-the-fetch-call-e059509308f1?sharedUserId=nagendraswsa",
     },
   ] as Post[],
   github: {
-    username: "nodeanurag",
+    username: "nagendra376",
     contributionsLastYear: "500+",
   },
   footerNote: "Built with ❤️ and hardwork",
