@@ -162,6 +162,22 @@ export const site = {
       image: "/project-images/codeforge.png",
       categories: ["Backend", "Fullstack"],
     },
+    {
+      title: "toDesktop",
+      blurb:
+        "A sleek desktop-inspired frontend focused on productivity workflows, live task visibility, and a polished product experience.",
+      story:
+        "This is an in-progress frontend project designed to bring a modern desktop-style interface to life with clean layouts, smooth interactions, and a polished user experience. The goal is to create a highly usable productivity dashboard that feels premium while staying practical and easy to navigate.\n\nCurrently under active development as a frontend-focused build.",
+      stack: ["HTML", "JavaScript", "Tailwind CSS", "Responsive Design"],
+      year: "2026",
+      links: {
+        live: "https://to-desktop-frontend.vercel.app/",
+        source: "https://github.com/nagendra376/toDesktop-frontend",
+      },
+      featured: false,
+      status: "In Progress",
+      categories: ["Frontend"],
+    },
   ] as Project[],
   skills: [
     "TypeScript",
