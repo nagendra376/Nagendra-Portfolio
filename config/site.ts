@@ -28,12 +28,9 @@ export type Post = {
 };
 
 export const site = {
-  name: "Anurag Jha",
-  url: "https://anuragdotdev.vercel.app",
-  profileImages: [
-    "/profile.jpg",
-    "/profile2.png",
-  ],
+  name: "Nagendra Dwivedi",
+  url: "https://nagendra  .vercel.app",
+  profileImages: ["/profile.jpg", "/profile2.png"],
   bannerImage: "/banner.png",
   socialBannerImage: "/social-banner.png",
   initials: "AJ",
@@ -41,10 +38,11 @@ export const site = {
   location: "Delhi, India",
   timezone: "Asia/Kolkata",
   email: "conveytoanurag@gmail.com",
-  greeting: "Hey, I'm Anurag",
-  tagline: "I build clean, modern websites and web apps where design, functionality, and even the smallest details matter.",
+  greeting: "Hey, I'm Nagendra",
+  tagline:
+    "I build clean, modern websites and web apps where design, functionality, and even the smallest details matter.",
   about: [
-    "Hey, I'm Anurag, a full stack developer who loves building clean, modern websites and apps where design, functionality, and even the smallest details matter, with a focus on making products that are both practical and visually satisfying.",
+    "Hey, I'm Nagendra, a full stack developer who loves building clean, modern websites and apps where design, functionality, and even the smallest details matter, with a focus on making products that are both practical and visually satisfying.",
     "I spend most of my time in the terminal, the browser, or scribbling on a whiteboard. I lean backend,not because I don't like frontend, but because I enjoy making polished things actually hold up.",
     "I don't ship junk. Maintainability isn't optional. And I build best when I'm curious.",
   ],
@@ -79,102 +77,90 @@ export const site = {
         "Built and deployed multiple SPAs & web applications. Engaged in competitive coding events like the Smart India Hackathon and HT codeathon.",
       url: "",
     },
+    {
+      company: "Independent Developer",
+      role: "Frontend Developer",
+      period: "2025 — Present",
+      blurb:
+        "Built and deployed multiple SPAs & web applications. Engaged in competitive coding events like the Smart India Hackathon and HT codeathon.",
+      url: "",
+    },
   ] as Job[],
   projects: [
     {
-      title: "FrameLabs",
+      title: "Support CRM System",
       blurb:
-        "A creative tool that turns static card generation into a reactive, real-time design experience. Users can switch between retro palettes and layouts on the fly, with zero jank—because every state transition is memoized and component-driven.",
+        "A full-stack customer support ticket management system for creating, searching, filtering, viewing, and updating support tickets in a streamlined workflow.",
       story:
-        "The frontend is built with React's compositional model, styled atomically with Tailwind CSS, and powered by Zustand for predictable, lean state management. Icons from lucide-react keep the UI crisp and accessible. The result: a minimal surface area with a maximal creative ceiling.\n\n*Designed for speed \u2022 Engineered for feel.*",
-      stack: ["React.js", "Tailwind CSS", "Zustand", "lucide-react"],
+        "This project combines a React + Vite frontend with a Node.js and Express backend, backed by MongoDB for reliable ticket storage and notes tracking. It includes ticket creation, status updates, comment history, search and filtering, and a clean admin-style dashboard built for real support workflows.\n\n*Built to keep support operations organized, efficient, and easy to maintain.*",
+      stack: [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "React Router",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "Axios",
+      ],
       year: "2026",
       links: {
-        live: "https://framelabs.vercel.app/",
-        source: "https://github.com/nodeanurag/FrameLabs",
+        live: "https://support-crm-system-phi.vercel.app/",
+        source: "https://github.com/nagendra376/Support_CRM_System-",
       },
       featured: true,
       image: "/project-images/framelabs.png",
-      categories: ["Frontend"],
+      categories: ["Fullstack", "Backend"],
     },
     {
-      title: "DoodleDash",
+      title: "Porsche 911 GT3 RS showcase",
       blurb:
-        "A real-time multiplayer drawing and guessing game (Skribbl.io clone) built as a TypeScript monorepo with absolute dimension-independent drawing synchronization.",
+        "A cinematic Porsche GT3 RS concept landing page that blends luxury branding, motion design, and performance storytelling into a premium automotive experience.",
       story:
-        "Engineered using Socket.IO WebSockets for bidirectional event mapping. Features a zero-trust server validation engine (timers, guessing logic, turn loops managed strictly on the server), spectator rooms, and a custom canvas-to-image engine for client-side PNG sharing. Strikethroughs and drawing vectors are normalized to relative coordinates to ensure cross-device consistency.",
-      stack: ["React.js", "Node.js", "Socket.IO", "TypeScript", "Tailwind CSS v4", "Zustand"],
+        "This project focuses on turning a high-performance car into a visual narrative using immersive sections, bold typography, and smooth transitions. The experience highlights engineering, aerodynamics, power, and design through a refined storytelling layout that feels modern, fast, and unmistakably premium.\n\nBuilt to feel like a luxury performance brand presentation, not just a product page.",
+      stack: [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "GSAP",
+        "Framer Motion",
+        "Responsive Design",
+      ],
       year: "2026",
       links: {
-        live: "https://doodledash.pages.dev/",
-        source: "https://github.com/nodeanurag/DoodleDash",
+        live: "https://timeline-activity.vercel.app/",
+        source: "",
       },
       featured: true,
       image: "/project-images/doodledash.png",
-      categories: ["Fullstack", "Backend"],
+      categories: ["Frontend"],
     },
     {
-      title: "CodeForge",
+      title: "Project Management System",
       blurb:
-        "A local-first browser-based IDE offering full Monaco editing, in-browser code execution for JS/Python/TS, sandboxed previews, and IndexedDB workspace persistence.",
+        "A Node.js and Express backend for a project management application with authentication, project APIs, and a scalable foundation for feature expansion.",
       story:
-        "Engineered to run entirely client-side without servers. Integrates Monaco Editor models with dynamic Web Workers and Pyodide runtimes. Features resizable panel split layouts, instant sandboxed iframe live-previews for web files, Dexie-powered IndexedDB database state management, workspace-wide text search, and URL-encoded code snippets sharing.",
-      stack: ["React.js", "Vite", "Zustand", "Monaco Editor", "Pyodide", "Dexie.js"],
+        "This backend project is built to support user registration and login, project creation and management, validation layers, health checks, and API-ready structure for future task, team, and member management features. It uses MongoDB with Mongoose for persistence and includes email utilities, JWT-based auth, and environment-based configuration for a real-world service setup.\n\nStructured as a clean, extendable backend foundation for a full project management product.",
+      stack: [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "bcrypt",
+        "Nodemailer",
+        "Multer",
+      ],
       year: "2026",
       links: {
-        source: "https://github.com/nodeanurag/codeforge",
+        live: "",
+        source: "https://github.com/nagendra376/Project-managemenet_system",
       },
       featured: true,
-      status: "In Progress",
+      status: "Backend API",
       image: "/project-images/codeforge.png",
-      categories: ["Frontend"],
-    },
-    {
-      title: "SwiftPoll",
-      blurb:
-        "A real-time anonymous polling application built for maximum creation and voting speed without user registration friction.",
-      story:
-        "Uses Supabase Realtime DB and server actions for lightning-fast voting updates and creator actions. Features browser-stored secret admin tokens for accountless close/delete operations, server-side IP hashing spam de-duplication, full keyboard accessibility, and optimistic client voting counts.",
-      stack: ["Next.js", "Supabase", "TypeScript", "Tailwind CSS v4", "Zod", "Vitest"],
-      year: "2026",
-      links: {
-        source: "https://github.com/nodeanurag/swiftpoll",
-      },
-      featured: false,
-      status: "In Progress",
-      image: "/project-images/swiftpoll.png",
-      categories: ["Fullstack"],
-    },
-    {
-      title: "Nexus",
-      blurb:
-        "A workspace-based project management app featuring kanban boards, real-time activity tracking, nodemailer notifications, and robust team collaboration.",
-      story:
-        "Built to mimic enterprise collaboration canvases. Employs Next-Auth for role-based authentication, TanStack Query for caching and server synchronization, Recharts for team productivity insights, and @dnd-kit for seamless drag-and-drop workflow task transitions. Backed by a clean PostgreSQL database schema via Prisma.",
-      stack: ["Next.js", "Prisma", "PostgreSQL", "React Query", "@dnd-kit", "Next-Auth"],
-      year: "2026",
-      links: {
-        source: "https://github.com/nodeanurag/nexus",
-      },
-      featured: false,
-      status: "In Progress",
-      image: "/project-images/nexus.png",
-      categories: ["Fullstack", "Backend"],
-    },
-    {
-      title: "AlumniConnect",
-      blurb:
-        "A white-label, production-ready alumni newsletter builder built entirely on @unlayer/react-email-editor.",
-      story:
-        "One React application renders a custom email client simulator, a responsive web portal, and a print-tuned PDF engine — and exports straight to Unlayer design JSON. It features a drag-and-drop editor canvas, live client simulator preview, and exports to Email-safe HTML, Dynamic JSON Layout, and A4 PDF Document.",
-      stack: ["React.js", "Unlayer", "TypeScript", "Tailwind CSS"],
-      year: "2026",
-      links: {
-        source: "https://github.com/nodeanurag/alumniconnect",
-      },
-      featured: false,
-      image: "/project-images/alumniconnect.png",
-      categories: ["Frontend"],
+      categories: ["Backend", "Fullstack"],
     },
   ] as Project[],
   skills: [
@@ -206,7 +192,7 @@ export const site = {
     username: "nodeanurag",
     contributionsLastYear: "500+",
   },
-  footerNote: "Built with ❤️ and hardwork "
+  footerNote: "Built with ❤️ and hardwork ",
 } as const;
 
 export type Site = typeof site;

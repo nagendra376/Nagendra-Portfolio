@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface VisitorContextType {
   count: number | null;
@@ -13,33 +13,40 @@ export function VisitorProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const fetchCount = async () => {
-      const BASELINE = 6389;
-      const KEY = "nodeanurag_portfolio_views";
-      const hasVisited = sessionStorage.getItem("has_visited_session");
-      
-      const endpoint = hasVisited ? "get" : "hit";
-      const url = `https://countapi.mileshilliard.com/api/v1/${endpoint}/${KEY}`;
+      const KEY = "nagendra_visits";
 
       try {
+        const hasVisited = sessionStorage.getItem("has_visited_session");
+
+        // First visit in this browser session = +1
+        // Subsequent visits = only read the count
+        const endpoint = hasVisited ? "get" : "hit";
+
+        const url = `https://countapi.mileshilliard.com/api/v1/${endpoint}/${KEY}`;
+
         if (!hasVisited) {
           sessionStorage.setItem("has_visited_session", "true");
         }
 
-        const res = await fetch(url);
-        if (!res.ok) {
-          throw new Error(`Failed to fetch count: ${res.statusText}`);
+        const response = await fetch(url);
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch count: ${response.status}`);
         }
-        
-        const data = await res.json();
-        if (typeof data.value === "number") {
-          setCount(data.value + BASELINE);
+
+        const data = await response.json();
+
+        // CountAPI can return value as a string
+        const value = Number(data.value);
+
+        if (!Number.isNaN(value)) {
+          setCount(value);
         } else {
-          setCount(BASELINE);
+          setCount(0);
         }
       } catch (error) {
         console.error("Error fetching visitor count:", error);
-        // Fallback gracefully so we never show an error or 0
-        setCount(BASELINE);
+        setCount(0);
       } finally {
         setIsLoading(false);
       }
@@ -57,8 +64,10 @@ export function VisitorProvider({ children }: { children: React.ReactNode }) {
 
 export function useVisitor() {
   const context = useContext(VisitorContext);
-  if (context === undefined) {
+
+  if (!context) {
     throw new Error("useVisitor must be used within a VisitorProvider");
   }
+
   return context;
 }
