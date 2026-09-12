@@ -13,6 +13,7 @@ import { Experience } from "@/sections/Experience";
 import { TechStack } from "@/sections/TechStack";
 import { Writing } from "@/sections/Writing";
 import { GithubActivity } from "@/sections/GithubActivity";
+import { Books } from "@/sections/Books";
 import { CommandPalette } from "@/components/command-palette";
 import { WritingPage } from "@/pages/WritingPage";
 import { Konami } from "@/components/konami";
@@ -47,6 +48,7 @@ function MainLayout({ onOpenPalette }: { onOpenPalette: () => void }) {
       <TechStack />
       <Writing limit={4} />
       <GithubActivity />
+      <Books />
     </>
   );
 }

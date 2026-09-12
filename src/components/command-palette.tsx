@@ -114,6 +114,17 @@ export function CommandPalette({
       },
     },
     {
+      id: "nav-books",
+      category: "navigation",
+      title: "Go to Books",
+      subtitle: "Curated reading list & Atomic Habits notes",
+      icon: <BookOpen size={16} />,
+      action: () => {
+        navigate("/#books");
+        handleClose();
+      },
+    },
+    {
       id: "nav-contact",
       category: "navigation",
       title: "Go to Contact",

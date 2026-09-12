@@ -27,6 +27,19 @@ export type Post = {
   readingTime?: string;
 };
 
+export type Book = {
+  id: string;
+  title: string;
+  author: string;
+  cover: string;
+  tagline?: string;
+  description: string;
+  status?: string;
+  readUrl: string;
+  quote?: string;
+  keyTakeaways?: string[];
+};
+
 export const site = {
   name: "Nagendra Dwivedi",
   firstName: "Nagendra",
@@ -70,7 +83,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/nagendra-dwivedi-1049651b6/",
     email: "mailto:nagendraswsa@gmail.com",
     resume:
-      "https://drive.google.com/file/d/1wcb1tbG9bYjRMloNcM35jVJ1Ag8vvrNH/view?usp=sharing",
+      "https://drive.google.com/file/d/10a4D_OcCeOQpKObsC2hZBf-i0WXWTsp7/view?usp=sharing",
     discord: "https://discord.gg/ra4kyKdTk",
     medium: "https://medium.com/@nagendraswsa",
   },
@@ -184,23 +197,6 @@ export const site = {
       image: "/project-images/codeforge.png",
       categories: ["Backend", "Fullstack"],
     },
-    {
-      title: "toDesktop",
-      blurb:
-        "A sleek desktop-inspired frontend focused on productivity workflows, live task visibility, and a polished product experience.",
-      story:
-        "This is an in-progress frontend project designed to bring a modern desktop-style interface to life with clean layouts, smooth interactions, and a polished user experience. The goal is to create a highly usable productivity dashboard that feels premium while staying practical and easy to navigate.\n\nCurrently under active development as a frontend-focused build.",
-      stack: ["HTML", "JavaScript", "Tailwind CSS", "Responsive Design"],
-      year: "2026",
-      links: {
-        live: "https://to-desktop-frontend.vercel.app/",
-        source: "https://github.com/nagendra376/toDesktop-frontend",
-      },
-      featured: false,
-      image: "/project-images/toDesktop.jpg",
-      status: "In Progress",
-      categories: ["Frontend"],
-    },
   ] as Project[],
   skills: [
     "TypeScript",
@@ -234,6 +230,28 @@ export const site = {
       url: "https://medium.com/@nagendraswsa/http-for-frontend-developers-beyond-the-fetch-call-e059509308f1?sharedUserId=nagendraswsa",
     },
   ] as Post[],
+  books: [
+    {
+      id: "atomic-habits",
+      title: "Atomic Habits",
+      author: "James Clear",
+      cover: "/images/atomic-habits.jpg",
+      tagline: "Tiny Changes, Remarkable Results",
+      description:
+        "An easy and proven way to build good habits and break bad ones. Changes that seem small and unimportant at first will compound into remarkable results if you're willing to stick with them for years.",
+      status: "Highly Recommended",
+      readUrl:
+        "https://drive.google.com/file/d/1Xs41YFOmkXuse7KptiUY_5Vwo9yPLBLY/view?usp=sharing",
+      quote:
+        "You do not rise to the level of your goals. You fall to the level of your systems.",
+      keyTakeaways: [
+        "The 1% Rule: Getting 1% better every day counts for 37x improvement in a year.",
+        "Systems over Goals: Goals are about the results you want; systems are about the processes that lead to those results.",
+        "Identity-Based Habits: The most effective way to change habits is to focus not on what you want to achieve, but on who you wish to become.",
+        "The 4 Laws of Behavior Change: Make it Obvious, Make it Attractive, Make it Easy, and Make it Satisfying.",
+      ],
+    },
+  ] as Book[],
   github: {
     username: "nagendra376",
     contributionsLastYear: "500+",
