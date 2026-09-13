@@ -9,7 +9,8 @@ const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Se
 
 export function GithubActivity() {
   const username = site.github.username;
-  const heatmap = useGithubHeatmap(username);
+  const accounts = (site.github as any).accounts || [username];
+  const heatmap = useGithubHeatmap(accounts);
 
   const monthLabels = useMemo(() => {
     const now = new Date();

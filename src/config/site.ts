@@ -254,6 +254,7 @@ export const site = {
   ] as Book[],
   github: {
     username: "nagendra376",
+    accounts: ["nagendra376", "nagendraiic"],
     contributionsLastYear: "500+",
   },
   footerNote: "Built with ❤️ and hardwork",
