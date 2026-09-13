@@ -22,15 +22,22 @@ export function GithubActivity() {
       <SectionHeader
         title="GitHub Activity"
         aside={
-          <a
-            href={site.socials.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 font-mono text-[11px] text-[var(--muted)] hover:text-[var(--fg)] transition-colors"
-          >
-            <span>@{username}</span>
-            <ExternalLink size={12} />
-          </a>
+          <div className="flex items-center gap-2.5 font-mono text-[11px] text-[var(--muted)]">
+            {accounts.map((acc: string, idx: number) => (
+              <div key={acc} className="flex items-center gap-2.5">
+                {idx > 0 && <span className="text-[var(--soft)]">•</span>}
+                <a
+                  href={`https://github.com/${acc}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-[var(--fg)] transition-colors"
+                >
+                  <span>@{acc}</span>
+                  <ExternalLink size={11} />
+                </a>
+              </div>
+            ))}
+          </div>
         }
       />
       <Shell className="px-6 py-6 sm:px-8">
