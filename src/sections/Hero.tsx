@@ -37,7 +37,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
         <div className="relative h-36 overflow-hidden rounded-xl bg-neutral-950 sm:h-44 border border-[var(--line)]">
           <img
             src={site.bannerImage}
-            alt="Steve Jobs at desk"
+            alt="Workspace Banner"
             loading="eager"
             decoding="async"
             className="w-full h-full object-cover object-center opacity-65 grayscale"

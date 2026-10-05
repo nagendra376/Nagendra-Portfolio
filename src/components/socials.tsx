@@ -29,32 +29,32 @@ const hoverCardsData: Record<string, {
   bannerText: string;
 }> = {
   github: {
-    handle: "@nodeanurag",
+    handle: "@nagendra376",
     bio: "Full Stack Developer. Building products, learning technologies, shipping consistently. Obsessed with clean code.",
     stats: ["5+ Projects", "500+ Contributions"],
     bannerText: "learn • build • ship",
   },
   twitter: {
-    handle: "@anuragdotdev",
+    handle: "@nagendra92407",
     bio: "Building clean, modern web apps where design, functionality, and even the smallest details matter.",
     stats: ["Tech Thoughts", "Dev Twitter"],
     bannerText: "connect • share • grow",
   },
   linkedin: {
     pronouns: "He/Him",
-    handle: "in/nodeanurag",
+    handle: "in/nagendra-dwivedi-1049651b6",
     bio: "Frontend & Backend Developer. Experienced in React, Next.js, Node.js, and database systems.",
-    stats: ["Open to Work", "Delhi, India"],
+    stats: ["Open to Work", "Mumbai, India"],
     bannerText: "network • build • impact",
   },
   medium: {
-    handle: "@anuragdotdev",
+    handle: "@nagendraswsa",
     bio: "Writing technical articles about software development, system design, React, and backend architecture.",
     stats: ["Tech Articles", "Blog Posts"],
     bannerText: "write • share • read",
   },
   email: {
-    handle: "conveytoanurag@gmail.com",
+    handle: "nagendraswsa@gmail.com",
     bio: "Available for contract work, internship opportunities, and collaborative software engineering projects.",
     stats: ["Fast Response", "Direct Email"],
     bannerText: "collab • contact • direct",
@@ -66,7 +66,7 @@ const hoverCardsData: Record<string, {
     bannerText: "skills • experience • cv",
   },
   discord: {
-    handle: "anurag.dev",
+    handle: "nagendra.dev",
     bio: "Join my server or drop a DM to chat about web dev, coding challenges, or side projects.",
     stats: ["Developer Chat", "Active DM"],
     bannerText: "hangout • chat • code",
@@ -113,7 +113,7 @@ export function Socials({ className = "" }: { className?: string }) {
                     {/* Banner header */}
                     <div className="relative h-20 w-full overflow-hidden flex items-center justify-center bg-neutral-950">
                       <img
-                        src={(site as any).socialBannerImage || "/banner.png"}
+                        src={(site as any).socialBannerImage || "/social-banner.png"}
                         alt="Banner"
                         className="absolute inset-0 h-full w-full object-cover object-center"
                       />

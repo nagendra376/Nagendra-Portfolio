@@ -10,8 +10,8 @@ const QUOTES = [
     author: "Elon Musk",
   },
   {
-    text: "The biggest risk is not taking any risk.",
-    author: "Mark Zuckerberg",
+    text: "Talk is cheap. Show me the code.",
+    author: "Linus Torvalds",
   },
   {
     text: "The people who are crazy enough to think they can change the world are the ones who do.",

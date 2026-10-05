@@ -27,19 +27,6 @@ export type Post = {
   readingTime?: string;
 };
 
-export type Book = {
-  id: string;
-  title: string;
-  author: string;
-  cover: string;
-  tagline?: string;
-  description: string;
-  status?: string;
-  readUrl: string;
-  quote?: string;
-  keyTakeaways?: string[];
-};
-
 export const site = {
   name: "Nagendra Dwivedi",
   firstName: "Nagendra",
@@ -74,7 +61,7 @@ export const site = {
     available: true,
     availableText: "open to opportunities",
     nowLearning: "Backend Engineering • System Design • DSA • DevOps",
-    nowBuilding: "DoodleDash",
+    nowBuilding: "Project Management System",
     nowListening: "focus playlists",
   },
   socials: {
@@ -145,7 +132,7 @@ export const site = {
         source: "https://github.com/nagendra376/Support_CRM_System-",
       },
       featured: true,
-      image: "/project-images/framelabs.png",
+      image: "/project-images/support-crm.png",
       categories: ["Fullstack", "Backend"],
     },
     {
@@ -168,7 +155,7 @@ export const site = {
         source: "",
       },
       featured: true,
-      image: "/project-images/doodledash.png",
+      image: "/project-images/porsche-showcase.png",
       categories: ["Frontend"],
     },
     {
@@ -194,7 +181,7 @@ export const site = {
       },
       featured: true,
       status: "Backend API",
-      image: "/project-images/codeforge.png",
+      image: "/project-images/project-management.png",
       categories: ["Backend", "Fullstack"],
     },
   ] as Project[],
@@ -230,28 +217,6 @@ export const site = {
       url: "https://medium.com/@nagendraswsa/http-for-frontend-developers-beyond-the-fetch-call-e059509308f1?sharedUserId=nagendraswsa",
     },
   ] as Post[],
-  books: [
-    {
-      id: "atomic-habits",
-      title: "Atomic Habits",
-      author: "James Clear",
-      cover: "/images/atomic-habits.jpg",
-      tagline: "Tiny Changes, Remarkable Results",
-      description:
-        "An easy and proven way to build good habits and break bad ones. Changes that seem small and unimportant at first will compound into remarkable results if you're willing to stick with them for years.",
-      status: "Highly Recommended",
-      readUrl:
-        "https://drive.google.com/file/d/1Xs41YFOmkXuse7KptiUY_5Vwo9yPLBLY/view?usp=sharing",
-      quote:
-        "You do not rise to the level of your goals. You fall to the level of your systems.",
-      keyTakeaways: [
-        "The 1% Rule: Getting 1% better every day counts for 37x improvement in a year.",
-        "Systems over Goals: Goals are about the results you want; systems are about the processes that lead to those results.",
-        "Identity-Based Habits: The most effective way to change habits is to focus not on what you want to achieve, but on who you wish to become.",
-        "The 4 Laws of Behavior Change: Make it Obvious, Make it Attractive, Make it Easy, and Make it Satisfying.",
-      ],
-    },
-  ] as Book[],
   github: {
     username: "nagendra376",
     accounts: ["nagendra376", "nagendraiic"],
