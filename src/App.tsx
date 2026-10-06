@@ -17,6 +17,7 @@ import { CommandPalette } from "@/components/command-palette";
 import { WritingPage } from "@/pages/WritingPage";
 import { Konami } from "@/components/konami";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -87,6 +88,7 @@ export function App() {
       <VisitorProvider>
         <BrowserRouter>
           <Analytics />
+          <SpeedInsights />
           <ScrollToTop />
           <Konami />
           <div className="min-h-screen bg-[var(--bg)] font-sans text-[var(--fg)] antialiased transition-colors duration-300 relative">
