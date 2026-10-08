@@ -184,6 +184,50 @@ export const site = {
       image: "/project-images/project-management.png",
       categories: ["Backend", "Fullstack"],
     },
+    {
+      title: "ProInvoice – Advanced Billing PWA",
+      blurb:
+        "An installable Progressive Web App (PWA) for multi-user billing, invoice and quote generation, client management, and real-time revenue analytics.",
+      story:
+        "ProInvoice is an offline-capable Progressive Web Application built to streamline billing workflows for freelancers and growing businesses. It features fast invoice and quotation generation, itemized tax/discount calculations, client records, and visual analytics dashboards for tracking business performance.\n\nOptimized for smooth cross-device usage with standalone PWA installation, dark UI aesthetics, and instant responsiveness.",
+      stack: [
+        "React.js",
+        "Vite",
+        "PWA",
+        "TypeScript",
+        "Tailwind CSS",
+      ],
+      year: "2026",
+      links: {
+        live: "https://pro-invoice-pwa.vercel.app/",
+        source: "",
+      },
+      featured: true,
+      image: "/project-images/pro-invoice.png",
+      categories: ["Fullstack", "Frontend"],
+    },
+    {
+      title: "Solution Systems",
+      blurb:
+        "A commercial computer repair, IT services, and custom hardware e-commerce platform serving 365+ locations across Mumbai & MMR.",
+      story:
+        "Developed and maintained as the core digital platform for Solution Systems, featuring doorstep computer and laptop repair booking, genuine OEM parts tracking, custom PC configurator, hardware catalog, and direct WhatsApp customer support channels.\n\nEngineered with localized SEO across 300+ Mumbai regions, high-performance page loads, and intuitive responsive navigation.",
+      stack: [
+        "React.js",
+        "Next.js",
+        "Tailwind CSS",
+        "REST APIs",
+        "Responsive Design",
+      ],
+      year: "2026",
+      links: {
+        live: "https://solutionsystems.in/",
+        source: "",
+      },
+      featured: true,
+      image: "/project-images/solution-systems.png",
+      categories: ["Fullstack", "Frontend"],
+    },
   ] as Project[],
   skills: [
     "TypeScript",
