@@ -70,7 +70,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/nagendra-dwivedi-1049651b6/",
     email: "mailto:nagendraswsa@gmail.com",
     resume:
-      "https://drive.google.com/file/d/10a4D_OcCeOQpKObsC2hZBf-i0WXWTsp7/view?usp=sharing",
+      "https://drive.google.com/file/d/1oGE1BRZbU6TtCkIeBzhsQx6Yd5B_qD4h/view?usp=sharing",
     discord: "https://discord.gg/ra4kyKdTk",
     medium: "https://medium.com/@nagendraswsa",
   },
