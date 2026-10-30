@@ -76,19 +76,19 @@ export const site = {
   },
   experience: [
     {
-      company: "INK IN CAPS",
+      company: "INK IN CAPS (KNKY Platform)",
       role: "Junior Software Engineer",
       period: "Feb '25 – Present",
       blurb:
-        "• Contributed to KNKY, a global social platform, by developing scalable frontend features across feeds, profiles, channels, reels, and monetization workflows.\n• Built 20+ reusable React components to improve consistency, maintainability, and delivery speed across major application modules.\n• Architected an Instagram-style Reels experience using virtualized rendering and media lifecycle management to support smooth, scalable content consumption.\n• Integrated WebSocket-based real-time functionality for live streaming and messaging, along with checkout and payment workflows within media feeds.\n• Improved Largest Contentful Paint (LCP) by ~35% through frontend performance optimization and efficient rendering strategies.\n• Resolved 50+ production issues across UI, rendering, cross-browser compatibility, and application functionality, improving platform stability.",
+        "• Architected and delivered the end-to-end Reels short-form video platform across mobile and desktop, integrating TanStack Virtualizer and Intersection Observer for infinite scrolling, dynamic Swiper media carousels, and synchronized cross-component audio/playback controls.\n• Engineered an interactive multimedia player suite, featuring custom draggable video scrubbers with time previews, 10s skip navigation, pinch-to-zoom media inspection, double-tap engagement, and native/custom fullscreen portals.\n• Spearheaded Centrobill payment gateway integration across 5 platform monetization funnels (Creator Prime Subscriptions, Locked Pay-to-View Posts, Event Ticketing, Pay-Per-Message Chat Fees, and Shop Checkout) with global transaction state handling and multi-currency formatting.\n• Co-engineered the Vault-first Story & Content Creation suite, featuring stepped draft publishing, audience-based access pricing, scheduled releases, and pre-upload corrupted media validation guards.\n• Designed guest-to-subscriber conversion funnels and overlay architecture, implementing a custom stacked modal history system (useOverlayHistory) and resolving critical iOS PWA safe-area, deep-linking, and viewport rendering challenges across 40+ major releases.",
       url: "",
     },
     {
-      company: "Accenture",
+      company: "Accenture (GSK Project)",
       role: "Frontend Developer",
       period: "Aug '24 – Dec '24",
       blurb:
-        "• Worked on the GSK project, translating complex Figma designs into production-ready, pixel-perfect web interfaces.\n• Developed reusable HTML, CSS, JavaScript, and React components following established design patterns and component standards.\n• Implemented responsive and consistent UI layouts while maintaining high visual fidelity across different screen sizes.\n• Collaborated on frontend implementation and refinement of complex UI requirements, bridging the gap between design specifications and production-ready interfaces.",
+        "• Developed pixel-perfect, responsive React.js interfaces by translating Figma designs into production-ready components.\n• Built reusable and accessible UI components while following established design systems, design tokens, and UI guidelines.\n• Ensured consistent user experiences across desktop, tablet, and mobile devices through responsive development and cross-browser testing.",
       url: "",
     },
     {
@@ -96,7 +96,7 @@ export const site = {
       role: "Web Developer",
       period: "Mar '24 – Aug '24",
       blurb:
-        "• Developed responsive web applications for client projects including Shagun, Sunrise, and ESN India.\n• Built pixel-perfect, responsive interfaces using HTML, CSS, JavaScript, WordPress, and Shopify.\n• Optimized website loading performance while maintaining visual consistency across devices.\n• Worked with PHP and MySQL to implement and maintain dynamic website functionality.",
+        "• Developed responsive websites and client-facing web interfaces using HTML, CSS, JavaScript, and PHP.\n• Worked on client projects including Shagun, Sunrise, and ESN India, translating requirements into functional and responsive web solutions.\n• Worked with WordPress and Shopify for website development and customization, alongside MySQL-based dynamic functionality.\n• Collaborated directly with clients across three projects to understand requirements and deliver solutions.",
       url: "",
     },
     {
@@ -104,11 +104,35 @@ export const site = {
       role: "Web Developer",
       period: "Jul '22 – Mar '24",
       blurb:
-        "• Developed and maintained scalable UI components across 10+ telecommunication platforms, including Callam and SMSLocal.\n• Integrated REST APIs to display real-time VoIP telemetry and communication data within web applications.\n• Built responsive and reusable frontend interfaces, focusing on consistency and maintainability across multiple platforms.\n• Worked on data-driven web interfaces for telecom applications, improving the usability and presentation of real-time communication information.",
+        "• Developed and maintained company websites and responsive landing pages using HTML, CSS, JavaScript, PHP, and MySQL.\n• Worked on platforms including My Country Mobile, SMSLocal, Sweetmama, and Teloz, handling website enhancements, functional improvements, and UI maintenance.\n• Tested and debugged web applications, identifying and resolving functional, UI, and cross-browser issues to improve platform stability.\n• Collaborated with the SMSLocal team on platform updates, technical issues, and business requirements.",
       url: "",
     },
   ] as Job[],
   projects: [
+    {
+      title: "KNKY Reels Platform",
+      blurb:
+        "Full Reels video feed for mobile and desktop featuring virtualized infinite feeds, custom touch player controls, in-feed Centrobill monetization, and guest-to-subscriber conversion funnels.",
+      story:
+        "Built the full Reels video feed for mobile and desktop, using TanStack Virtualizer and smart video preloading so users can swipe smoothly through media-heavy feeds with instant video playback and zero lag.\n\nDeveloped custom video player controls and touch interactions, including a smooth draggable progress bar with seek preview, pinch-to-zoom, multi-photo/video swipe carousels, and synchronized sound settings.\n\nIntegrated in-feed payments and creator monetization, allowing users to unlock paid posts, send tips, and purchase creator subscriptions via Centrobill directly inside the feed without losing their place.\n\nImplemented preview limits to drive sign-ups, giving guest users a preview of creator reels before prompting them to follow or subscribe, while ensuring smooth browser back-button navigation on deep links.",
+      stack: [
+        "React.js",
+        "Next.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "TanStack Virtualizer",
+        "HLS.js",
+        "Swiper.js",
+        "Centrobill",
+      ],
+      year: "2025 – 2026",
+      links: {
+        live: "https://knky.co/reels",
+        source: "",
+      },
+      featured: true,
+      categories: ["Frontend", "Fullstack"],
+    },
     {
       title: "Support CRM System",
       blurb:
