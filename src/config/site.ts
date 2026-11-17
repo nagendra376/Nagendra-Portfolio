@@ -209,30 +209,6 @@ export const site = {
   ] as Job[],
   projects: [
     {
-      title: "KNKY Reels Platform",
-      blurb:
-        "Full Reels video feed for mobile and desktop featuring virtualized infinite feeds, custom touch player controls, in-feed Centrobill monetization, and guest-to-subscriber conversion funnels.",
-      story:
-        "Built the full Reels video feed for mobile and desktop, using TanStack Virtualizer and smart video preloading so users can swipe smoothly through media-heavy feeds with instant video playback and zero lag.\n\nDeveloped custom video player controls and touch interactions, including a smooth draggable progress bar with seek preview, pinch-to-zoom, multi-photo/video swipe carousels, and synchronized sound settings.\n\nIntegrated in-feed payments and creator monetization, allowing users to unlock paid posts, send tips, and purchase creator subscriptions via Centrobill directly inside the feed without losing their place.\n\nImplemented preview limits to drive sign-ups, giving guest users a preview of creator reels before prompting them to follow or subscribe, while ensuring smooth browser back-button navigation on deep links.",
-      stack: [
-        "React.js",
-        "Next.js",
-        "TypeScript",
-        "Redux Toolkit",
-        "TanStack Virtualizer",
-        "HLS.js",
-        "Swiper.js",
-        "Centrobill",
-      ],
-      year: "2025 – 2026",
-      links: {
-        live: "https://knky.co/reels",
-        source: "",
-      },
-      featured: true,
-      categories: ["Frontend", "Fullstack"],
-    },
-    {
       title: "AI-Powered Full Stack Project Management System",
       blurb:
         "A full-stack project tracker featuring JWT authentication, role-based authorization (RBAC), secure password hashing, modular RESTful APIs, and an integrated LLM API for deadline risk detection.",
