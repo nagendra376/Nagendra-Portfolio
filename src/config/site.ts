@@ -108,7 +108,7 @@ export const site = {
     phone: "tel:+918356006285",
     email: "mailto:nagendradwivedi2001@gmail.com",
     resume:
-      "https://drive.google.com/file/d/1Ep4ws-3SJP1xCLhd55msN1cUbpxBlVSi/view?usp=sharing",
+      "https://drive.google.com/file/d/18XGt4MPj8lTwOa2RKjaagJVYZ8-lNnh-/view?usp=sharing",
     discord: "https://discord.gg/ra4kyKdTk",
     medium: "https://medium.com/@nagendraswsa",
   },
