@@ -1,9 +1,13 @@
-import { Mail, FileText, ArrowUpRight as ArrowUpRightBase } from "lucide-react";
+import { Mail, FileText, Phone, ArrowUpRight as ArrowUpRightBase } from "lucide-react";
 
 type P = { className?: string };
 
 export const MailIcon = ({ className }: P) => (
   <Mail className={className} size={18} aria-hidden />
+);
+
+export const PhoneIcon = ({ className }: P) => (
+  <Phone className={className} size={18} aria-hidden />
 );
 
 export const FileIcon = ({ className }: P) => (

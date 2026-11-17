@@ -43,8 +43,8 @@ const hoverCardsData: Record<string, {
   linkedin: {
     pronouns: "He/Him",
     handle: "in/nagendra-dwivedi-1049651b6",
-    bio: "Frontend & Backend Developer. Experienced in React, Next.js, Node.js, and database systems.",
-    stats: ["Open to Work", "Mumbai, India"],
+    bio: "Full Stack Software Engineer. Core engineer on KNKY, specialized in React, Next.js, Node.js, and MongoDB.",
+    stats: ["Immediate Joiner", "Mumbai, India"],
     bannerText: "network • build • impact",
   },
   medium: {
@@ -54,14 +54,14 @@ const hoverCardsData: Record<string, {
     bannerText: "write • share • read",
   },
   email: {
-    handle: "nagendraswsa@gmail.com",
-    bio: "Available for contract work, internship opportunities, and collaborative software engineering projects.",
-    stats: ["Fast Response", "Direct Email"],
+    handle: "nagendradwivedi2001@gmail.com",
+    bio: "Full Stack Software Engineer with 2+ years of experience. Available as an immediate joiner.",
+    stats: ["Immediate Joiner", "Fast Response"],
     bannerText: "collab • contact • direct",
   },
   resume: {
     handle: "Curriculum Vitae",
-    bio: "View academic records, developer skills, and internship details.",
+    bio: "View full 1-page resume: 2+ yrs exp, KNKY creator platform, technical skills, and projects.",
     stats: ["PDF Resume", "1-Page CV"],
     bannerText: "skills • experience • cv",
   },

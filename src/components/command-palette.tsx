@@ -15,6 +15,9 @@ import {
   ExternalLink,
   BookOpen,
   Mail,
+  Briefcase,
+  GraduationCap,
+  Cpu,
 } from "lucide-react";
 import { GitHubIcon } from "./icons";
 
@@ -84,10 +87,43 @@ export function CommandPalette({
       id: "nav-about",
       category: "navigation",
       title: "Go to About",
-      subtitle: "Bio, experience, and full skills matrix",
+      subtitle: "Bio and developer summary",
       icon: <Terminal size={16} />,
       action: () => {
         navigate("/#about");
+        handleClose();
+      },
+    },
+    {
+      id: "nav-experience",
+      category: "navigation",
+      title: "Go to Experience",
+      subtitle: "Ink In Caps (KNKY), Accenture, Webtactics",
+      icon: <Briefcase size={16} />,
+      action: () => {
+        navigate("/#experience");
+        handleClose();
+      },
+    },
+    {
+      id: "nav-skills",
+      category: "navigation",
+      title: "Go to Tech Stack",
+      subtitle: "React, Next.js, Node.js, MongoDB, LLMs",
+      icon: <Cpu size={16} />,
+      action: () => {
+        navigate("/#skills");
+        handleClose();
+      },
+    },
+    {
+      id: "nav-education",
+      category: "navigation",
+      title: "Go to Education & Certifications",
+      subtitle: "MCA, B.Sc. IT, and Certifications",
+      icon: <GraduationCap size={16} />,
+      action: () => {
+        navigate("/#education");
         handleClose();
       },
     },

@@ -11,6 +11,7 @@ import { Contact } from "@/sections/Contact";
 import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
 import { TechStack } from "@/sections/TechStack";
+import { Education } from "@/sections/Education";
 import { Writing } from "@/sections/Writing";
 import { GithubActivity } from "@/sections/GithubActivity";
 import { CommandPalette } from "@/components/command-palette";
@@ -46,6 +47,7 @@ function MainLayout({ onOpenPalette }: { onOpenPalette: () => void }) {
       <Projects isSearchable={false} />
       <Experience />
       <TechStack />
+      <Education />
       <Writing limit={4} />
       <GithubActivity />
     </>
@@ -100,6 +102,7 @@ export function App() {
                 <Route path="/" element={<MainLayout onOpenPalette={() => setPaletteOpen(true)} />} />
                 <Route path="/projects" element={<Projects isSearchable={true} />} />
                 <Route path="/experience" element={<Experience />} />
+                <Route path="/education" element={<Education />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/writing" element={<WritingPage />} />
               </Routes>

@@ -11,11 +11,44 @@ export type Project = {
   categories?: ("Frontend" | "Backend" | "Fullstack")[];
 };
 
+export type JobPoint = {
+  prefix: string;
+  text: string;
+};
+
+export type JobSubProject = {
+  name: string;
+  tools?: string;
+  points: JobPoint[];
+};
+
 export type Job = {
   company: string;
   role: string;
   period: string;
+  location?: string;
+  summary?: string;
+  tools?: string;
+  subProjects?: JobSubProject[];
+  points?: JobPoint[];
   blurb: string;
+  url?: string;
+};
+
+export type EducationItem = {
+  degree: string;
+  institution: string;
+  location: string;
+  period: string;
+  grade?: string;
+  status?: string;
+};
+
+export type CertificationItem = {
+  title: string;
+  issuer: string;
+  issued: string;
+  credential?: string;
   url?: string;
 };
 
@@ -39,36 +72,41 @@ export const site = {
   bannerImage: "/images/cover.jpg",
   socialBannerImage: "/social-banner.png",
   initials: "ND",
-  role: "Full Stack Developer",
+  role: "Full Stack Software Engineer",
+  experienceYears: "2+ years",
   location: "Mumbai, India",
+  phone: "+91-835-600-6285",
   timezone: "Asia/Kolkata",
-  email: "nagendraswsa@gmail.com",
+  email: "nagendradwivedi2001@gmail.com",
   greeting: "Hey, I'm Nagendra",
   tagline:
-    "I build clean, modern websites and web apps where design, functionality, and even the smallest details matter.",
+    "Full Stack Software Engineer with 2+ years of experience architecting and shipping production web applications using React.js, Next.js, TypeScript, Node.js, and MongoDB.",
   about: [
-    "Hey, I'm Nagendra, a full stack developer who loves building clean, modern websites and apps where design, functionality, and even the smallest details matter, with a focus on making products that are both practical and visually satisfying.",
-    "I spend most of my time in the terminal, the browser, or scribbling on a whiteboard. I lean backend, not because I don't like frontend, but because I enjoy making polished things actually hold up.",
-    "I don't ship junk. Maintainability isn't optional. And I build best when I'm curious.",
+    "Full Stack Software Engineer with 2+ years of experience architecting and shipping production web applications using React.js, Next.js, TypeScript, Node.js, and MongoDB.",
+    "Core engineer behind creator monetization and streaming infrastructure on KNKY, developing virtualized video feeds, custom multimedia controls, and multi-flow Centrobill payment gateways.",
+    "Hands-on backend experience designing modular RESTful APIs (JWT, RBAC) with Node.js/Express, working with PostgreSQL, MySQL, Redis, BullMQ job queues, Docker, and LLM-powered features. Proven track record of delivering features end-to-end from technical design to deployment. Available as an immediate joiner.",
   ],
   tldr: [
-    "Building products.",
-    "Learning technologies.",
-    "Shipping consistently.",
-    "Obsessed with clean code.",
+    "2+ Years Production Experience",
+    "Immediate Joiner",
+    "React.js, Next.js 14, TypeScript",
+    "Node.js, Express, MongoDB, PostgreSQL",
+    "Creator Monetization & Centrobill Payments",
+    "LLM API Integration & AI Risk Detection",
   ],
   status: {
     available: true,
-    availableText: "open to opportunities",
-    nowLearning: "Backend Engineering • System Design • DSA • DevOps",
-    nowBuilding: "Project Management System",
+    availableText: "Immediate Joiner • Open to opportunities",
+    nowLearning: "Distributed Systems • System Design • LLM Agents",
+    nowBuilding: "AI-Powered Full Stack Project Management System",
     nowListening: "focus playlists",
   },
   socials: {
     github: "https://github.com/nagendra376",
-    twitter: "https://x.com/nagendra92407",
     linkedin: "https://www.linkedin.com/in/nagendra-dwivedi-1049651b6/",
-    email: "mailto:nagendraswsa@gmail.com",
+    twitter: "https://x.com/nagendra92407",
+    phone: "tel:+918356006285",
+    email: "mailto:nagendradwivedi2001@gmail.com",
     resume:
       "https://drive.google.com/file/d/1oGE1BRZbU6TtCkIeBzhsQx6Yd5B_qD4h/view?usp=sharing",
     discord: "https://discord.gg/ra4kyKdTk",
@@ -76,35 +114,96 @@ export const site = {
   },
   experience: [
     {
-      company: "INK IN CAPS (KNKY Platform)",
-      role: "Junior Software Engineer",
-      period: "Feb '25 – Present",
+      company: "Ink In Caps",
+      role: "Software Engineer",
+      period: "Feb 2025 – Present",
+      location: "Mumbai, India",
+      summary:
+        "Full-stack engineer across creator monetization platforms, administrative portals, and agency management dashboards for KNKY.",
+      subProjects: [
+        {
+          name: "KNKY — Creator Platform (Flagship Application)",
+          tools:
+            "Next.js 14, React 18, TypeScript, Node.js, Redux Toolkit, WebSockets, Centrobill, HLS.js, Tailwind CSS",
+          points: [
+            {
+              prefix: "Post Creation & Media Engine",
+              text: "Architected end-to-end Draft Posts system (SaveDraft, restoration, route guards), multi-video vault picker with automated client-side canvas poster thumbnail extraction, and dynamic @mentions autocomplete with profile deep-linking.",
+            },
+            {
+              prefix: "Reels Streaming & Audio Sync",
+              text: "Built responsive Reels desktop/mobile view; integrated AbortController into API client to cleanly cancel stale video requests during rapid scrolling and developed a Global Audio Synchronizer to eliminate audio bleeding across video cards.",
+            },
+            {
+              prefix: "Payments & Subscription Flows",
+              text: "Integrated Centrobill payment processing across Prime subscriptions, Pay-To-View clips, and tipping; synchronized modal submission states with asynchronous gateway responses to prevent double-charging.",
+            },
+          ],
+        },
+        {
+          name: "KNKY Agency Portal",
+          tools: "React.js, TypeScript, Context API, REST APIs, Tailwind CSS",
+          points: [
+            {
+              prefix: "Device Security & Creator Workflows",
+              text: "Engineered complete multi-device session management enabling creators and agencies to monitor active sessions, execute remote single-device and 'Logout from All' revocations with auth token invalidation; preserved creator context across fullscreen vault media and agency chat threads.",
+            },
+          ],
+        },
+        {
+          name: "KNKY Admin Portal",
+          tools: "React.js, Vite, SSR, REST APIs, Tailwind CSS",
+          points: [
+            {
+              prefix: "Admin Operations & Build Architecture",
+              text: "Aligned administrative data schemas across user profiles, channel earnings analytics, and real-time transaction monitoring; overhauled promotional offer workflows and optimized Vite SSR dependencies for zero-downtime deployments.",
+            },
+          ],
+        },
+      ],
       blurb:
-        "• Architected and delivered the end-to-end Reels short-form video platform across mobile and desktop, integrating TanStack Virtualizer and Intersection Observer for infinite scrolling, dynamic Swiper media carousels, and synchronized cross-component audio/playback controls.\n• Engineered an interactive multimedia player suite, featuring custom draggable video scrubbers with time previews, 10s skip navigation, pinch-to-zoom media inspection, double-tap engagement, and native/custom fullscreen portals.\n• Spearheaded Centrobill payment gateway integration across 5 platform monetization funnels (Creator Prime Subscriptions, Locked Pay-to-View Posts, Event Ticketing, Pay-Per-Message Chat Fees, and Shop Checkout) with global transaction state handling and multi-currency formatting.\n• Co-engineered the Vault-first Story & Content Creation suite, featuring stepped draft publishing, audience-based access pricing, scheduled releases, and pre-upload corrupted media validation guards.\n• Designed guest-to-subscriber conversion funnels and overlay architecture, implementing a custom stacked modal history system (useOverlayHistory) and resolving critical iOS PWA safe-area, deep-linking, and viewport rendering challenges across 40+ major releases.",
+        "• Full-stack engineer across creator monetization platforms, administrative portals, and agency management dashboards for KNKY.\n• Post Creation & Media Engine: Architected end-to-end Draft Posts system, multi-video vault picker with automated client-side canvas poster thumbnail extraction, and dynamic @mentions autocomplete.\n• Reels Streaming & Audio Sync: Built responsive Reels desktop/mobile view; integrated AbortController and developed Global Audio Synchronizer.\n• Payments & Subscription Flows: Integrated Centrobill payment processing across Prime subscriptions, Pay-To-View clips, and tipping.\n• KNKY Agency & Admin Portals: Engineered multi-device session management, schema alignment, and optimized Vite SSR dependencies.",
       url: "",
     },
     {
-      company: "Accenture (GSK Project)",
-      role: "Frontend Developer",
-      period: "Aug '24 – Dec '24",
+      company: "Accenture",
+      role: "Frontend Developer (GSK Project)",
+      period: "Aug 2024 – Dec 2024",
+      location: "Mumbai, India",
+      tools:
+        "React.js, TypeScript, JavaScript, CSS3, Figma, Design Systems, Cross-Browser Testing",
+      points: [
+        {
+          prefix: "Design System Implementation",
+          text: "Developed responsive, reusable React.js components by translating Figma designs into production code, adhering to enterprise design systems and accessibility standards.",
+        },
+        {
+          prefix: "Performance & Compatibility",
+          text: "Optimized frontend interfaces for consistent performance and cross-browser compatibility across desktop, tablet, and mobile devices.",
+        },
+      ],
       blurb:
-        "• Developed pixel-perfect, responsive React.js interfaces by translating Figma designs into production-ready components.\n• Built reusable and accessible UI components while following established design systems, design tokens, and UI guidelines.\n• Ensured consistent user experiences across desktop, tablet, and mobile devices through responsive development and cross-browser testing.",
+        "• Design System Implementation: Developed responsive, reusable React.js components by translating Figma designs into production code, adhering to enterprise design systems and accessibility standards.\n• Performance & Compatibility: Optimized frontend interfaces for consistent performance and cross-browser compatibility across desktop, tablet, and mobile devices.",
       url: "",
     },
     {
-      company: "Webtactics",
+      company: "Webtactics & My Country Mobile",
       role: "Web Developer",
-      period: "Mar '24 – Aug '24",
+      period: "Jul 2022 – Aug 2024",
+      location: "Mumbai, India",
+      tools: "JavaScript, HTML5, CSS3, PHP, MySQL, WordPress, Shopify",
+      points: [
+        {
+          prefix: "Web Platform Development",
+          text: "Built and maintained production web platforms (SMSLocal, Teloz, Shagun, Sunrise, ESN India), implementing dynamic features, client customization, and database-driven functionality.",
+        },
+        {
+          prefix: "Platform Stability & Maintenance",
+          text: "Tested and debugged web applications, resolving critical functional, UI, and cross-browser issues to ensure platform stability.",
+        },
+      ],
       blurb:
-        "• Developed responsive websites and client-facing web interfaces using HTML, CSS, JavaScript, and PHP.\n• Worked on client projects including Shagun, Sunrise, and ESN India, translating requirements into functional and responsive web solutions.\n• Worked with WordPress and Shopify for website development and customization, alongside MySQL-based dynamic functionality.\n• Collaborated directly with clients across three projects to understand requirements and deliver solutions.",
-      url: "",
-    },
-    {
-      company: "My Country Mobile",
-      role: "Web Developer",
-      period: "Jul '22 – Mar '24",
-      blurb:
-        "• Developed and maintained company websites and responsive landing pages using HTML, CSS, JavaScript, PHP, and MySQL.\n• Worked on platforms including My Country Mobile, SMSLocal, Sweetmama, and Teloz, handling website enhancements, functional improvements, and UI maintenance.\n• Tested and debugged web applications, identifying and resolving functional, UI, and cross-browser issues to improve platform stability.\n• Collaborated with the SMSLocal team on platform updates, technical issues, and business requirements.",
+        "• Web Platform Development: Built and maintained production web platforms (SMSLocal, Teloz, Shagun, Sunrise, ESN India), implementing dynamic features, client customization, and database-driven functionality.\n• Platform Stability & Maintenance: Tested and debugged web applications, resolving critical functional, UI, and cross-browser issues to ensure platform stability.",
       url: "",
     },
   ] as Job[],
@@ -134,11 +233,59 @@ export const site = {
       categories: ["Frontend", "Fullstack"],
     },
     {
+      title: "AI-Powered Full Stack Project Management System",
+      blurb:
+        "A full-stack project tracker featuring JWT authentication, role-based authorization (RBAC), secure password hashing, modular RESTful APIs, and an integrated LLM API for deadline risk detection.",
+      story:
+        "Engineered a full-stack project tracker featuring JWT authentication, role-based authorization (RBAC), secure password hashing, and modular RESTful backend APIs with Node.js, Express, and MongoDB.\n\nIntegrated an LLM API to analyze task deadlines and statuses, detect potential delays, and generate contextual risk explanations with actionable recommendations.",
+      stack: [
+        "React.js",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "JWT",
+        "REST APIs",
+        "LLM API",
+      ],
+      year: "2026",
+      links: {
+        live: "https://support-crm-system-phi.vercel.app/",
+        source: "https://github.com/nagendra376/Project-managemenet_system",
+      },
+      featured: true,
+      image: "/project-images/project-management.png",
+      categories: ["Fullstack", "Backend"],
+    },
+    {
+      title: "Porsche 911 GT3 RS Showcase",
+      blurb:
+        "An interactive automotive showcase developed with responsive layouts, scroll-triggered animations, smooth scrolling, and interactive navigation.",
+      story:
+        "Developed an interactive automotive showcase with responsive layouts, scroll-triggered animations, smooth scrolling, and interactive navigation. Blends luxury branding, motion design, and performance storytelling into a premium digital experience.",
+      stack: [
+        "React.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "GSAP",
+      ],
+      year: "2025",
+      links: {
+        live: "https://timeline-activity.vercel.app/",
+        source: "",
+      },
+      featured: true,
+      image: "/project-images/porsche-showcase.png",
+      categories: ["Frontend"],
+    },
+    {
       title: "Support CRM System",
       blurb:
         "A full-stack customer support ticket management system for creating, searching, filtering, viewing, and updating support tickets in a streamlined workflow.",
       story:
-        "This project combines a React + Vite frontend with a Node.js and Express backend, backed by MongoDB for reliable ticket storage and notes tracking. It includes ticket creation, status updates, comment history, search and filtering, and a clean admin-style dashboard built for real support workflows.\n\nBuilt to keep support operations organized, efficient, and easy to maintain.",
+        "This project combines a React + Vite frontend with a Node.js and Express backend, backed by MongoDB for reliable ticket storage and notes tracking. It includes ticket creation, status updates, comment history, search and filtering, and a clean admin-style dashboard built for real support workflows.",
       stack: [
         "React.js",
         "Vite",
@@ -155,65 +302,16 @@ export const site = {
         live: "https://support-crm-system-phi.vercel.app/",
         source: "https://github.com/nagendra376/Support_CRM_System-",
       },
-      featured: true,
+      featured: false,
       image: "/project-images/support-crm.png",
       categories: ["Fullstack", "Backend"],
-    },
-    {
-      title: "Porsche 911 GT3 RS showcase",
-      blurb:
-        "A cinematic Porsche GT3 RS concept landing page that blends luxury branding, motion design, and performance storytelling into a premium automotive experience.",
-      story:
-        "This project focuses on turning a high-performance car into a visual narrative using immersive sections, bold typography, and smooth transitions. The experience highlights engineering, aerodynamics, power, and design through a refined storytelling layout that feels modern, fast, and unmistakably premium.\n\nBuilt to feel like a luxury performance brand presentation, not just a product page.",
-      stack: [
-        "React.js",
-        "Vite",
-        "Tailwind CSS",
-        "GSAP",
-        "Framer Motion",
-        "Responsive Design",
-      ],
-      year: "2026",
-      links: {
-        live: "https://timeline-activity.vercel.app/",
-        source: "",
-      },
-      featured: true,
-      image: "/project-images/porsche-showcase.png",
-      categories: ["Frontend"],
-    },
-    {
-      title: "Project Management System",
-      blurb:
-        "A Node.js and Express backend for a project management application with authentication, project APIs, and a scalable foundation for feature expansion.",
-      story:
-        "This backend project is built to support user registration and login, project creation and management, validation layers, health checks, and API-ready structure for future task, team, and member management features. It uses MongoDB with Mongoose for persistence and includes email utilities, JWT-based auth, and environment-based configuration for a real-world service setup.\n\nStructured as a clean, extendable backend foundation for a full project management product.",
-      stack: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Mongoose",
-        "JWT",
-        "bcrypt",
-        "Nodemailer",
-        "Multer",
-      ],
-      year: "2026",
-      links: {
-        live: "",
-        source: "https://github.com/nagendra376/Project-managemenet_system",
-      },
-      featured: true,
-      status: "Backend API",
-      image: "/project-images/project-management.png",
-      categories: ["Backend", "Fullstack"],
     },
     {
       title: "ProInvoice – Advanced Billing PWA",
       blurb:
         "An installable Progressive Web App (PWA) for multi-user billing, invoice and quote generation, client management, and real-time revenue analytics.",
       story:
-        "ProInvoice is an offline-capable Progressive Web Application built to streamline billing workflows for freelancers and growing businesses. It features fast invoice and quotation generation, itemized tax/discount calculations, client records, and visual analytics dashboards for tracking business performance.\n\nOptimized for smooth cross-device usage with standalone PWA installation, dark UI aesthetics, and instant responsiveness.",
+        "ProInvoice is an offline-capable Progressive Web Application built to streamline billing workflows for freelancers and growing businesses. It features fast invoice and quotation generation, itemized tax/discount calculations, client records, and visual analytics dashboards for tracking business performance.",
       stack: [
         "React.js",
         "Vite",
@@ -226,7 +324,7 @@ export const site = {
         live: "https://pro-invoice-pwa.vercel.app/",
         source: "",
       },
-      featured: true,
+      featured: false,
       image: "/project-images/pro-invoice.png",
       categories: ["Fullstack", "Frontend"],
     },
@@ -235,7 +333,7 @@ export const site = {
       blurb:
         "A commercial computer repair, IT services, and custom hardware e-commerce platform serving 365+ locations across Mumbai & MMR.",
       story:
-        "Developed and maintained as the core digital platform for Solution Systems, featuring doorstep computer and laptop repair booking, genuine OEM parts tracking, custom PC configurator, hardware catalog, and direct WhatsApp customer support channels.\n\nEngineered with localized SEO across 300+ Mumbai regions, high-performance page loads, and intuitive responsive navigation.",
+        "Developed and maintained as the core digital platform for Solution Systems, featuring doorstep computer and laptop repair booking, genuine OEM parts tracking, custom PC configurator, hardware catalog, and direct WhatsApp customer support channels.",
       stack: [
         "React.js",
         "Next.js",
@@ -248,33 +346,87 @@ export const site = {
         live: "https://solutionsystems.in/",
         source: "",
       },
-      featured: true,
+      featured: false,
       image: "/project-images/solution-systems.png",
       categories: ["Fullstack", "Frontend"],
     },
   ] as Project[],
   skills: [
+    // Languages
+    "JavaScript (ES6+)",
     "TypeScript",
-    "JavaScript",
-    "React",
+    "HTML5",
+    "CSS3",
+    "SQL",
+    // Frontend
+    "React.js",
     "Next.js",
+    "Angular.js",
+    "Redux Toolkit",
+    "Tailwind CSS",
+    "Bootstrap",
+    "CSS Modules",
+    "SCSS",
+    "shadcn/ui",
+    "GSAP",
+    // Backend
     "Node.js",
     "Express.js",
-    "Tailwind CSS",
-    "Shadcn UI",
-    "PostgreSQL",
-    "MongoDB",
-    "Prisma",
-    "Supabase",
-    "Firebase",
     "REST APIs",
-    "JWT",
+    "JWT Authentication",
+    "Zod",
+    "Swagger",
+    "WebSockets",
+    "Socket.io",
+    "BullMQ",
+    // Databases
+    "MongoDB",
+    "Mongoose",
+    "PostgreSQL",
+    "MySQL",
+    "Redis",
+    // Cloud & DevOps
+    "Docker",
+    "AWS",
+    "CI/CD",
+    "Vercel",
+    // AI & LLM
+    "LangChain",
+    "LangGraph",
+    "RAG",
+    "Vector Databases",
+    "LLM API Integration",
+    // Tools & Concepts
     "Git",
     "GitHub",
     "Postman",
-    "Vercel",
-    "Figma",
+    "Microservices",
+    "Core Web Vitals",
   ],
+  education: [
+    {
+      degree: "Master of Computer Applications (MCA)",
+      institution: "Sikkim Manipal University",
+      location: "Gangtok",
+      period: "Nov 2025 – Pursuing",
+      status: "Pursuing",
+    },
+    {
+      degree: "Bachelor of Science in Information Technology (B.Sc. IT)",
+      institution: "Nirmala Memorial Foundation College",
+      location: "Mumbai",
+      period: "Jun 2019 – Jul 2022",
+      grade: "CGPA: 8.6/10.0",
+    },
+  ] as EducationItem[],
+  certifications: [
+    {
+      title: "Frontend Developer Certification",
+      issuer: "Techpaathshala",
+      issued: "Nov 2024",
+      credential: "Certificate",
+    },
+  ] as CertificationItem[],
   writing: [
     {
       title: "HTTP for Frontend Developers: Beyond the Fetch Call",

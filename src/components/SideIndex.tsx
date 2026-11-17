@@ -7,6 +7,7 @@ const INDEX_ITEMS = [
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
   { id: "writing", label: "Writing" },
   { id: "github", label: "GitHub" },
 ];

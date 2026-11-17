@@ -16,7 +16,12 @@ export function Experience() {
     <div id="experience">
       <SectionHeader title="Experience" />
       <Shell>
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue={`${site.experience[0]?.company}-0`}
+          className="w-full"
+        >
           {site.experience.map((job, i) => (
             <motion.div
               key={`${job.company}-${i}`}
@@ -32,34 +37,112 @@ export function Experience() {
                 <AccordionTrigger className="py-5 text-left hover:no-underline">
                   <div className="flex w-full flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[12px] font-mono uppercase tracking-[0.18em] text-[var(--soft)]">
-                          {job.period}
-                        </span>
-                      </div>
                       <div>
-                        <p className="text-[15px] font-semibold text-[var(--fg)]">
-                          {job.role}
-                        </p>
+                        <div className="flex items-center gap-2">
+                          <p className="text-[15px] font-semibold text-[var(--fg)]">
+                            {job.role}
+                          </p>
+                          {job.location && (
+                            <span className="text-[11px] font-mono text-[var(--soft)] hidden sm:inline">
+                              • {job.location}
+                            </span>
+                          )}
+                        </div>
                         <p className="text-[13px] text-[var(--muted)]">
                           {job.company}
                         </p>
                       </div>
                     </div>
-                    {job.url && (
-                      <ExternalLink size={14} className="text-[var(--soft)]" />
-                    )}
+                    <div className="flex items-center gap-3">
+                      <span className="text-[11px] font-mono uppercase tracking-[0.15em] text-[var(--soft)] border border-[var(--line)] px-2.5 py-1 rounded-md bg-[var(--chip)]">
+                        {job.period}
+                      </span>
+                      {job.url && (
+                        <ExternalLink size={14} className="text-[var(--soft)]" />
+                      )}
+                    </div>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
-                  {job.blurb.includes("•") ? (
-                    <ul className="list-disc space-y-2 pl-5 text-[13.5px] leading-relaxed text-[var(--muted)]">
-                      {job.blurb.split("\n").map((point, idx) => (
-                        <li key={`${job.company}-${idx}`}>
-                          {point.replace(/^•\s*/, "")}
-                        </li>
+                  {job.summary && (
+                    <p className="text-[13.5px] font-medium text-[var(--fg)] mb-4 leading-relaxed">
+                      {job.summary}
+                    </p>
+                  )}
+
+                  {/* Render Sub-Projects if present (e.g. KNKY Creator, Agency, Admin) */}
+                  {job.subProjects && job.subProjects.length > 0 ? (
+                    <div className="space-y-4">
+                      {job.subProjects.map((sub, sIdx) => (
+                        <div
+                          key={`${sub.name}-${sIdx}`}
+                          className="rounded-lg border border-[var(--line)] bg-[var(--chip)]/40 p-4 transition-colors"
+                        >
+                          <div className="mb-2">
+                            <h4 className="text-[14px] font-semibold text-[var(--fg)]">
+                              {sub.name}
+                            </h4>
+                            {sub.tools && (
+                              <div className="mt-2 flex flex-wrap gap-1.5">
+                                {sub.tools.split(",").map((tool) => (
+                                  <span
+                                    key={tool.trim()}
+                                    className="rounded border border-[var(--line)] bg-[var(--card)] px-2 py-0.5 font-mono text-[10px] text-[var(--soft)]"
+                                  >
+                                    {tool.trim()}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                          <ul className="mt-3 space-y-2 text-[13px] leading-relaxed text-[var(--muted)]">
+                            {sub.points.map((pt, pIdx) => (
+                              <li key={pIdx} className="flex gap-2">
+                                <span className="text-[var(--soft)] font-mono select-none mt-0.5">
+                                  •
+                                </span>
+                                <div>
+                                  <strong className="text-[var(--fg)] font-medium">
+                                    {pt.prefix}:
+                                  </strong>{" "}
+                                  <span>{pt.text}</span>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
+                  ) : job.points && job.points.length > 0 ? (
+                    <div className="space-y-3">
+                      {job.tools && (
+                        <div className="mb-3 flex flex-wrap gap-1.5">
+                          {job.tools.split(",").map((tool) => (
+                            <span
+                              key={tool.trim()}
+                              className="rounded border border-[var(--line)] bg-[var(--chip)] px-2 py-0.5 font-mono text-[10px] text-[var(--soft)]"
+                            >
+                              {tool.trim()}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <ul className="space-y-2 text-[13px] leading-relaxed text-[var(--muted)]">
+                        {job.points.map((pt, pIdx) => (
+                          <li key={pIdx} className="flex gap-2">
+                            <span className="text-[var(--soft)] font-mono select-none mt-0.5">
+                              •
+                            </span>
+                            <div>
+                              <strong className="text-[var(--fg)] font-medium">
+                                {pt.prefix}:
+                              </strong>{" "}
+                              <span>{pt.text}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ) : (
                     <p className="text-[13.5px] leading-relaxed text-[var(--muted)]">
                       {job.blurb}

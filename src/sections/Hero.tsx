@@ -6,10 +6,10 @@ import { MapPin, Search, RotateCw, Eye } from "lucide-react";
 import { useVisitor } from "@/context/VisitorContext";
 
 const HEADLINE_TITLES = [
-  "Full Stack Developer",
-  "Backend Engineer",
-  "Open Source Contributor",
-  "Clean Code Advocate",
+  "Full Stack Software Engineer",
+  "React.js, Next.js & Node.js",
+  "2+ Years Exp • Immediate Joiner",
+  "Backend & Streaming Infrastructure",
 ];
 
 export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
@@ -37,10 +37,10 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
         <div className="relative h-36 overflow-hidden rounded-xl bg-neutral-950 sm:h-44 border border-[var(--line)]">
           <img
             src={site.bannerImage}
-            alt="Workspace Banner"
+            alt="AWS Summit Banner"
             loading="eager"
             decoding="async"
-            className="w-full h-full object-cover object-center opacity-65 grayscale"
+            className="w-full h-full object-cover object-center opacity-85 transition-opacity duration-300 hover:opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)]/40 to-transparent" />
           <div className="absolute inset-0 opacity-20 [background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.05)_0,rgba(255,255,255,0.05)_1px,transparent_1px,transparent_5px)]" />
@@ -60,15 +60,16 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
             <div 
               onClick={handleNextImage}
               className="relative grid size-20 shrink-0 place-items-center overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--chip)] shadow-md group cursor-pointer select-none animate-fade-up"
-              title="Click to change profile image"
+              title="Click to toggle between photo and Luffy"
             >
               {/* Main Avatar Image */}
               <img
+                key={imgIndex}
                 src={site.profileImages[imgIndex]}
-                alt={site.name}
+                alt={imgIndex === 0 ? site.name : "Monkey D. Luffy"}
                 loading="eager"
                 decoding="async"
-                className="h-full w-full object-cover pointer-events-none"
+                className="h-full w-full object-cover pointer-events-none transition-opacity duration-300"
               />
 
               {/* CRT scanline overlay */}
@@ -115,6 +116,11 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
                   <Eye size={12} className="shrink-0" />
                   <span>{isLoading ? "..." : count?.toLocaleString()} views</span>
                 </span>
+                <span>·</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-500">
+                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Immediate Joiner
+                </span>
               </p>
             </div>
           </div>
@@ -123,7 +129,7 @@ export function Hero({ onOpenPalette }: { onOpenPalette?: () => void }) {
           {onOpenPalette && (
             <button
               onClick={onOpenPalette}
-              className="flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--chip)] px-3 py-1.5 font-mono text-[11px] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--soft)] transition-colors shadow-sm cursor-pointer"
+              className="hidden sm:flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--chip)] px-3 py-1.5 font-mono text-[11px] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--soft)] transition-colors shadow-sm cursor-pointer"
               title="Open Command Palette (Ctrl+K)"
             >
               <Search size={14} />

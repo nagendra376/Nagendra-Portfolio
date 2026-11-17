@@ -15,7 +15,12 @@ export function Experience() {
       <SectionHeader id="work" index="02" title="where I've worked" />
 
       <div className="space-y-4">
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion
+          type="single"
+          collapsible
+          defaultValue={`${site.experience[0]?.company}-0`}
+          className="space-y-4"
+        >
           {site.experience.map((job, i) => (
             <Reveal key={`${job.company}-${i}`} delay={i * 0.06}>
               <AccordionItem
@@ -38,18 +43,66 @@ export function Experience() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6">
-                  {job.blurb.includes("•") ? (
-                    <ul className="mt-2 list-disc space-y-2 pl-5 text-sm text-neutral-300 leading-relaxed">
-                      {job.blurb.split("\n").map((point, idx) => (
-                        <li key={`${job.company}-${idx}`}>
-                          {point.replace(/^•\s*/, "")}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
-                      {job.blurb}
+                  {job.summary && (
+                    <p className="text-sm text-neutral-300 font-medium mb-3">
+                      {job.summary}
                     </p>
+                  )}
+
+                  {job.subProjects && job.subProjects.length > 0 ? (
+                    <div className="space-y-4">
+                      {job.subProjects.map((sub, sIdx) => (
+                        <div
+                          key={`${sub.name}-${sIdx}`}
+                          className="rounded-xl border border-neutral-800/80 bg-neutral-950/40 p-4"
+                        >
+                          <h4 className="text-sm font-semibold text-neutral-200">
+                            {sub.name}
+                          </h4>
+                          {sub.tools && (
+                            <p className="font-mono text-xs text-neutral-400 mt-1 mb-2">
+                              {sub.tools}
+                            </p>
+                          )}
+                          <ul className="space-y-2 text-sm text-neutral-300">
+                            {sub.points.map((pt, pIdx) => (
+                              <li key={pIdx} className="flex gap-2">
+                                <span className="text-emerald-400 font-mono">•</span>
+                                <div>
+                                  <strong className="text-white font-medium">
+                                    {pt.prefix}:
+                                  </strong>{" "}
+                                  <span>{pt.text}</span>
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : job.points && job.points.length > 0 ? (
+                    <div className="space-y-3">
+                      {job.tools && (
+                        <p className="font-mono text-xs text-neutral-400 mb-2">
+                          Tools: {job.tools}
+                        </p>
+                      )}
+                      <ul className="space-y-2 text-sm text-neutral-300">
+                        {job.points.map((pt, pIdx) => (
+                          <li key={pIdx} className="flex gap-2">
+                            <span className="text-emerald-400 font-mono">•</span>
+                            <div>
+                              <strong className="text-white font-medium">
+                                {pt.prefix}:
+                              </strong>{" "}
+                              <span>{pt.text}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <p className="text-sm text-neutral-300">{job.blurb}</p>
                   )}
                 </AccordionContent>
               </AccordionItem>
