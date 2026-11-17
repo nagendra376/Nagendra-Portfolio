@@ -184,6 +184,17 @@ export function CommandPalette({
       },
     },
     {
+      id: "action-resume",
+      category: "actions",
+      title: "View Resume (PDF)",
+      subtitle: "Open Google Drive link",
+      icon: <ExternalLink size={16} />,
+      action: () => {
+        window.open(site.socials.resume, "_blank");
+        handleClose();
+      },
+    },
+    {
       id: "action-medium",
       category: "actions",
       title: "Open Medium Profile",
