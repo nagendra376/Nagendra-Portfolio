@@ -55,13 +55,13 @@ const hoverCardsData: Record<string, {
   },
   email: {
     handle: "nagendradwivedi2001@gmail.com",
-    bio: "Full Stack Software Engineer with 2+ years of experience. Available as an immediate joiner.",
+    bio: "Full Stack Software Engineer with 3+ years of experience. Available as an immediate joiner.",
     stats: ["Immediate Joiner", "Fast Response"],
     bannerText: "collab • contact • direct",
   },
   resume: {
     handle: "Curriculum Vitae",
-    bio: "View full 1-page resume: 2+ yrs exp, KNKY creator platform, technical skills, and projects.",
+    bio: "View full 1-page resume: 3+ yrs exp, KNKY creator platform, technical skills, and projects.",
     stats: ["PDF Resume", "1-Page CV"],
     bannerText: "skills • experience • cv",
   },

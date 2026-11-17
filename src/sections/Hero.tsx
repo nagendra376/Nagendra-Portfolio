@@ -8,7 +8,7 @@ import { useVisitor } from "@/context/VisitorContext";
 const HEADLINE_TITLES = [
   "Full Stack Software Engineer",
   "React.js, Next.js & Node.js",
-  "2+ Years Exp • Immediate Joiner",
+  "3+ Years Exp • Immediate Joiner",
   "Backend & Streaming Infrastructure",
 ];
 
